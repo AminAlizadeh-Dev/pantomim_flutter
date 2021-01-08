@@ -51,24 +51,18 @@ dev_dependencies:
 # The following section is specific to Flutter.
 flutter:
   fonts:
-    - family: iranSans
+    - family: aviny
       fonts:
-        - asset: fonts/iran_sans_regular.ttf
+        - asset: fonts/Aviny.ttf
           weight: 400
-        - asset: fonts/iran_sans_bold.ttf
-          weight: 500
 
-    - family: kalameh
+    - family: cactos
       fonts:
-        - asset: fonts/kalame_bold.ttf
-          weight: 900
-
-    - family: balsamiq
-      fonts:
-        - asset: fonts/BalsamiqSans-Regular.ttf
+        - asset: fonts/Cactus-Bold.ttf
           weight: 500
-        - asset: fonts/BalsamiqSans-Bold.ttf
-          weight: 900
+        - asset: fonts/Cactus-Bold.ttf
+          weight: 300
+
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
