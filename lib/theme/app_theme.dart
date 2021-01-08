@@ -12,18 +12,20 @@ ThemeData appTheme(BuildContext context) {
     accentColor: AppColors.accentColor,
     splashColor: AppColors.accentColor,
     brightness: Brightness.dark,
-    fontFamily: '',
+    fontFamily: 'aviny',
     textTheme: TextTheme(
-      headline1: TextStyle(fontFamily: '', color: AppColors.darkAccentColor),
-      headline2: TextStyle(fontFamily: '', color: AppColors.darkAccentColor),
+      headline1:
+          TextStyle(fontFamily: 'cactos', color: AppColors.darkAccentColor),
+      headline2:
+          TextStyle(fontFamily: 'cactos', color: AppColors.darkAccentColor),
       headline3: TextStyle(
           fontSize: headline3Size(context),
-          fontFamily: '',
+          fontFamily: 'cactos',
           color: AppColors.textColorDark,
           height: 1.4),
       headline4: TextStyle(
           color: AppColors.textColorDark,
-          fontFamily: '',
+          fontFamily: 'cactos',
           fontSize: headline4Size(context)),
       headline5: TextStyle(color: Colors.white),
       headline6: TextStyle(color: Colors.white),
