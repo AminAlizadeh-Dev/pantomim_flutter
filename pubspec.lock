@@ -56,7 +56,7 @@ packages:
       name: chewie
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.12.1+1"
+    version: "0.12.2"
   clock:
     dependency: transitive
     description:
@@ -139,6 +139,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_neumorphic:
+    dependency: "direct main"
+    description:
+      name: flutter_neumorphic
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.0.4+1"
   flutter_svg:
     dependency: "direct main"
     description:
@@ -162,7 +169,7 @@ packages:
       name: google_fonts
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.1.1"
+    version: "1.1.2"
   html:
     dependency: transitive
     description:
@@ -254,13 +261,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.0.4"
+  neumorphic:
+    dependency: "direct main"
+    description:
+      name: neumorphic
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.4.0"
   page_transition:
     dependency: "direct main"
     description:
       name: page_transition
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.1.7+5"
+    version: "1.1.7+6"
   path:
     dependency: transitive
     description:
@@ -337,7 +351,7 @@ packages:
       name: pin_code_fields
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "6.0.2"
+    version: "6.1.0"
   platform:
     dependency: transitive
     description:
@@ -365,7 +379,7 @@ packages:
       name: provider
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.3.2+3"
+    version: "4.3.3"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -482,7 +496,7 @@ packages:
       name: win32
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.7.4"
+    version: "1.7.4+1"
   xdg_directories:
     dependency: transitive
     description:
