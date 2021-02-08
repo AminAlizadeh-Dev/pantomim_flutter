@@ -1,24 +1,28 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:pantomim_flutter/theme/app_theme.dart';
+import 'package:pantomim_flutter/theme/colors.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(MaterialApp(debugShowCheckedModeBanner: false, home: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-//        statusBarColor: ,
-        statusBarIconBrightness: Brightness.light));
+        statusBarColor: AppColors.background,
+        statusBarIconBrightness: Brightness.dark));
+
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
 
     return MaterialApp(
-      title: 'Pantomim App',
-//      theme: ThemeData(
-//      ),
-//      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      debugShowCheckedModeBanner: false,
+      title: 'Pantomime',
+      theme: appTheme(context),
     );
   }
 }
