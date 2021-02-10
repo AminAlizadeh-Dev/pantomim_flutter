@@ -10,7 +10,7 @@ Widget wordDeatail(
   return Container(
     margin: EdgeInsets.symmetric(
       horizontal: largeSize(context),
-      vertical: mediumSize(context),
+      vertical: standardSize(context),
     ),
     width: fullWidth(context),
     height: fullWidth(context) / 7.4,
