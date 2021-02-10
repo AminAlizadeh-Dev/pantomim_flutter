@@ -1,18 +1,20 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
 import 'colors.dart';
 import 'dimense.dart';
 
-ThemeData appTheme(BuildContext context) {
-  return ThemeData(
-    backgroundColor: AppColors.background,
-    primaryColor: AppColors.primaryColor,
-    primaryColorDark: AppColors.darkPrimaryColor,
+NeumorphicThemeData appTheme(BuildContext context) {
+  return NeumorphicThemeData(
+    baseColor: AppColors.primaryColor,
+    defaultTextColor: AppColors.textColorDark,
+    buttonStyle: NeumorphicStyle(
+        color: AppColors.accentColor,
+        intensity: 5,
+        depth: 5,
+        boxShape: NeumorphicBoxShape.roundRect(BorderRadius.circular(12))),
     accentColor: AppColors.accentColor,
-    splashColor: AppColors.accentColor,
-    brightness: Brightness.dark,
-    fontFamily: 'aviny',
     textTheme: TextTheme(
       headline1:
           TextStyle(fontFamily: 'cactos', color: AppColors.darkAccentColor),
@@ -24,43 +26,43 @@ ThemeData appTheme(BuildContext context) {
           color: AppColors.textColorDark,
           height: 1.4),
       headline4: TextStyle(
-          color: AppColors.textColorDark,
+          color: AppColors.primaryColor,
           fontFamily: 'cactos',
           fontSize: headline4Size(context)),
-      headline5: TextStyle(color: Colors.white),
-      headline6: TextStyle(color: Colors.white),
+      headline5: TextStyle(
+        color: Colors.white,
+        fontFamily: 'aviny',
+      ),
+      headline6: TextStyle(
+        color: Colors.white,
+        fontFamily: 'aviny',
+      ),
       subtitle1: TextStyle(
           color: AppColors.textColorDark,
           fontSize: subTitleSize(context),
+          fontFamily: 'aviny',
           fontWeight: FontWeight.w600),
       subtitle2: TextStyle(
           color: AppColors.textColorDark,
           fontSize: subTitleSize(context),
+          fontFamily: 'aviny',
           fontWeight: FontWeight.w300),
       bodyText1: TextStyle(
           height: 1.6,
+          fontFamily: 'aviny',
           fontSize: bodyText1Size(context),
           color: AppColors.textColorDark,
           fontWeight: FontWeight.w600),
       bodyText2: TextStyle(
           fontSize: bodyText1Size(context),
           color: AppColors.textColorDark,
+          fontFamily: 'aviny',
           fontWeight: FontWeight.w500),
       caption: TextStyle(
           fontSize: caption1Size(context),
+          fontFamily: 'aviny',
           color: AppColors.textColorDark,
           fontWeight: FontWeight.w500),
     ),
-    scaffoldBackgroundColor: AppColors.background,
-    buttonTheme: ButtonThemeData(
-        minWidth: double.infinity,
-        padding: EdgeInsets.all(8),
-        buttonColor: Theme.of(context).accentColor,
-        disabledColor: Colors.grey,
-        splashColor: Theme.of(context).primaryColor,
-        textTheme: ButtonTextTheme.primary,
-        shape: new RoundedRectangleBorder(
-          borderRadius: new BorderRadius.circular(8),
-        )),
   );
 }

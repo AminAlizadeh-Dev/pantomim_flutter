@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:pantomim_flutter/pages/loser_page.dart';
+import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:pantomim_flutter/pages/new_word.dart';
 import 'package:pantomim_flutter/theme/app_theme.dart';
 import 'package:pantomim_flutter/theme/colors.dart';
 
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-        statusBarColor: AppColors.background,
+        statusBarColor: AppColors.accentColor,
         statusBarIconBrightness: Brightness.dark));
 
     SystemChrome.setPreferredOrientations([
@@ -20,11 +21,11 @@ class MyApp extends StatelessWidget {
       DeviceOrientation.portraitDown,
     ]);
 
-    return MaterialApp(
+    return NeumorphicApp(
       debugShowCheckedModeBanner: false,
       title: 'Pantomime',
       theme: appTheme(context),
-      home: LoserPage(),
+      home: NewWord(),
     );
   }
 }
