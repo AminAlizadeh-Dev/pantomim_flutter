@@ -13,8 +13,8 @@ Widget neuAppbar(BuildContext context, String title) {
           Align(
             alignment: Alignment.centerLeft,
             child: SizedBox(
-                height: fullWidth(context) / 8,
-                width: fullWidth(context) / 8,
+                height: fullWidth(context) / 9,
+                width: fullWidth(context) / 9,
                 child: neuButton(context, () {
                   Navigator.pop(context);
                 }, icon: Icons.arrow_back_ios_rounded)),
@@ -29,7 +29,7 @@ Widget neuAppbar(BuildContext context, String title) {
               ),
               textStyle: NeumorphicTextStyle(
                 fontFamily: 'cactos',
-                fontSize: fullWidth(context) / 15, //customize size here
+                fontSize: fullWidth(context) / 14, //// customize size here
               ),
             ),
           ),
