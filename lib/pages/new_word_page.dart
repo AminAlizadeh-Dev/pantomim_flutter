@@ -2,15 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:line_icons/line_icons.dart';
-import 'package:neumorphic/neumorphic.dart';
 import 'package:pantomim_flutter/theme/app_theme.dart';
-import 'package:pantomim_flutter/theme/colors.dart';
 import 'package:pantomim_flutter/theme/dimense.dart';
 import 'package:pantomim_flutter/widgets/neu_app_bar.dart';
-import 'package:pantomim_flutter/widgets/neu_button.dart';
 import 'package:pantomim_flutter/widgets/point_button.dart';
+import 'package:pantomim_flutter/widgets/text_field_widgets.dart';
 import 'package:pantomim_flutter/widgets/word_detail_widget.dart';
 
 class NewWord extends StatefulWidget {
@@ -46,31 +42,7 @@ class NewWordState extends State<NewWord> {
                   ),
                 ),
               ),
-              Neumorphic(
-                padding: EdgeInsets.all(0),
-                style: NeumorphicStyle(
-                    boxShape:
-                    NeumorphicBoxShape.roundRect(BorderRadius.circular(12)),
-                    depth: -5,
-                    intensity: 10,
-                    color: AppColors.accentColor),
-                margin: EdgeInsets.symmetric(
-                    horizontal: largeSize(context),
-                    vertical: xxSmallSize(context)),
-                child: NeuTextField(
-                  textDirection: TextDirection.rtl,
-                  textAlign: TextAlign.center,
-                  decoration: InputDecoration(
-                      border: InputBorder.none,
-                      hintText: "کلمه مورد نظر تو اینجا بنویس",
-                      hintStyle: TextStyle(color: Colors.grey)),
-                  style: TextStyle(
-                      fontSize: fullWidth(context) / 23,
-                      fontWeight: FontWeight.w500),
-                  keyboardType: TextInputType.text,
-                  mouseCursor: MouseCursor.uncontrolled,
-                ),
-              ),
+              textFieldWidgets(context, "کلمه مورد نظر تو اینجا بنویس"),
               Center(
                 child: NeumorphicText(
                   ":امتیاز واژه",
@@ -127,7 +99,7 @@ class NewWordState extends State<NewWord> {
                     depth: 6,
                     intensity: 10,
                     boxShape:
-                    NeumorphicBoxShape.roundRect(BorderRadius.circular(12)),
+                        NeumorphicBoxShape.roundRect(BorderRadius.circular(12)),
                   ),
                   child: NeumorphicText(
                     "ذخیره",

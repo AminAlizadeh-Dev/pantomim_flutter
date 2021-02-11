@@ -43,7 +43,7 @@ NeumorphicThemeData appTheme(BuildContext context) {
           fontFamily: 'aviny',
           fontWeight: FontWeight.w600),
       subtitle2: TextStyle(
-          color: AppColors.textColorDark,
+          color: AppColors.primaryColor,
           fontSize: subTitleSize(context),
           fontFamily: 'aviny',
           fontWeight: FontWeight.w300),
