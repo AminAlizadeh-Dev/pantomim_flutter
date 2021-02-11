@@ -123,7 +123,7 @@ class StartGamePageState extends State<StartGamePage> {
                         fontSize: headline3Size(context) / 1.2,
                       ),
                     ),
-                    margin: EdgeInsets.only(top: 8),
+                    margin: EdgeInsets.only(top: 4),
                   ),
                   Container(
                     width: fullWidth(context) / 10,
