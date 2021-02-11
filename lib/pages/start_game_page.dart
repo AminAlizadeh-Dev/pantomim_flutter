@@ -22,8 +22,8 @@ class StartGamePageState extends State<StartGamePage> {
         body: Stack(
           children: [
             Positioned.fill(
-              right: 30,
-              left: 30,
+              right: fullWidth(context) / 10,
+              left: fullWidth(context) / 10,
               bottom: 0,
               top: 0,
               child: Neumorphic(
@@ -37,8 +37,8 @@ class StartGamePageState extends State<StartGamePage> {
               ),
             ),
             Positioned(
-              right: 65,
-              left: 65,
+              right: fullWidth(context) / 5,
+              left: fullWidth(context) / 5,
               bottom: 0,
               top: 0,
               child: Neumorphic(
@@ -52,9 +52,9 @@ class StartGamePageState extends State<StartGamePage> {
               ),
             ),
             Positioned(
-              right: 30,
-              left: 30,
-              bottom: 30,
+              right: fullWidth(context) / 10,
+              left: fullWidth(context) / 10,
+              bottom: fullWidth(context) / 10,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -76,17 +76,17 @@ class StartGamePageState extends State<StartGamePage> {
               ),
             ),
             Positioned(
-              top: fullHeight(context) / 1.8,
+              top: fullHeight(context) / 1.9,
               right: fullWidth(context) / 3,
               left: fullWidth(context) / 3,
-              bottom: fullHeight(context) / 2.5,
+              bottom: fullHeight(context) / 2.4,
               child: Neumorphic(
                 child: Text(
                   "تعداد دور",
                   style: TextStyle(
                     color: appTheme(context).defaultTextColor,
                     fontFamily: "aviny",
-                    height: 1.7,
+                    height: 2,
                     fontSize: subTitleSize(context),
                   ),
                   textAlign: TextAlign.center,
@@ -123,12 +123,13 @@ class StartGamePageState extends State<StartGamePage> {
                         fontSize: headline3Size(context) / 1.2,
                       ),
                     ),
-                    margin: EdgeInsets.only(top: 4),
+                    margin: EdgeInsets.only(top: 8),
                   ),
                   Container(
                     width: fullWidth(context) / 10,
                     height: fullWidth(context) / 10,
                     child: Lottie.asset('assets/timer.json'),
+                    margin: EdgeInsets.only(top: 8),
                   ),
                 ],
               ),
