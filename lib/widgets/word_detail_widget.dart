@@ -5,7 +5,7 @@ import 'package:pantomim_flutter/theme/app_theme.dart';
 import 'package:pantomim_flutter/theme/colors.dart';
 import 'package:pantomim_flutter/theme/dimense.dart';
 
-Widget wordDeatail(
+Widget wordDetailWidget(
     BuildContext context, String wordText, String pointText, String point) {
   return Container(
     margin: EdgeInsets.symmetric(
@@ -26,24 +26,23 @@ Widget wordDeatail(
               boxShape: NeumorphicBoxShape.roundRect(
                 BorderRadius.circular(fullWidth(context) / 1),
               )),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              NeumorphicText(
-                wordText,
-                style:
-                    NeumorphicStyle(color: appTheme(context).defaultTextColor),
-                textStyle: NeumorphicTextStyle(
-                    fontFamily: "aviny", fontSize: fullWidth(context) / 22),
-              ),
-              NeumorphicText(
-                pointText,
-                style:
-                    NeumorphicStyle(color: appTheme(context).defaultTextColor),
-                textStyle: NeumorphicTextStyle(
-                    fontFamily: "aviny", fontSize: fullWidth(context) / 22),
-              ),
-            ],
+          child: Container(
+            margin: EdgeInsets.symmetric(horizontal: xlargeSize(context)),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Expanded(
+                  flex: 4,
+                  child: Text(
+                    wordText,maxLines:1 ,overflow: TextOverflow.ellipsis,),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Text(
+                    pointText
+                  ),
+                )],
+            ),
           ),
         )),
         Positioned(
@@ -51,17 +50,20 @@ Widget wordDeatail(
           top: 0,
           bottom: 0,
           child: NeumorphicButton(
+            pressed: false,
             onPressed: () {},
+            provideHapticFeedback: false,
             style: NeumorphicStyle(
               color: appTheme(context).accentColor,
               depth: 4,
               intensity: 8,
               boxShape: NeumorphicBoxShape.circle(),
             ),
-            child: NeumorphicText(
+            child: Text(
               point,
-              textStyle: NeumorphicTextStyle(
+              style: TextStyle(
                   fontFamily: "aviny",
+                  color: AppColors.primaryColor,
                   fontSize: fullWidth(context) / 14,
                   height: fullWidth(context) / 290),
               textAlign: TextAlign.center,

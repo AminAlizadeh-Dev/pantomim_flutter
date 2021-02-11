@@ -6,8 +6,9 @@ import 'package:pantomim_flutter/widgets/neu_button.dart';
 
 Widget neuAppbar(BuildContext context, String title) {
   return NeumorphicAppBar(
-      centerTitle: false,
+      centerTitle: true,
       titleSpacing: 0,
+      buttonPadding: EdgeInsets.all(0),
       title: Stack(
         children: [
           Align(

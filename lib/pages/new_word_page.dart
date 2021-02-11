@@ -11,7 +11,7 @@ import 'package:pantomim_flutter/theme/dimense.dart';
 import 'package:pantomim_flutter/widgets/neu_app_bar.dart';
 import 'package:pantomim_flutter/widgets/neu_button.dart';
 import 'package:pantomim_flutter/widgets/point_button.dart';
-import 'package:pantomim_flutter/widgets/word_deatail.dart';
+import 'package:pantomim_flutter/widgets/word_detail_widget.dart';
 
 class NewWord extends StatefulWidget {
   @override
@@ -50,7 +50,7 @@ class NewWordState extends State<NewWord> {
                 padding: EdgeInsets.all(0),
                 style: NeumorphicStyle(
                     boxShape:
-                        NeumorphicBoxShape.roundRect(BorderRadius.circular(12)),
+                    NeumorphicBoxShape.roundRect(BorderRadius.circular(12)),
                     depth: -5,
                     intensity: 10,
                     color: AppColors.accentColor),
@@ -127,7 +127,7 @@ class NewWordState extends State<NewWord> {
                     depth: 6,
                     intensity: 10,
                     boxShape:
-                        NeumorphicBoxShape.roundRect(BorderRadius.circular(12)),
+                    NeumorphicBoxShape.roundRect(BorderRadius.circular(12)),
                   ),
                   child: NeumorphicText(
                     "ذخیره",
@@ -141,9 +141,9 @@ class NewWordState extends State<NewWord> {
                   ),
                 ),
               ),
-              wordDeatail(context, "سیب", "امتیاز 2", "2"),
-              wordDeatail(context, "پرتقال", "امتیاز 4", "4"),
-              wordDeatail(context, "موز", "امتیاز 6", "6"),
+              wordDetailWidget(context, "پرتقال", "امتیاز 4", "4"),
+              wordDetailWidget(context, "پرتقال", "امتیاز 4", "4"),
+              wordDetailWidget(context, "پرتقال", "امتیاز 4", "4"),
             ],
           ),
         ),
