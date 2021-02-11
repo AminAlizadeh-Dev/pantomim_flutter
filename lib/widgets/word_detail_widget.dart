@@ -34,14 +34,16 @@ Widget wordDetailWidget(
                 Expanded(
                   flex: 4,
                   child: Text(
-                    wordText,maxLines:1 ,overflow: TextOverflow.ellipsis,),
+                    wordText,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
                 ),
                 Expanded(
                   flex: 1,
-                  child: Text(
-                    pointText
-                  ),
-                )],
+                  child: Text(pointText),
+                )
+              ],
             ),
           ),
         )),
