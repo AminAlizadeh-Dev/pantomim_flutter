@@ -91,7 +91,7 @@ class RoundPageState extends State<RoundPage> {
                       'دور 1 از 3',
                       textAlign: TextAlign.center,
                       textStyle: NeumorphicTextStyle(
-                          fontFamily: 'cactos',
+                          fontFamily: 'kalameh',
                           fontSize: fullWidth(context) / 13,
                           height: fullWidth(context) / 230),
                     ),

@@ -30,7 +30,7 @@ Widget neuAppbar(BuildContext context, String title) {
                 color: appTheme(context).baseColor, //customize color here
               ),
               textStyle: NeumorphicTextStyle(
-                fontFamily: 'cactos',
+                fontFamily: 'kalameh',
                 fontSize: fullWidth(context) / 14, //// customize size here
               ),
             ),
