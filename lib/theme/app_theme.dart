@@ -17,52 +17,57 @@ NeumorphicThemeData appTheme(BuildContext context) {
     accentColor: AppColors.accentColor,
     textTheme: TextTheme(
       headline1:
-          TextStyle(fontFamily: 'cactos', color: AppColors.darkAccentColor),
+          TextStyle(fontFamily: 'kalameh', color: AppColors.darkAccentColor,fontWeight: FontWeight.w700,),
       headline2:
-          TextStyle(fontFamily: 'cactos', color: AppColors.darkAccentColor),
+          TextStyle(fontFamily: 'kalameh', color: AppColors.darkAccentColor,fontWeight: FontWeight.w700),
       headline3: TextStyle(
           fontSize: headline3Size(context),
-          fontFamily: 'cactos',
+          fontFamily: 'kalameh',
           color: AppColors.textColorDark,
+          fontWeight: FontWeight.w700,
           height: 1.4),
       headline4: TextStyle(
           color: AppColors.primaryColor,
-          fontFamily: 'cactos',
+          fontFamily: 'vazir',
+          fontWeight: FontWeight.w700,
           fontSize: headline4Size(context)),
       headline5: TextStyle(
         color: Colors.white,
-        fontFamily: 'aviny',
+        fontFamily: 'vazir',
+          fontWeight: FontWeight.w500,
       ),
       headline6: TextStyle(
         color: Colors.white,
-        fontFamily: 'aviny',
+        fontFamily: 'vazir',
+          fontWeight: FontWeight.w500
       ),
       subtitle1: TextStyle(
           color: AppColors.textColorDark,
           fontSize: subTitleSize(context),
-          fontFamily: 'aviny',
-          fontWeight: FontWeight.w600),
+          fontFamily: 'vazir',
+          fontWeight: FontWeight.w500),
       subtitle2: TextStyle(
           color: AppColors.primaryColor,
           fontSize: subTitleSize(context),
-          fontFamily: 'aviny',
-          fontWeight: FontWeight.w300),
+          fontFamily: 'vazir',
+          fontWeight: FontWeight.w500,
+      ),
       bodyText1: TextStyle(
           height: 1.6,
-          fontFamily: 'aviny',
+          fontFamily: 'vazir',
           fontSize: bodyText1Size(context),
           color: AppColors.textColorDark,
-          fontWeight: FontWeight.w600),
+          fontWeight: FontWeight.w500),
       bodyText2: TextStyle(
           fontSize: bodyText1Size(context),
           color: AppColors.textColorDark,
-          fontFamily: 'aviny',
+          fontFamily: 'vazir',
           fontWeight: FontWeight.w500),
       caption: TextStyle(
           fontSize: caption1Size(context),
-          fontFamily: 'aviny',
+          fontFamily: 'vazir',
           color: AppColors.textColorDark,
-          fontWeight: FontWeight.w500),
+          fontWeight: FontWeight.w400),
     ),
   );
 }
