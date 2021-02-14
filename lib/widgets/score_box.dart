@@ -7,7 +7,7 @@ import 'package:pantomim_flutter/theme/dimense.dart';
 
 Widget scoreBox(
     BuildContext context, String topic, String point, String svgIcon,
-    {Color iconColor}) {
+    {Color iconColor, Color colorBorder}) {
   return Directionality(
     textDirection: TextDirection.rtl,
     child: Container(
@@ -22,22 +22,23 @@ Widget scoreBox(
         children: [
           Positioned.fill(
             child: Container(
-               decoration: BoxDecoration(
-                 color: Colors.grey.shade100,
-                 borderRadius: BorderRadius.circular(fullWidth(context)/1)
-               ),
+              decoration: BoxDecoration(
+                  color: Colors.grey.shade100,
+                  borderRadius: BorderRadius.circular(fullWidth(context) / 1)),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Text(
-                    topic,
-                      textAlign: TextAlign.start,
-                    maxLines: 1,
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: fullWidth(context) / 16,
-                        height: fullWidth(context) / 185),
-                    overflow: TextOverflow.ellipsis,
+                  Container(
+                    alignment: AlignmentDirectional.centerStart,
+                    child: Text(
+                      topic,
+                      maxLines: 1,
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: fullWidth(context) / 16,
+                          height: fullWidth(context) / 185),
+                      overflow: TextOverflow.ellipsis,
+                    ),
                   ),
 //                  Container(
 //                    alignment: AlignmentDirectional.centerStart,
@@ -61,10 +62,12 @@ Widget scoreBox(
             top: 0,
             bottom: 0,
             child: SizedBox(
-              width: fullWidth(context)/9,
-              height: fullWidth(context)/9,
+              width: fullWidth(context) / 9,
+              height: fullWidth(context) / 9,
               child: Neumorphic(
-                padding: EdgeInsets.symmetric(horizontal: smallSize(context),vertical: mediumSize(context)),
+                  padding: EdgeInsets.symmetric(
+                      horizontal: smallSize(context),
+                      vertical: mediumSize(context)),
                   style: NeumorphicStyle(
                     color: appTheme(context).accentColor,
                     depth: 1,
