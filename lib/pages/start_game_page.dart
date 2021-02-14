@@ -128,7 +128,7 @@ class StartGamePageState extends State<StartGamePage> {
                   Container(
                     width: fullWidth(context) / 10,
                     height: fullWidth(context) / 10,
-                    child: Lottie.asset('assets/timer.json'),
+                    child: Lottie.asset('assets/timer_lottie.json'),
                     margin: EdgeInsets.only(top: 8),
                   ),
                 ],

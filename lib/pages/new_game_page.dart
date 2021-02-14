@@ -59,7 +59,7 @@ class NewGameState extends State<NewGame> {
                     width: fullWidth(context) / 1.5,
                     height: fullHeight(context) / 10,
                     margin:
-                        EdgeInsets.symmetric(vertical: standardSize(context)),
+                        EdgeInsets.symmetric(vertical: mediumSize(context)),
                     child: Neumorphic(
                       style: NeumorphicStyle(
                         color: appTheme(context).accentColor,

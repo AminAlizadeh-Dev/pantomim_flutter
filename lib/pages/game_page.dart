@@ -63,7 +63,7 @@ class GamePageState extends State<GamePage> {
                       color: Color(0xffD32F2F),
                       align: TextAlign.center),
                   NeuButton(() {},
-                      svg: "assets/error.svg",
+                      svg: "assets/error_icon.svg",
                       color: Color(0xffF57C00),
                       align: TextAlign.center),
                   NeuButton(() {},
@@ -126,7 +126,7 @@ class GamePageState extends State<GamePage> {
                   Container(
                     width: fullWidth(context) / 10,
                     height: fullWidth(context) / 10,
-                    child: Lottie.asset('assets/timer.json'),
+                    child: Lottie.asset('assets/timer_lottie.json'),
                     margin: EdgeInsets.only(top: 8),
                   ),
                 ],

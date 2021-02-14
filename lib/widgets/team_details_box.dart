@@ -5,7 +5,7 @@ import 'package:pantomim_flutter/theme/app_theme.dart';
 import 'package:pantomim_flutter/theme/colors.dart';
 import 'package:pantomim_flutter/theme/dimense.dart';
 
-Widget scoreBox(
+Widget teamDetailBox(
     BuildContext context, String topic, String point, String svgIcon,
     {Color iconColor}) {
   return Directionality(
@@ -21,11 +21,13 @@ Widget scoreBox(
         overflow: Overflow.visible,
         children: [
           Positioned.fill(
-            child: Container(
-               decoration: BoxDecoration(
-                 color: Colors.grey.shade100,
-                 borderRadius: BorderRadius.circular(fullWidth(context)/1)
-               ),
+            child: Neumorphic(
+              style: NeumorphicStyle(
+                depth: 2,
+                  intensity: 4,
+                  color: appTheme(context).baseColor,
+                  boxShape: (NeumorphicBoxShape.roundRect(BorderRadius.circular(fullWidth(context)/1)))
+              ),
               child: Container(
                 margin: EdgeInsets.only(right: xSmallSize(context)),
                 child: Row(
@@ -64,7 +66,7 @@ Widget scoreBox(
               width: fullWidth(context)/9,
               height: fullWidth(context)/9,
               child: Neumorphic(
-                padding: EdgeInsets.symmetric(horizontal: smallSize(context),vertical: mediumSize(context)),
+                  padding: EdgeInsets.symmetric(horizontal: smallSize(context),vertical: mediumSize(context)),
                   style: NeumorphicStyle(
                     color: appTheme(context).accentColor,
                     depth: 1,

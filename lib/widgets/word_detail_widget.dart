@@ -85,7 +85,7 @@ Widget wordDetailWidget(
               boxShape: NeumorphicBoxShape.circle(),
             ),
             child: SvgPicture.asset(
-              'assets/close.svg',
+              'assets/close_small_icon.svg',
               width: mediumSize(context),
               height: mediumSize(context),
               color: Color(0xffD81010),
