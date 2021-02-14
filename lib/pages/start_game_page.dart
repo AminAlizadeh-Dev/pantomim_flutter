@@ -62,6 +62,7 @@ class StartGamePageState extends State<StartGamePage> {
                     width: fullWidth(context) / 4.6,
                     child: NeuButton(() {},
                         title: "تعویض",
+                        textHeight: 2.3,
                         color: Color(0xff0090FF),
                         align: TextAlign.center,),
                   ),
@@ -69,6 +70,7 @@ class StartGamePageState extends State<StartGamePage> {
                     width: fullWidth(context) / 4.6,
                     child: NeuButton(() {},
                         title: "شروع",
+                        textHeight: 2.3,
                         color: Color(0xff388E3C),
                         align: TextAlign.center),
                   ),
@@ -81,15 +83,12 @@ class StartGamePageState extends State<StartGamePage> {
               left: fullWidth(context) / 3,
               bottom: fullHeight(context) / 2.4,
               child: Neumorphic(
-                child: Text(
-                  "تعداد دور",
-                  style: TextStyle(
-                    color: appTheme(context).defaultTextColor,
-                    fontFamily: "aviny",
-                    height: 2,
-                    fontSize: subTitleSize(context),
+                child: Center(
+                  child: Text(
+                    "تعداد دور",
+                    style: theme.textTheme.subtitle1,
+                    textAlign: TextAlign.center,
                   ),
-                  textAlign: TextAlign.center,
                 ),
                 style: NeumorphicStyle(
                   shape: NeumorphicShape.flat,
@@ -103,37 +102,26 @@ class StartGamePageState extends State<StartGamePage> {
             Align(
               alignment: Alignment(0,-0.1),
               child: Text("صندلی",
-                style: TextStyle(
-                  color: appTheme(context).baseColor,
-                  fontFamily: "aviny",
-                  fontSize: headline3Size(context),
-                ),
+                style: theme.textTheme.headline3,
               ),
             ),
             Align(
               alignment: Alignment(0,-0.8),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    child: Text("01:59",
-                      style: TextStyle(
-                        color: appTheme(context).baseColor,
-                        fontFamily: "aviny",
-                        fontSize: headline3Size(context) / 1.2,
-                      ),
-                    ),
-                    margin: EdgeInsets.only(top: 8),
-                  ),
-                  Container(
-                    width: fullWidth(context) / 10,
-                    height: fullWidth(context) / 10,
-                    child: Lottie.asset('assets/timer_lottie.json'),
-                    margin: EdgeInsets.only(top: 8),
-                  ),
-                ],
+              child: Container(
+                child: Text("01:59",
+                  style: theme.textTheme.subtitle2.copyWith(fontSize: subTitleSize(context) / 0.7),
+                ),
               ),
-            )
+            ),
+            Align(
+              alignment: Alignment(0.2,-0.8),
+              child: Container(
+                width: fullWidth(context) / 10,
+                height: fullWidth(context) / 10,
+                child: Lottie.asset('assets/timer_lottie.json'),
+                margin: EdgeInsets.only(left: standardSize(context)),
+              ),
+            ),
           ],
         ));
   }

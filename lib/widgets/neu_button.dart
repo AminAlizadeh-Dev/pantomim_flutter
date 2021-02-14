@@ -12,6 +12,7 @@ class NeuButton extends StatelessWidget {
   Color color , colorSvg;
   TextAlign align;
   String svg;
+  double textHeight;
 
   NeuButton(this.onPress,
       {this.icon,
@@ -19,7 +20,8 @@ class NeuButton extends StatelessWidget {
       this.title,
       this.align: TextAlign.center,
       this.color,
-      this.colorSvg});
+      this.colorSvg,
+      this.textHeight});
 
   @override
   Widget build(BuildContext context) {
@@ -42,6 +44,7 @@ class NeuButton extends StatelessWidget {
           textAlign: align,
           style: appTheme(context).textTheme.bodyText1.copyWith(
             color: color,
+            height: textHeight,
           ),
         ),
       );
