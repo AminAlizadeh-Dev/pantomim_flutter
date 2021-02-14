@@ -121,7 +121,7 @@ class RoundPageState extends State<RoundPage> {
                       'امتیازات این دور:  35',
                       textAlign: TextAlign.center,
                       textStyle: NeumorphicTextStyle(
-                          fontFamily: 'aviny',
+                          fontFamily: 'kalame',
                           fontSize: fullWidth(context) / 13,
                           height: fullWidth(context) / 190),
                     ),

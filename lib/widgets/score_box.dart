@@ -26,33 +26,33 @@ Widget scoreBox(
                  color: Colors.grey.shade100,
                  borderRadius: BorderRadius.circular(fullWidth(context)/1)
                ),
-              child: Container(
-                margin: EdgeInsets.only(right: xSmallSize(context)),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Text(
-                      topic,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Text(
+                    topic,
                       textAlign: TextAlign.start,
-                      maxLines: 1,
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: fullWidth(context) / 16,
-                          height: fullWidth(context) / 185),
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                    Text(
-                      point,
-                      textAlign: TextAlign.start,
-                      maxLines: 1,
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: fullWidth(context) / 16,
-                          height: fullWidth(context) / 185),
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ],
-                ),
+                    maxLines: 1,
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: fullWidth(context) / 16,
+                        height: fullWidth(context) / 185),
+                    overflow: TextOverflow.ellipsis,
+                  ),
+//                  Container(
+//                    alignment: AlignmentDirectional.centerStart,
+//                    child: Text(
+//                      point,
+//                      textAlign: TextAlign.start,
+//                      maxLines: 1,
+//                      style: TextStyle(
+//                          color: Colors.black,
+//                          fontSize: fullWidth(context) / 16,
+//                          height: fullWidth(context) / 185),
+//                      overflow: TextOverflow.ellipsis,
+//                    ),
+//                  ),
+                ],
               ),
             ),
           ),

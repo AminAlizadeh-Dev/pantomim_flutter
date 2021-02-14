@@ -63,7 +63,7 @@ class SpeedScoreState extends State<SpeedScore> {
                       ),
                       child: SingleChildScrollView(
                         child: Container(
-                          margin: EdgeInsets.symmetric(vertical: largeSize(context)),
+                          margin: EdgeInsets.only(top: largeSize(context),bottom: xxSmallSize(context)),
                           child: Column(
                             children: [
                               scoreBox(context, 'مگس کش', '1 امتیاز',
@@ -109,43 +109,13 @@ class SpeedScoreState extends State<SpeedScore> {
                         boxShape: NeumorphicBoxShape.roundRect(
                           BorderRadius.circular(fullWidth(context) / 1),
                         )),
-                    child: NeumorphicText(
-                      'شمارش امتیازات',
-                      textAlign: TextAlign.center,
-                      textStyle: NeumorphicTextStyle(
-                          fontFamily: 'aviny',
-                          fontSize: fullWidth(context) / 13,
-                          height: fullWidth(context) / 190),
-                    ),
-                  ),
-                ),
-              ),
-              Positioned(
-                bottom: fullHeight(context)/7,
-                right: standardSize(context),
-                left: standardSize(context),
-                child: Container(
-                  width: fullWidth(context),
-                  height: xlargeSize(context),
-                  child: Neumorphic(
-                    style: NeumorphicStyle(
-                        depth: 1.75,
-                        intensity: 3.5,
-                        color: AppColors.accentColor,
-                        boxShape: NeumorphicBoxShape.roundRect(
-                          BorderRadius.only(
-                              bottomLeft:
-                                  Radius.circular(standardSize(context)),
-                              bottomRight:
-                                  Radius.circular(standardSize(context))),
-                        )),
-                    child: NeumorphicText(
-                      'امتیازات این دور:  35',
-                      textAlign: TextAlign.center,
-                      textStyle: NeumorphicTextStyle(
-                          fontFamily: 'aviny',
-                          fontSize: fullWidth(context) / 13,
-                          height: fullWidth(context) / 190),
+                    child: Container(
+                      alignment: Alignment.center,
+                      child: Text(
+                        'امتیازات این دور:  35',
+                        textAlign: TextAlign.center,
+                        style: appTheme(context).textTheme.headline4,
+                      ),
                     ),
                   ),
                 ),
