@@ -16,8 +16,8 @@ class ExitDialogPage extends StatelessWidget {
         Align(
           alignment: Alignment.center,
           child: SizedBox(
-            width: fullWidth(context) / 1.3,
-            height: fullWidth(context) / 2.5,
+            width: fullWidth(context) / 1.2,
+            height: fullWidth(context) / 2,
             child: Neumorphic(
               style: NeumorphicStyle(
                 shape: NeumorphicShape.flat,
@@ -31,22 +31,37 @@ class ExitDialogPage extends StatelessWidget {
           ),
         ),
         Align(
-          alignment: Alignment(0, -0.05),
+          alignment: Alignment(0, -0.11),
           child: Container(
               // alignment: Alignment.center,
               child: Text(
             "برای خروج و بازگـشــت \n به صفحه اصلی مطمئن هستید ؟",
-            style: theme.textTheme.bodyText1
-                .copyWith(fontSize: bodyText1Size(context) / 1.2),
+            style: theme.textTheme.subtitle1,
             textAlign: TextAlign.center,
           )),
         ),
-        // Align(
-        //   alignment: Alignment.center,
-        //     child: NeuButton(
-        //   () {},
-        //   title: "بله",
-        // ))
+        Align(
+            alignment: Alignment(0.65, 0.1),
+            child: SizedBox(
+              width: fullWidth(context) / 6,
+              height: fullWidth(context) / 6,
+              child: NeuButton(
+                () {},
+                svg: "assets/thick_icon.svg",
+                colorSvg: Color(0xff388E3C),
+              ),
+            )),
+        Align(
+            alignment: Alignment(-0.65, 0.1),
+            child: SizedBox(
+              width: fullWidth(context) / 6,
+              height: fullWidth(context) / 6,
+              child: NeuButton(
+                    () {},
+                svg: "assets/close_small_icon.svg",
+                colorSvg: Color(0xffD32F2F),
+              ),
+            )),
       ]),
     );
   }

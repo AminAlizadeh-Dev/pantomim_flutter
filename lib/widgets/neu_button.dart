@@ -9,7 +9,7 @@ class NeuButton extends StatelessWidget {
   Function onPress;
   String title;
   IconData icon;
-  Color color;
+  Color color , colorSvg;
   TextAlign align;
   String svg;
 
@@ -18,7 +18,8 @@ class NeuButton extends StatelessWidget {
       this.svg,
       this.title,
       this.align: TextAlign.center,
-      this.color});
+      this.color,
+      this.colorSvg});
 
   @override
   Widget build(BuildContext context) {
@@ -35,11 +36,13 @@ class NeuButton extends StatelessWidget {
 
   Widget childNeuButton(BuildContext context) {
     if (title != null) {
-      return Text(
-        title,
-        textAlign: align,
-        style: TextStyle(
-          color: color,
+      return Center(
+        child: Text(
+          title,
+          textAlign: align,
+          style: appTheme(context).textTheme.bodyText1.copyWith(
+            color: color,
+          ),
         ),
       );
     } else if (icon != null) {
@@ -55,7 +58,7 @@ class NeuButton extends StatelessWidget {
         child: SvgPicture.asset(
           svg,
           alignment: Alignment.center,
-          color: Color(0xffF57C00),
+          color: colorSvg,
         ),
       );
     }
