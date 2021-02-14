@@ -102,6 +102,7 @@ class SpeedScoreState extends State<SpeedScore> {
                   margin: EdgeInsets.only(
                       top: standardSize(context), bottom: mediumSize(context)),
                   child: Neumorphic(
+
                     style: NeumorphicStyle(
                         depth: 1.75,
                         intensity: 3.5,
@@ -109,13 +110,11 @@ class SpeedScoreState extends State<SpeedScore> {
                         boxShape: NeumorphicBoxShape.roundRect(
                           BorderRadius.circular(fullWidth(context) / 1),
                         )),
-                    child: NeumorphicText(
-                      'شمارش امتیازات',
-                      textAlign: TextAlign.center,
-                      textStyle: NeumorphicTextStyle(
-                          fontFamily: 'aviny',
-                          fontSize: fullWidth(context) / 13,
-                          height: fullWidth(context) / 190),
+                    child: Center(
+                      child: Text(
+                        'شمارش امتیازات',
+                        style: appTheme(context).textTheme.headline4,
+                      ),
                     ),
                   ),
                 ),
