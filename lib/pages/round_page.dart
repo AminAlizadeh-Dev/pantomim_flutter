@@ -6,6 +6,7 @@ import 'package:pantomim_flutter/theme/app_theme.dart';
 import 'package:pantomim_flutter/theme/colors.dart';
 import 'package:pantomim_flutter/theme/dimense.dart';
 import 'package:pantomim_flutter/widgets/neu_button.dart';
+import 'package:pantomim_flutter/widgets/role_box.dart';
 import 'package:pantomim_flutter/widgets/score_box.dart';
 import 'package:pantomim_flutter/widgets/team_details_box.dart';
 
@@ -17,8 +18,128 @@ class RoundPage extends StatefulWidget {
 class RoundPageState extends State<RoundPage> {
   @override
   Widget build(BuildContext context) {
+    void _showDialog() {
+      showDialog(
+        useSafeArea: true,
+        context: context,
+        builder: (BuildContext context) {
+          return Directionality(
+            textDirection: TextDirection.rtl,
+            child: SingleChildScrollView(
+              physics: NeverScrollableScrollPhysics(),
+              child: Container(
+                width: fullWidth(context),
+                height: fullHeight(context),
+                child: Stack(
+                  children: [
+                    Positioned(
+                      top: fullWidth(context) / 4.5,
+                      right: standardSize(context),
+                      left: standardSize(context),
+                      bottom: xlargeSize(context),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius:
+                              BorderRadius.circular(standardSize(context)),
+                          color: appTheme(context).accentColor,
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                              top: fullWidth(context) / 10.2,
+                              bottom: fullWidth(context) / 14),
+                          child: SingleChildScrollView(
+                            physics: BouncingScrollPhysics(),
+                            child: Container(
+                              margin: EdgeInsets.symmetric(
+                                  vertical: smallSize(context),
+                                  horizontal: xxSmallSize(context)),
+                              child: Column(
+                                children: [
+                                  roleBox(
+                                    context,
+                                    'میتوانید یک نفر را به عنوان ناظر بی طرف \nبرای داوری انتخاب کنید',
+                                    'assets/thick_icon.svg',
+                                  ),
+                                  roleBox(
+                                    context,
+                                    'میتوانید یک نفر را به عنوان ناظر بی طرف \nبرای داوری انتخاب کنید',
+                                    'assets/thick_icon.svg',
+                                  ),
+                                  roleBox(
+                                    context,
+                                    'میتوانید یک نفر را به عنوان ناظر بی طرف \nبرای داوری انتخاب کنید',
+                                    'assets/thick_icon.svg',
+                                  ),
+                                  roleBox(
+                                    context,
+                                    'میتوانید یک نفر را به عنوان ناظر بی طرف \nبرای داوری انتخاب کنید',
+                                    'assets/thick_icon.svg',
+                                  ),
+                                  roleBox(
+                                    context,
+                                    'میتوانید یک نفر را به عنوان ناظر بی طرف \nبرای داوری انتخاب کنید',
+                                    'assets/thick_icon.svg',
+                                  ),
+                                  roleBox(
+                                    context,
+                                    'میتوانید یک نفر را به عنوان ناظر بی طرف \nبرای داوری انتخاب کنید',
+                                    'assets/thick_icon.svg',
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment(0.0, -0.88),
+                      child: Container(
+                        width: fullWidth(context) / 1.5,
+                        height: xlargeSize(context),
+                        margin: EdgeInsets.only(
+                            top: standardSize(context),
+                            bottom: mediumSize(context)),
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: AppColors.accentColor,
+                              borderRadius:
+                                  BorderRadius.circular(fullWidth(context) / 1),
+                              boxShadow: [BoxShadow(
+                                color: Color(0xffADADB2),
+                                blurRadius: 1,
+                                spreadRadius: 0.5,
+                                offset: Offset(
+                                  0.0,1
+                                )
+                              )]),
+                          child: Container(
+                            alignment: Alignment.center,
+                            child: Text(
+                              'قـــــوانین',
+                              textAlign: TextAlign.center,
+                              style: appTheme(context)
+                                  .textTheme
+                                  .headline3
+                                  .copyWith(
+                                      color: appTheme(context).baseColor,
+                                      fontSize: fullWidth(context) / 11),
+                            ),
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+          );
+        },
+      );
+    }
+
     return Scaffold(
-      backgroundColor:NeumorphicTheme.accentColor(context),
+      backgroundColor: NeumorphicTheme.accentColor(context),
       body: SingleChildScrollView(
         physics: NeverScrollableScrollPhysics(),
         child: Container(
@@ -107,7 +228,11 @@ class RoundPageState extends State<RoundPage> {
                         height: fullWidth(context) / 7,
                         width: fullWidth(context) / 7,
                         child: NeuButton(
-                          () {},
+                          () {
+                            setState(() {
+                              _showDialog();
+                            });
+                          },
                           svg: 'assets/role_icon.svg',
                         ),
                       ),
@@ -117,7 +242,10 @@ class RoundPageState extends State<RoundPage> {
                         child: NeuButton(
                           () {
                             setState(() {
-                              Navigator.push(context, MaterialPageRoute(builder: (context)=> SpeedScore()));
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => SpeedScore()));
                             });
                           },
                           svg: 'assets/play_icon.svg',

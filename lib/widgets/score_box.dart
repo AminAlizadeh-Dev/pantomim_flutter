@@ -7,7 +7,7 @@ import 'package:pantomim_flutter/theme/dimense.dart';
 
 Widget scoreBox(
     BuildContext context, String topic, String point, String svgIcon,
-    {Color iconColor, Color colorBorder}) {
+    {Color iconColor}) {
   return Directionality(
     textDirection: TextDirection.rtl,
     child: Container(
@@ -23,12 +23,12 @@ Widget scoreBox(
           Positioned.fill(
             child: Neumorphic(
               style: NeumorphicStyle(
-                color: appTheme(context).accentColor,
-                depth: 8,
-                intensity: 6,
-                surfaceIntensity: 10,
-                boxShape: NeumorphicBoxShape.roundRect(BorderRadius.circular(fullWidth(context) / 1))
-              ),
+                  color: appTheme(context).accentColor,
+                  depth: 8,
+                  intensity: 6,
+                  surfaceIntensity: 10,
+                  boxShape: NeumorphicBoxShape.roundRect(
+                      BorderRadius.circular(fullWidth(context) / 1))),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [

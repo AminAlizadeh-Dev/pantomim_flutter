@@ -1,3 +1,4 @@
+import 'package:draggable_scrollbar/draggable_scrollbar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
@@ -7,7 +8,6 @@ import 'package:pantomim_flutter/theme/colors.dart';
 import 'package:pantomim_flutter/theme/dimense.dart';
 import 'package:pantomim_flutter/widgets/neu_button.dart';
 import 'package:pantomim_flutter/widgets/score_box.dart';
-import 'package:pantomim_flutter/widgets/word_detail_widget.dart';
 
 class SpeedScore extends StatefulWidget {
   @override
@@ -15,6 +15,8 @@ class SpeedScore extends StatefulWidget {
 }
 
 class SpeedScoreState extends State<SpeedScore> {
+  ScrollController _rrectController =
+  ScrollController(initialScrollOffset: 50.0);
   @override
   Widget build(BuildContext context) {
     return Directionality(
@@ -52,7 +54,7 @@ class SpeedScoreState extends State<SpeedScore> {
                   top: fullWidth(context) / 4.5,
                   right: standardSize(context),
                   left: standardSize(context),
-                  bottom: xxLargeSize(context),
+                  bottom: fullHeight(context)/7.3,
                   child: Neumorphic(
                     style: NeumorphicStyle(
                       boxShape: NeumorphicBoxShape.roundRect(
@@ -65,47 +67,56 @@ class SpeedScoreState extends State<SpeedScore> {
                     child: Padding(
                       padding: EdgeInsets.only(
                           top: fullWidth(context) / 10.2,
-                          bottom: fullWidth(context) / 14),
-                      child: SingleChildScrollView(
-                        physics: BouncingScrollPhysics(),
-                        child: Container(
-                          margin: EdgeInsets.symmetric(
-                              vertical: smallSize(context),
-                              horizontal: smallSize(context)),
-                          child: Column(
-                            children: [
-                              scoreBox(context, 'مگس کش', '1 امتیاز',
-                                  'assets/close_large_icon.svg',
-                                  colorBorder: Colors.red),
-                              scoreBox(context, 'مگس کش', '1 امتیاز',
-                                  'assets/thick_icon.svg',
-                                  colorBorder: Colors.green.shade700),
-                              scoreBox(context, 'مگس کش', '1 امتیاز',
-                                  'assets/close_large_icon.svg',
-                                  colorBorder: Colors.red),
-                              scoreBox(context, 'مگس کش', '1 امتیاز',
-                                  'assets/close_large_icon.svg',
-                                  colorBorder: Colors.red),
-                              scoreBox(context, 'مگس کش', '1 امتیاز',
-                                  'assets/close_large_icon.svg',
-                                  colorBorder: Colors.red),
-                              scoreBox(context, 'مگس کش', '1 امتیاز',
-                                  'assets/close_large_icon.svg',
-                                  colorBorder: Colors.red),
-                              scoreBox(context, 'پاس', '1 امتیاز',
-                                  'assets/thick_icon.svg',
-                                  colorBorder: Colors.green.shade700),
-                              scoreBox(context, 'دست', '1 امتیاز',
-                                  'assets/thick_icon.svg',
-                                  colorBorder: Colors.green.shade700),
-                              scoreBox(context, 'گل', '1 امتیاز',
-                                  'assets/close_large_icon.svg',
-                                  colorBorder: Colors.red),
-                              scoreBox(context, 'پروتون', '1 امتیاز',
-                                  'assets/thick_icon.svg',
-                                  colorBorder: Colors.green.shade700)
-                            ],
-                          ),
+                          bottom: fullHeight(context)/11.6
+                      ),
+                      child: DraggableScrollbar.rrect(
+                        backgroundColor: AppColors.primaryColor,
+                        alwaysVisibleScrollThumb: true,
+                        controller: _rrectController,
+                        padding: EdgeInsets.only(bottom: smallSize(context)),
+                        child: ListView(
+                          padding: EdgeInsets.all(0),
+                          controller: _rrectController,
+                          children: [
+                            Container(
+                              margin: EdgeInsets.symmetric(
+                                  horizontal: smallSize(context)),
+                              child: Column(
+                                children: [
+                                  scoreBox(context, 'مگس کش', '1 امتیاز',
+                                      'assets/close_large_icon.svg',
+                                      ),
+                                  scoreBox(context, 'مگس کش', '1 امتیاز',
+                                      'assets/thick_icon.svg',
+                                      ),
+                                  scoreBox(context, 'مگس کش', '1 امتیاز',
+                                      'assets/close_large_icon.svg',
+                                      ),
+                                  scoreBox(context, 'مگس کش', '1 امتیاز',
+                                      'assets/close_large_icon.svg',
+                                      ),
+                                  scoreBox(context, 'مگس کش', '1 امتیاز',
+                                      'assets/close_large_icon.svg',
+                                      ),
+                                  scoreBox(context, 'مگس کش', '1 امتیاز',
+                                      'assets/close_large_icon.svg',
+                                      ),
+                                  scoreBox(context, 'پاس', '1 امتیاز',
+                                      'assets/thick_icon.svg',
+                                      ),
+                                  scoreBox(context, 'دست', '1 امتیاز',
+                                      'assets/thick_icon.svg',
+                                      ),
+                                  scoreBox(context, 'گل', '1 امتیاز',
+                                      'assets/close_large_icon.svg',
+                                      ),
+                                  scoreBox(context, 'پروتون', '1 امتیاز',
+                                      'assets/thick_icon.svg',
+                                      )
+                                ],
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ),
@@ -140,93 +151,82 @@ class SpeedScoreState extends State<SpeedScore> {
                     ),
                   ),
                 ),
-                Positioned(
-                  bottom: xxLargeSize(context),
-                  right: xlargeSize(context),
-                  left: xlargeSize(context),
+                Align(
+                  alignment: Alignment(0.08,0.725),
                   child: Container(
-                    width: fullWidth(context) / 1.7,
+                    width: fullWidth(context) / 1.4,
                     height: fullWidth(context) / 8,
                     margin: EdgeInsets.only(
                         top: standardSize(context),
                         bottom: mediumSize(context)),
-                    child: Neumorphic(
-                      style: NeumorphicStyle(
-                          depth: 1.75,
-                          intensity: 3.5,
-                          color: AppColors.accentColor,
-                          boxShape: NeumorphicBoxShape.roundRect(
-                            BorderRadius.circular(fullWidth(context) / 1),
-                          )),
-                      child: Container(
-                        margin: EdgeInsets.symmetric(
-                            horizontal: smallSize(context)),
-                        alignment: Alignment.center,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            SizedBox(
-                                width: largeSize(context),
-                                height: largeSize(context),
-                                child: Neumorphic(
-                                  padding: EdgeInsets.symmetric(
-                                      horizontal: xSmallSize(context),
-                                      vertical: xSmallSize(context)),
-                                  style: NeumorphicStyle(
-                                    color: appTheme(context).accentColor,
-                                    depth: 2,
-                                    intensity: 4,
-                                    boxShape: NeumorphicBoxShape.circle(),
-                                  ),
-                                  child: SvgPicture.asset(
-                                      "assets/thick_icon.svg",
-                                      height: mediumSize(context),
-                                      width: mediumSize(context)),
-                                )),
-                            Container(
-                              alignment: Alignment.center,
-                              child: Text(
-                                'پاسخ درست',
-                                maxLines: 1,
-                                style: appTheme(context)
-                                    .textTheme
-                                    .bodyText1
-                                    .copyWith(fontFamily: 'kalameh'),
-                                overflow: TextOverflow.ellipsis,
-                              ),
+                    child: Container(
+                      margin: EdgeInsets.symmetric(
+                          horizontal: smallSize(context)),
+                      alignment: Alignment.center,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          SizedBox(
+                              width: largeSize(context),
+                              height: largeSize(context),
+                              child: Neumorphic(
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: xSmallSize(context),
+                                    vertical: xSmallSize(context)),
+                                style: NeumorphicStyle(
+                                  color: appTheme(context).accentColor,
+                                  depth: 2,
+                                  intensity: 4,
+                                  boxShape: NeumorphicBoxShape.circle(),
+                                ),
+                                child: SvgPicture.asset(
+                                    "assets/thick_icon.svg",
+                                    height: mediumSize(context),
+                                    width: mediumSize(context)),
+                              )),
+                          Container(
+                            alignment: Alignment.center,
+                            child: Text(
+                              'پاسخ درست',
+                              maxLines: 1,
+                              style: appTheme(context)
+                                  .textTheme
+                                  .bodyText1
+                                  .copyWith(fontFamily: 'kalameh'),
+                              overflow: TextOverflow.ellipsis,
                             ),
-                            SizedBox(
-                                width: largeSize(context),
-                                height: largeSize(context),
-                                child: Neumorphic(
-                                  padding: EdgeInsets.symmetric(
-                                      horizontal: xSmallSize(context),
-                                      vertical: xSmallSize(context)),
-                                  style: NeumorphicStyle(
-                                    color: appTheme(context).accentColor,
-                                    depth: 2,
-                                    intensity: 4,
-                                    boxShape: NeumorphicBoxShape.circle(),
-                                  ),
-                                  child: SvgPicture.asset(
-                                      "assets/close_large_icon.svg",
-                                      height: mediumSize(context),
-                                      width: mediumSize(context)),
-                                )),
-                            Container(
-                              alignment: Alignment.center,
-                              child: Text(
-                                'پاسخ غلط',
-                                maxLines: 1,
-                                style: appTheme(context)
-                                    .textTheme
-                                    .bodyText1
-                                    .copyWith(fontFamily: 'kalameh'),
-                                overflow: TextOverflow.ellipsis,
-                              ),
+                          ),
+                          SizedBox(
+                              width: largeSize(context),
+                              height: largeSize(context),
+                              child: Neumorphic(
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: xSmallSize(context),
+                                    vertical: xSmallSize(context)),
+                                style: NeumorphicStyle(
+                                  color: appTheme(context).accentColor,
+                                  depth: 2,
+                                  intensity: 4,
+                                  boxShape: NeumorphicBoxShape.circle(),
+                                ),
+                                child: SvgPicture.asset(
+                                    "assets/close_large_icon.svg",
+                                    height: mediumSize(context),
+                                    width: mediumSize(context)),
+                              )),
+                          Container(
+                            alignment: Alignment.center,
+                            child: Text(
+                              'پاسخ غلط',
+                              maxLines: 1,
+                              style: appTheme(context)
+                                  .textTheme
+                                  .bodyText1
+                                  .copyWith(fontFamily: 'kalameh'),
+                              overflow: TextOverflow.ellipsis,
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                     ),
                   ),

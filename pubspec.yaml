@@ -40,6 +40,8 @@ dependencies:
   chewie: ^0.12.0
   flutter_neumorphic: ^3.0.4+1
   neumorphic: ^0.4.0
+  draggable_scrollbar: 0.0.4
+
 
 
   pin_code_fields: ^6.0.0
