@@ -24,7 +24,7 @@ variantColor: AppColors.primaryColor,
       headline3: TextStyle(
           fontSize: headline3Size(context),
           fontFamily: 'kalameh',
-          color: AppColors.textColorDark,
+          color: AppColors.primaryColor,
           fontWeight: FontWeight.w700,
           height: 1.4),
       headline4: TextStyle(
