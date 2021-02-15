@@ -1,3 +1,4 @@
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:pantomim_flutter/theme/app_theme.dart';
@@ -16,7 +17,7 @@ Widget neuAppbar(BuildContext context, String title) {
             child: SizedBox(
                 height: fullWidth(context) / 9,
                 width: fullWidth(context) / 9,
-                child: neuButton(context, () {
+                child: NeuButton( () {
                   Navigator.pop(context);
                 }, icon: Icons.arrow_back_ios_rounded)),
           ),
@@ -29,7 +30,7 @@ Widget neuAppbar(BuildContext context, String title) {
                 color: appTheme(context).baseColor, //customize color here
               ),
               textStyle: NeumorphicTextStyle(
-                fontFamily: 'cactos',
+                fontFamily: 'kalameh',
                 fontSize: fullWidth(context) / 14, //// customize size here
               ),
             ),

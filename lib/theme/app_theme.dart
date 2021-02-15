@@ -17,42 +17,51 @@ NeumorphicThemeData appTheme(BuildContext context) {
     accentColor: AppColors.accentColor,
     textTheme: TextTheme(
       headline1:
-          TextStyle(fontFamily: 'cactos', color: AppColors.darkAccentColor),
+          TextStyle(fontFamily: 'kalameh', color: AppColors.darkAccentColor,fontWeight: FontWeight.w700,),
       headline2:
-          TextStyle(fontFamily: 'cactos', color: AppColors.darkAccentColor),
+          TextStyle(fontFamily: 'kalameh', color: AppColors.darkAccentColor,fontWeight: FontWeight.w700),
       headline3: TextStyle(
           fontSize: headline3Size(context),
-          fontFamily: 'cactos',
-          color: AppColors.textColorDark,
+          fontFamily: 'kalameh',
+          color: AppColors.primaryColor,
+          fontWeight: FontWeight.w700,
           height: 1.4),
       headline4: TextStyle(
           color: AppColors.primaryColor,
-          fontFamily: 'cactos',
+          fontFamily: 'aviny',
+          fontWeight: FontWeight.w700,
           fontSize: headline4Size(context)),
       headline5: TextStyle(
         color: Colors.white,
         fontFamily: 'aviny',
+          fontWeight: FontWeight.w500,
       ),
       headline6: TextStyle(
         color: Colors.white,
         fontFamily: 'aviny',
+          fontWeight: FontWeight.w500
       ),
       subtitle1: TextStyle(
+          height: 1.5,
+
           color: AppColors.textColorDark,
           fontSize: subTitleSize(context),
           fontFamily: 'aviny',
-          fontWeight: FontWeight.w600),
+          fontWeight: FontWeight.w500),
       subtitle2: TextStyle(
-          color: AppColors.primaryColor,
+        height: 1.5,
+
+        color: AppColors.primaryColor,
           fontSize: subTitleSize(context),
           fontFamily: 'aviny',
-          fontWeight: FontWeight.w300),
+          fontWeight: FontWeight.w500,
+      ),
       bodyText1: TextStyle(
           height: 1.5,
           fontFamily: 'aviny',
           fontSize: bodyText1Size(context),
           color: AppColors.textColorDark,
-          fontWeight: FontWeight.w600),
+          fontWeight: FontWeight.w500),
       bodyText2: TextStyle(
           height: 1.5,
 
@@ -66,7 +75,7 @@ NeumorphicThemeData appTheme(BuildContext context) {
           fontSize: caption1Size(context),
           fontFamily: 'aviny',
           color: AppColors.textColorDark,
-          fontWeight: FontWeight.w500),
+          fontWeight: FontWeight.w400),
     ),
   );
 }
