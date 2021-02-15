@@ -43,6 +43,7 @@ Widget DialogWidget (BuildContext context , String title){
                 () {},
             svg: "assets/thick_icon.svg",
             colorSvg: Color(0xff388E3C),
+            size: mediumSize(context),
           ),
         )),
     Align(
@@ -54,6 +55,7 @@ Widget DialogWidget (BuildContext context , String title){
                 () {},
             svg: "assets/close_small_icon.svg",
             colorSvg: Color(0xffD32F2F),
+            size: mediumSize(context),
           ),
         )),
   ]);
