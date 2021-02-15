@@ -21,38 +21,35 @@ Widget scoreBox(
         overflow: Overflow.visible,
         children: [
           Positioned.fill(
-            child: Container(
-              decoration: BoxDecoration(
-                  color: Colors.grey.shade100,
-                  borderRadius: BorderRadius.circular(fullWidth(context) / 1)),
+            child: Neumorphic(
+              style: NeumorphicStyle(
+                color: appTheme(context).accentColor,
+                depth: 8,
+                intensity: 6,
+                surfaceIntensity: 10,
+                boxShape: NeumorphicBoxShape.roundRect(BorderRadius.circular(fullWidth(context) / 1))
+              ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Container(
-                    alignment: AlignmentDirectional.centerStart,
+                    alignment: Alignment.center,
                     child: Text(
                       topic,
                       maxLines: 1,
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: fullWidth(context) / 16,
-                          height: fullWidth(context) / 185),
+                      style: appTheme(context).textTheme.subtitle1,
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),
-//                  Container(
-//                    alignment: AlignmentDirectional.centerStart,
-//                    child: Text(
-//                      point,
-//                      textAlign: TextAlign.start,
-//                      maxLines: 1,
-//                      style: TextStyle(
-//                          color: Colors.black,
-//                          fontSize: fullWidth(context) / 16,
-//                          height: fullWidth(context) / 185),
-//                      overflow: TextOverflow.ellipsis,
-//                    ),
-//                  ),
+                  Container(
+                    alignment: Alignment.center,
+                    child: Text(
+                      point,
+                      maxLines: 1,
+                      style: appTheme(context).textTheme.subtitle1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -70,8 +67,8 @@ Widget scoreBox(
                       vertical: mediumSize(context)),
                   style: NeumorphicStyle(
                     color: appTheme(context).accentColor,
-                    depth: 1,
-                    intensity: 2,
+                    depth: 2,
+                    intensity: 4,
                     boxShape: NeumorphicBoxShape.circle(),
                   ),
                   child: SvgPicture.asset(

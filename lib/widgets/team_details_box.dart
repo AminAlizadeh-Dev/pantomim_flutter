@@ -63,8 +63,8 @@ Widget teamDetailBox(
                   padding: EdgeInsets.symmetric(horizontal: smallSize(context),vertical: xSmallSize(context)),
                   style: NeumorphicStyle(
                     color: appTheme(context).accentColor,
-                    depth: 1,
-                    intensity: 2,
+                    depth: 2,
+                    intensity: 4,
                     boxShape: NeumorphicBoxShape.circle(),
                   ),
                   child: SvgPicture.asset(
