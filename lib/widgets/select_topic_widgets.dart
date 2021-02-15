@@ -20,7 +20,7 @@ Widget selectTopicWidgets(BuildContext context, String topicName) {
             child: Neumorphic(
           style: NeumorphicStyle(
               depth: 5.5,
-              intensity: 16,
+              intensity: 14,
               color: AppColors.accentColor,
               boxShape: NeumorphicBoxShape.roundRect(
                 BorderRadius.circular(12),
@@ -59,9 +59,12 @@ Widget selectTopicWidgets(BuildContext context, String topicName) {
               intensity: 8,
               boxShape: NeumorphicBoxShape.circle(),
             ),
-            child: Text(
-              "6",
-              style: theme.textTheme.subtitle2.copyWith(height: 2.7),
+            child: Center(
+              child: Text(
+                "6",
+                textAlign: TextAlign.center,
+                style: theme.textTheme.subtitle2,
+              ),
             ),
           ),
         ),
@@ -77,9 +80,12 @@ Widget selectTopicWidgets(BuildContext context, String topicName) {
               intensity: 8,
               boxShape: NeumorphicBoxShape.circle(),
             ),
-            child: Text(
-              "4",
-              style: theme.textTheme.subtitle2.copyWith(height: 2.7),
+            child: Center(
+              child: Text(
+                "4",
+                textAlign: TextAlign.center,
+                style: theme.textTheme.subtitle2,
+              ),
             ),
           ),
         ),
@@ -95,9 +101,10 @@ Widget selectTopicWidgets(BuildContext context, String topicName) {
               intensity: 8,
               boxShape: NeumorphicBoxShape.circle(),
             ),
-            child: Text(
-              "2",
-              style: theme.textTheme.subtitle2.copyWith(height: 2.7),
+            child: Center(
+              child: Text("2",
+                  textAlign: TextAlign.center,
+                  style: theme.textTheme.subtitle2),
             ),
           ),
         ),

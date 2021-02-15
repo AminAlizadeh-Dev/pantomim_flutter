@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:pantomim_flutter/pages/end_game_page.dart';
+import 'package:pantomim_flutter/pages/loser_page.dart';
+import 'package:pantomim_flutter/pages/new_word_page.dart';
 import 'package:pantomim_flutter/pages/select_topic_page.dart';
+import 'package:pantomim_flutter/pages/sum_points_page.dart';
+import 'package:pantomim_flutter/pages/winner_page.dart';
 import 'package:pantomim_flutter/theme/app_theme.dart';
 import 'package:pantomim_flutter/theme/colors.dart';
 
@@ -25,7 +30,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Pantomime',
       theme: appTheme(context),
-      home: SelectTopic(),
+      home: WinnerPage(),
     );
   }
 }

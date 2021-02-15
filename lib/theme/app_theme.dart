@@ -48,17 +48,21 @@ NeumorphicThemeData appTheme(BuildContext context) {
           fontFamily: 'aviny',
           fontWeight: FontWeight.w300),
       bodyText1: TextStyle(
-          height: 1.6,
+          height: 1.5,
           fontFamily: 'aviny',
           fontSize: bodyText1Size(context),
           color: AppColors.textColorDark,
           fontWeight: FontWeight.w600),
       bodyText2: TextStyle(
+          height: 1.5,
+
           fontSize: bodyText1Size(context),
           color: AppColors.textColorDark,
           fontFamily: 'aviny',
           fontWeight: FontWeight.w500),
       caption: TextStyle(
+          height: 1.5,
+
           fontSize: caption1Size(context),
           fontFamily: 'aviny',
           color: AppColors.textColorDark,
