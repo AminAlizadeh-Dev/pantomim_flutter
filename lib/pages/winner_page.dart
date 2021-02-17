@@ -79,7 +79,7 @@ class WinnerState extends State<WinnerPage> {
               ),
             ),
             Align(
-              alignment: Alignment(0, -0.63),
+              alignment: Alignment(0, -0.59),
               child: Container(
                 width: fullWidth(context) / 2.4,
                 height: xlargeSize(context) / 1.2,

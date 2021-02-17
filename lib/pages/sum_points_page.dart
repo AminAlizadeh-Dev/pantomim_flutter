@@ -153,8 +153,7 @@ class SumPointsState extends State<SumPointsPage> {
                   child: SizedBox(
                       width: fullWidth(context) / 6.5,
                       height: fullWidth(context) / 6.5,
-                      child: neuButton(
-                        context,
+                      child: NeuButton(
                         () {},
                         icon: Icons.arrow_forward_ios_rounded,
                       )),
@@ -167,8 +166,7 @@ class SumPointsState extends State<SumPointsPage> {
               child: SizedBox(
                   width: fullWidth(context) / 6.5,
                   height: fullWidth(context) / 6.5,
-                  child: neuButton(
-                    context,
+                  child: NeuButton(
                     () {},
                     icon: Icons.arrow_forward_ios_rounded,
                   )),
