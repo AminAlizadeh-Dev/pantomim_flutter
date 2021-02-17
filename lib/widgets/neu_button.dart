@@ -12,7 +12,7 @@ class NeuButton extends StatelessWidget {
   Color color , colorSvg;
   TextAlign align;
   String svg;
-  double textHeight;
+  double textHeight , size;
 
   NeuButton(this.onPress,
       {this.icon,
@@ -21,11 +21,13 @@ class NeuButton extends StatelessWidget {
       this.align: TextAlign.center,
       this.color,
       this.colorSvg,
-      this.textHeight});
+      this.textHeight : 1,
+      this.size : 0});
 
   @override
   Widget build(BuildContext context) {
     return NeumorphicButton(
+      padding: EdgeInsets.all(0),
       onPressed: onPress,
       style: NeumorphicStyle(
           color: AppColors.accentColor,
@@ -39,12 +41,14 @@ class NeuButton extends StatelessWidget {
   Widget childNeuButton(BuildContext context) {
     if (title != null) {
       return Center(
-        child: Text(
-          title,
-          textAlign: align,
-          style: appTheme(context).textTheme.bodyText1.copyWith(
-            color: color,
-            height: textHeight,
+        child: Center(
+          child: Text(
+            title,
+            textAlign: align,
+            style: appTheme(context).textTheme.bodyText1.copyWith(
+              color: color,
+              height: textHeight,
+            ),
           ),
         ),
       );
@@ -55,9 +59,8 @@ class NeuButton extends StatelessWidget {
         size: fullWidth(context) / 18.5,
       );
     } else {
-      return SizedBox(
-        width: fullWidth(context) / 15,
-        height: fullHeight(context) / 20,
+      return Container(
+        padding: EdgeInsets.all(size),
         child: SvgPicture.asset(
           svg,
           alignment: Alignment.center,
