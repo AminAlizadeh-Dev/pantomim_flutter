@@ -7,6 +7,7 @@ import 'package:line_icons/line_icons.dart';
 import 'package:pantomim_flutter/theme/app_theme.dart';
 import 'package:pantomim_flutter/theme/colors.dart';
 import 'package:pantomim_flutter/theme/dimense.dart';
+import 'package:pantomim_flutter/widgets/bottom_sheet_widget.dart';
 import 'package:pantomim_flutter/widgets/neu_button.dart';
 import 'package:pantomim_flutter/widgets/num_picker_buttons.dart';
 import 'package:pantomim_flutter/widgets/team_name_picker.dart';
@@ -19,7 +20,7 @@ class NewGame extends StatefulWidget {
 
 class NewGameState extends State<NewGame> {
   ScrollController _rrectController =
-      ScrollController(initialScrollOffset: 50.0);
+      ScrollController(initialScrollOffset: 1.0);
 
   @override
   Widget build(BuildContext context) {
@@ -44,314 +45,343 @@ class NewGameState extends State<NewGame> {
                 ),
               ),
             ),
-            body: Center(
-              child: Column(
-                children: [
-                  Container(
-                    width: fullWidth(context) / 1.1,
-                    height: fullHeight(context) / 1.4,
-                    margin: EdgeInsets.only(
-                        bottom: standardSize(context), top: smallSize(context)),
-                    child: Neumorphic(
-                      style: NeumorphicStyle(
-                          boxShape: NeumorphicBoxShape.roundRect(
-                              BorderRadius.circular(xxSmallSize(context))),
-                          depth: 2,
-                          intensity: 4,
-                          color: appTheme(context).accentColor),
-                      child: DraggableScrollbar.rrect(
-                          backgroundColor: AppColors.primaryColor,
-                          alwaysVisibleScrollThumb: true,
-                          controller: _rrectController,
-                          child: ListView(
+            body: SingleChildScrollView(
+              physics: NeverScrollableScrollPhysics(),
+              child: Center(
+                child: Column(
+                  children: [
+                    Container(
+                      width: fullWidth(context) / 1.1,
+                      height: fullHeight(context) / 1.4,
+                      margin: EdgeInsets.only(
+                          bottom: standardSize(context), top: smallSize(context)),
+                      child: Neumorphic(
+                        style: NeumorphicStyle(
+                            boxShape: NeumorphicBoxShape.roundRect(
+                                BorderRadius.circular(xxSmallSize(context))),
+                            depth: 2,
+                            intensity: 4,
+                            color: appTheme(context).accentColor),
+                        child: DraggableScrollbar.rrect(
+                            backgroundColor: AppColors.primaryColor,
+                            alwaysVisibleScrollThumb: true,
                             controller: _rrectController,
-                            children: [
-                              Container(
-                                margin: EdgeInsets.only(top: smallSize(context))
-                                ,child: Column(
-                                  children: [
-                                    Center(
-                                      child: Text(
-                                        "نوع مسابقه:",
-                                        style: TextStyle(
-                                          color: appTheme(context)
-                                              .defaultTextColor,
-                                          // customize color here
-                                          fontFamily: "aviny",
-                                          fontSize: subTitleSize(context),
+                            child: ListView(
+                              controller: _rrectController,
+                              children: [
+                                Container(
+                                  margin:
+                                      EdgeInsets.only(top: smallSize(context)),
+                                  child: Column(
+                                    children: [
+                                      Center(
+                                        child: Text(
+                                          "نوع مسابقه:",
+                                          style: TextStyle(
+                                            color: appTheme(context)
+                                                .defaultTextColor,
+                                            // customize color here
+                                            fontFamily: "aviny",
+                                            fontSize: subTitleSize(context),
+                                          ),
+                                          textAlign: TextAlign.center,
                                         ),
-                                        textAlign: TextAlign.center,
                                       ),
-                                    ),
-                                    Container(
-                                      width: fullWidth(context) / 1.5,
-                                      height: fullHeight(context) / 10,
-                                      margin: EdgeInsets.symmetric(
-                                          vertical: mediumSize(context)),
-                                      child: Neumorphic(
-                                        style: NeumorphicStyle(
-                                          color: appTheme(context).accentColor,
-                                          depth: 8,
-                                          intensity: 16,
-                                          boxShape:
-                                              NeumorphicBoxShape.roundRect(
-                                                  BorderRadius.circular(12)),
-                                        ),
-                                        child: Row(
-                                          children: [
-                                            Expanded(
-                                              flex: 2,
-                                              child: Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceAround,
-                                                children: [
-                                                  SvgPicture.asset(
-                                                    'assets/arrow_down_icon.svg',
-                                                    height: smallSize(context),
-                                                    width: smallSize(context),
-                                                  ),
+                                      Material(
+                                        color: Colors.transparent,
+                                        child: Ink(
+                                          child: InkWell(
+                                            onTap: () {
+                                              setState(() {
+                                                showModalBottomSheet<void>(
+                                                    context: context,
+                                                    backgroundColor:
+                                                        Colors.transparent,
+                                                    builder: (BuildContext
+                                                            context) =>
+                                                        bottomSheetWidget(context));
+                                              });
+                                            },
+                                            child: Container(
+                                              width: fullWidth(context) / 1.5,
+                                              height: fullHeight(context) / 10,
+                                              margin: EdgeInsets.symmetric(
+                                                  vertical: mediumSize(context)),
+                                              child: Neumorphic(
+                                                style: NeumorphicStyle(
+                                                  color:
+                                                      appTheme(context).accentColor,
+                                                  depth: 8,
+                                                  intensity: 16,
+                                                  boxShape:
+                                                      NeumorphicBoxShape.roundRect(
+                                                          BorderRadius.circular(
+                                                              12)),
+                                                ),
+                                                child: Row(
+                                                  children: [
+                                                    Expanded(
+                                                      flex: 2,
+                                                      child: Row(
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .spaceAround,
+                                                        children: [
+                                                          SvgPicture.asset(
+                                                            'assets/arrow_down_icon.svg',
+                                                            height:
+                                                                smallSize(context),
+                                                            width:
+                                                                smallSize(context),
+                                                          ),
 //                              NeumorphicIcon(Icons.keyboard_arrow_down,size: (context),),
-                                                  Container(
-                                                    margin: EdgeInsets.only(
-                                                        right: mediumSize(
-                                                            context)),
-                                                    child: Center(
-                                                      child: NeumorphicText(
-                                                        "انتخاب کن",
-                                                        textStyle:
-                                                            NeumorphicTextStyle(
-                                                          fontFamily: "aviny",
-                                                          height: 1.8,
-                                                          fontSize: fullWidth(
-                                                                  context) /
-                                                              23,
-                                                        ),
-                                                        textAlign:
-                                                            TextAlign.center,
-                                                        style: NeumorphicStyle(
-                                                            color:
-                                                                Colors.black),
+                                                          Container(
+                                                            margin: EdgeInsets.only(
+                                                                right: mediumSize(
+                                                                    context)),
+                                                            child: Center(
+                                                              child: NeumorphicText(
+                                                                "انتخاب کن",
+                                                                textStyle:
+                                                                    NeumorphicTextStyle(
+                                                                  fontFamily:
+                                                                      "aviny",
+                                                                  height: 1.8,
+                                                                  fontSize: fullWidth(
+                                                                          context) /
+                                                                      23,
+                                                                ),
+                                                                textAlign: TextAlign
+                                                                    .center,
+                                                                style:
+                                                                    NeumorphicStyle(
+                                                                        color: Colors
+                                                                            .black),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ],
                                                       ),
                                                     ),
-                                                  ),
-                                                ],
+                                                    Expanded(
+                                                        flex: 1, child: SizedBox())
+                                                  ],
+                                                ),
                                               ),
                                             ),
-                                            Expanded(flex: 1, child: SizedBox())
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                    Center(
-                                      child: Text(
-                                        "تعداد تیم ها:",
-                                        style: TextStyle(
-                                          color: appTheme(context)
-                                              .defaultTextColor,
-                                          // customize color here
-                                          fontFamily: "aviny",
-                                          fontSize: subTitleSize(context),
-                                        ),
-                                        textAlign: TextAlign.center,
-                                      ),
-                                    ),
-                                    numPicker(context, '4'),
-                                    Center(
-                                      child: Text(
-                                        "نام تیم ها:",
-                                        style: TextStyle(
-                                          color: appTheme(context)
-                                              .defaultTextColor,
-                                          // customize color here
-                                          fontFamily: "aviny",
-                                          fontSize: subTitleSize(context),
-                                        ),
-                                        textAlign: TextAlign.center,
-                                      ),
-                                    ),
-                                    Container(
-                                      margin: EdgeInsets.symmetric(
-                                          vertical: smallSize(context)),
-                                      child: Column(
-                                        children: [
-                                          Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceEvenly,
-                                            children: [
-                                              teamName(context, 'تیم اول'),
-                                              teamName(context, 'تیم دوم'),
-                                            ],
                                           ),
-                                          Container(
-                                            margin: EdgeInsets.symmetric(
-                                                vertical: mediumSize(context)),
-                                            child: Row(
+                                        ),
+                                      ),
+                                      Center(
+                                        child: Text(
+                                          "تعداد تیم ها:",
+                                          style: TextStyle(
+                                            color: appTheme(context)
+                                                .defaultTextColor,
+                                            // customize color here
+                                            fontFamily: "aviny",
+                                            fontSize: subTitleSize(context),
+                                          ),
+                                          textAlign: TextAlign.center,
+                                        ),
+                                      ),
+                                      numPicker(context, '4'),
+                                      Center(
+                                        child: Text(
+                                          "نام تیم ها:",
+                                          style: TextStyle(
+                                            color: appTheme(context)
+                                                .defaultTextColor,
+                                            // customize color here
+                                            fontFamily: "aviny",
+                                            fontSize: subTitleSize(context),
+                                          ),
+                                          textAlign: TextAlign.center,
+                                        ),
+                                      ),
+                                      Container(
+                                        margin: EdgeInsets.symmetric(
+                                            vertical: smallSize(context)),
+                                        child: Column(
+                                          children: [
+                                            Row(
                                               mainAxisAlignment:
                                                   MainAxisAlignment.spaceEvenly,
                                               children: [
-                                                teamName(context, 'تیم سوم'),
-                                                teamName(context, 'تیم چهارم'),
+                                                teamName(context, 'تیم اول'),
+                                                teamName(context, 'تیم دوم'),
                                               ],
                                             ),
-                                          ),
-                                          Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceEvenly,
-                                            children: [
-                                              teamName(context, 'تیم پنجم'),
-                                              teamName(context, 'تیم ششم'),
-                                            ],
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                    Center(
-                                      child: Text(
-                                        "تعداد دور ها:",
-                                        style: TextStyle(
-                                          color: appTheme(context)
-                                              .defaultTextColor,
-                                          // customize color here
-                                          fontFamily: "aviny",
-                                          fontSize: subTitleSize(context),
+                                            Container(
+                                              margin: EdgeInsets.symmetric(
+                                                  vertical: mediumSize(context)),
+                                              child: Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.spaceEvenly,
+                                                children: [
+                                                  teamName(context, 'تیم سوم'),
+                                                  teamName(context, 'تیم چهارم'),
+                                                ],
+                                              ),
+                                            ),
+                                            Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceEvenly,
+                                              children: [
+                                                teamName(context, 'تیم پنجم'),
+                                                teamName(context, 'تیم ششم'),
+                                              ],
+                                            ),
+                                          ],
                                         ),
-                                        textAlign: TextAlign.center,
                                       ),
-                                    ),
-                                    numPicker(context, '6'),
-                                    Center(
-                                      child: Text(
-                                        "زمان مسابقه:",
-                                        style: TextStyle(
-                                          color: appTheme(context)
-                                              .defaultTextColor,
-                                          // customize color here
-                                          fontFamily: "aviny",
-                                          fontSize: subTitleSize(context),
+                                      Center(
+                                        child: Text(
+                                          "تعداد دور ها:",
+                                          style: TextStyle(
+                                            color: appTheme(context)
+                                                .defaultTextColor,
+                                            // customize color here
+                                            fontFamily: "aviny",
+                                            fontSize: subTitleSize(context),
+                                          ),
+                                          textAlign: TextAlign.center,
                                         ),
-                                        textAlign: TextAlign.center,
                                       ),
-                                    ),
-                                    Container(
-                                      margin: EdgeInsets.symmetric(
-                                          vertical: mediumSize(context)),
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceEvenly,
-                                        children: [
-                                          Container(
-                                            width: fullWidth(context) / 2.7,
-                                            height: fullWidth(context) / 8,
-                                            child: NeumorphicButton(
-                                              onPressed: () {},
-                                              style: NeumorphicStyle(
-                                                  depth: 5,
-                                                  intensity: 10,
-                                                  color: appTheme(context)
-                                                      .accentColor),
-                                              child: Center(
-                                                child: NeumorphicText(
-                                                  "خودکار",
-                                                  textStyle:
-                                                      NeumorphicTextStyle(
-                                                    fontFamily: "aviny",
-                                                    height: 1.8,
-                                                    fontSize:
-                                                        fullWidth(context) / 23,
+                                      numPicker(context, '6'),
+                                      Center(
+                                        child: Text(
+                                          "زمان مسابقه:",
+                                          style: TextStyle(
+                                            color: appTheme(context)
+                                                .defaultTextColor,
+                                            // customize color here
+                                            fontFamily: "aviny",
+                                            fontSize: subTitleSize(context),
+                                          ),
+                                          textAlign: TextAlign.center,
+                                        ),
+                                      ),
+                                      Container(
+                                        margin: EdgeInsets.symmetric(
+                                            vertical: mediumSize(context)),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceEvenly,
+                                          children: [
+                                            Container(
+                                              width: fullWidth(context) / 2.7,
+                                              height: fullWidth(context) / 8,
+                                              child: NeumorphicButton(
+                                                onPressed: () {},
+                                                style: NeumorphicStyle(
+                                                    depth: 5,
+                                                    intensity: 10,
+                                                    color: appTheme(context)
+                                                        .accentColor),
+                                                child: Center(
+                                                  child: NeumorphicText(
+                                                    "خودکار",
+                                                    textStyle:
+                                                        NeumorphicTextStyle(
+                                                      fontFamily: "aviny",
+                                                      height: 1.8,
+                                                      fontSize:
+                                                          fullWidth(context) / 23,
+                                                    ),
+                                                    textAlign: TextAlign.center,
+                                                    style: NeumorphicStyle(
+                                                        color: Colors.black),
                                                   ),
-                                                  textAlign: TextAlign.center,
-                                                  style: NeumorphicStyle(
-                                                      color: Colors.black),
                                                 ),
                                               ),
                                             ),
-                                          ),
-                                          Container(
-                                            width: fullWidth(context) / 2.7,
-                                            height: fullWidth(context) / 8,
-                                            child: NeumorphicButton(
-                                              onPressed: () {},
-                                              style: NeumorphicStyle(
-                                                  depth: 5,
-                                                  intensity: 10,
-                                                  color: appTheme(context)
-                                                      .accentColor),
-                                              child: Center(
-                                                child: NeumorphicText(
-                                                  "دستی",
-                                                  textStyle:
-                                                      NeumorphicTextStyle(
-                                                    fontFamily: "aviny",
-                                                    height: 1.8,
-                                                    fontSize:
-                                                        fullWidth(context) / 23,
+                                            Container(
+                                              width: fullWidth(context) / 2.7,
+                                              height: fullWidth(context) / 8,
+                                              child: NeumorphicButton(
+                                                onPressed: () {},
+                                                style: NeumorphicStyle(
+                                                    depth: 5,
+                                                    intensity: 10,
+                                                    color: appTheme(context)
+                                                        .accentColor),
+                                                child: Center(
+                                                  child: NeumorphicText(
+                                                    "دستی",
+                                                    textStyle:
+                                                        NeumorphicTextStyle(
+                                                      fontFamily: "aviny",
+                                                      height: 1.8,
+                                                      fontSize:
+                                                          fullWidth(context) / 23,
+                                                    ),
+                                                    textAlign: TextAlign.center,
+                                                    style: NeumorphicStyle(
+                                                        color: Colors.black),
                                                   ),
-                                                  textAlign: TextAlign.center,
-                                                  style: NeumorphicStyle(
-                                                      color: Colors.black),
                                                 ),
                                               ),
                                             ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                    Center(
-                                      child: Text(
-                                        "زمان دستی(  ثانیه  ):",
-                                        style: TextStyle(
-                                          color: appTheme(context)
-                                              .defaultTextColor,
-                                          // customize color here
-                                          fontFamily: "aviny",
-                                          fontSize: subTitleSize(context),
+                                          ],
                                         ),
-                                        textAlign: TextAlign.center,
                                       ),
-                                    ),
-                                    numPicker(context, '60'),
-                                  ],
+                                      Center(
+                                        child: Text(
+                                          "زمان دستی(  ثانیه  ):",
+                                          style: TextStyle(
+                                            color: appTheme(context)
+                                                .defaultTextColor,
+                                            // customize color here
+                                            fontFamily: "aviny",
+                                            fontSize: subTitleSize(context),
+                                          ),
+                                          textAlign: TextAlign.center,
+                                        ),
+                                      ),
+                                      numPicker(context, '60'),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                            ],
-                          )),
+                              ],
+                            )),
+                      ),
                     ),
-                  ),
-                  Container(
-                    margin:
-                        EdgeInsets.symmetric(horizontal: mediumSize(context)),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        SizedBox(
-                          height: fullWidth(context) / 7,
-                          width: fullWidth(context) / 7,
-                          child: NeuButton(
-                                () {},
-                            icon: Icons.arrow_forward_ios_rounded,
+                    Container(
+                      margin:
+                          EdgeInsets.symmetric(horizontal: mediumSize(context)),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          SizedBox(
+                            height: fullWidth(context) / 7,
+                            width: fullWidth(context) / 7,
+                            child: NeuButton(
+                              () {},
+                              icon: Icons.arrow_forward_ios_rounded,
+                            ),
                           ),
-                        ),
-                        SizedBox(
-                          height: fullWidth(context) / 7,
-                          width: fullWidth(context) / 7,
-                          child: NeuButton(
-                                () {},
-                            svg: 'assets/role_icon.svg',
+                          SizedBox(
+                            height: fullWidth(context) / 7,
+                            width: fullWidth(context) / 7,
+                            child: NeuButton(
+                              () {},
+                              svg: 'assets/role_icon.svg',
+                            ),
                           ),
-                        ),
-                        SizedBox(
-                          height: fullWidth(context) / 7,
-                          width: fullWidth(context) / 7,
-                          child: NeuButton(
-                                () {},
-                            icon: Icons.arrow_back_ios_rounded,
+                          SizedBox(
+                            height: fullWidth(context) / 7,
+                            width: fullWidth(context) / 7,
+                            child: NeuButton(
+                              () {},
+                              icon: Icons.arrow_back_ios_rounded,
+                            ),
                           ),
-                        ),
-                      ],
-                    ),
-                  )
-                ],
+                        ],
+                      ),
+                    )
+                  ],
+                ),
               ),
             )));
   }
