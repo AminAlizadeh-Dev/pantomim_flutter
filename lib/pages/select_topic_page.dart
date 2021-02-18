@@ -17,7 +17,7 @@ class SelectTopicState extends State<SelectTopic> {
       textDirection: TextDirection.rtl,
       child: Scaffold(
         backgroundColor: NeumorphicTheme.accentColor(context),
-        appBar: neuAppbar(context, "انتخاب موضوع"),
+        appBar: neuAppbar(context, "انتـخاب موضوع"),
         body: SingleChildScrollView(
           physics: BouncingScrollPhysics(),
           child: Column(

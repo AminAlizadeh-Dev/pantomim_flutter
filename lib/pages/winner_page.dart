@@ -99,11 +99,32 @@ class WinnerState extends State<WinnerPage> {
                       "بــرنــده !",
                       textAlign: TextAlign.center,
                       style: appTheme(context).textTheme.headline3.copyWith(
-                          color: appTheme(context).baseColor,
-                          fontSize: fullWidth(context) / 14,
-                          fontFamily: "aviny"),
+                            color: appTheme(context).baseColor,
+                            fontSize: fullWidth(context) / 13,
+                          ),
                     ),
                   ),
+                ),
+              ),
+            ),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Container(
+                margin: EdgeInsets.all(standardSize(context)),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    NeuButton(
+                      () {},
+                      svg: ("assets/icon_repeat.svg"),
+                      size: mediumSize(context),
+                    ),
+                    NeuButton(
+                      () {},
+                      svg: ("assets/icon_home.svg"),
+                      size: mediumSize(context),
+                    ),
+                  ],
                 ),
               ),
             ),

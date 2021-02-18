@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:neumorphism_web/timer/neu_progress_painter.dart';
-import 'package:neumorphism_web/timer/screen.dart';
+import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:pantomim_flutter/pages/screen.dart';
+import 'package:pantomim_flutter/theme/app_theme.dart';
+import 'package:pantomim_flutter/theme/colors.dart';
+import 'package:pantomim_flutter/theme/dimense.dart';
+
 import 'package:provider/provider.dart';
+
+import 'neu_progress_painter.dart';
 
 class NeuProgressPieBar extends StatelessWidget {
   const NeuProgressPieBar({
@@ -13,35 +19,31 @@ class NeuProgressPieBar extends StatelessWidget {
     final percentage =
         Provider.of<TimerService>(context).currentDuration.inSeconds / 60 * 100;
     return Container(
-      height: 400,
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        color: Color.fromRGBO(225, 234, 244, 1),
-        boxShadow: [
-          BoxShadow(
-            blurRadius: 15,
-            offset: Offset(-5, -5),
-            color: Colors.white,
-          ),
-          BoxShadow(
-            blurRadius: 15,
-            offset: Offset(10.5, 10.5),
-            color: Color.fromRGBO(214, 223, 230, 1),
-          )
-        ],
-        border: Border.all(
-          width: 15,
-          color: Theme.of(context).backgroundColor,
-        ),
-      ),
+       height: fullHeight(context) / 2.3,
       child: Stack(
         children: <Widget>[
+          Positioned.fill(
+            right: fullWidth(context) / 20,
+            left: fullWidth(context) / 20,
+            bottom: 0,
+            top: 0,
+            child: Neumorphic(
+              style: NeumorphicStyle(
+                shape: NeumorphicShape.flat,
+                boxShape: NeumorphicBoxShape.circle(),
+                depth: 8,
+                intensity: 5,
+                lightSource: LightSource.topLeft,
+                color: AppColors.accentColor,
+              ),
+            ),
+          ),
           Center(
             child: SizedBox(
-              height: 250,
+              height: fullHeight(context) / 2.9,
               child: CustomPaint(
                 painter: NeuProgressPainter(
-                  circleWidth: 60,
+                  circleWidth: fullWidth(context) / 6,
                   completedPercentage: percentage,
                   defaultCircleColor: Colors.transparent,
                 ),
@@ -49,26 +51,21 @@ class NeuProgressPieBar extends StatelessWidget {
               ),
             ),
           ),
-          Center(
-            child: Container(
-              height: 200,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                gradient: LinearGradient(
-                  begin: FractionalOffset.topCenter,
-                  end: FractionalOffset.bottomCenter,
-                  colors: [
-                    Colors.grey.withOpacity(0.0),
-                    Colors.black54,
-                  ],
-                  stops: [0.95, 1.0],
-                ),
-                border: Border.all(
-                  width: 15,
-                  color: Theme.of(context).backgroundColor,
-                ),
+          Positioned(
+            top:  fullWidth(context) / 9,
+            bottom:fullWidth(context) / 9,
+            left:  fullWidth(context) / 9,
+            right: fullWidth(context) / 9,
+            child: Neumorphic(
+              style: NeumorphicStyle(
+                shape: NeumorphicShape.concave,
+                boxShape: NeumorphicBoxShape.circle(),
+                depth: 5,
+oppositeShadowLightSource: false,
+                intensity: 0.8,
+                lightSource: LightSource.topLeft,
+                color: AppColors.accentColor,
               ),
-              child: Center(child: NeuStartButton()),
             ),
           ),
         ],
@@ -124,27 +121,27 @@ class _NeuStartButtonState extends State<NeuStartButton> {
         padding: const EdgeInsets.all(16.0),
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: Colors.white70,
+          color: appTheme(context).accentColor,
           boxShadow: _isPressed
               ? null
               : [
                   BoxShadow(
-                    blurRadius: 15,
-                    spreadRadius: 5,
+                    blurRadius: 14,
+                    spreadRadius: 14,
                     offset: -widget.blurOffset,
-                    color: Colors.white,
+                    color: Colors.grey.shade200,
                   ),
                   BoxShadow(
-                    blurRadius: 15,
-                    offset: Offset(10.5, 10.5),
-                    color: Color.fromRGBO(214, 223, 230, 1),
+                    blurRadius: 12,
+                    offset: Offset(10, 10),
+                    color: Colors.grey.shade200,
                   )
                 ],
         ),
         child: Center(
             child: Icon(
           _isRunning ? Icons.stop : Icons.play_arrow,
-          size: 60,
+          size: 30,
           color: _isRunning
               ? Colors.redAccent.shade400
               : Colors.greenAccent.shade400,

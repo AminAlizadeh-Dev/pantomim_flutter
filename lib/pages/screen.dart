@@ -1,11 +1,11 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:neumorphism_web/timer/neu_digital_clock.dart';
-import 'package:neumorphism_web/timer/neu_hamburger_button.dart';
-import 'package:neumorphism_web/timer/neu_progress_pie_bar.dart';
-import 'package:neumorphism_web/timer/neu_reset_button.dart';
+import 'package:pantomim_flutter/theme/app_theme.dart';
+
 import 'package:provider/provider.dart';
+
+import 'neu_progress_pie_bar.dart';
 
 class TimerScreen extends StatelessWidget {
   @override
@@ -14,22 +14,11 @@ class TimerScreen extends StatelessWidget {
     return ChangeNotifierProvider<TimerService>(
       create: (_) => timeService,
       child: Scaffold(
+        backgroundColor: appTheme(context).accentColor,
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 35.0),
-          child: SizedBox(
-            height: MediaQuery.of(context).size.height,
-            child: ListView(
-              children: <Widget>[
-                SizedBox(height: MediaQuery.of(context).viewPadding.top + 20),
-                TimerTitle(),
-                SizedBox(height: 60),
-                NeuDigitalClock(),
-                SizedBox(height: 20),
-                NeuProgressPieBar(),
-                SizedBox(height: 25),
-                NeuResetButton(),
-              ],
-            ),
+          child: Center(
+            child: NeuProgressPieBar(),
           ),
         ),
       ),
@@ -51,7 +40,6 @@ class TimerTitle extends StatelessWidget {
           style: Theme.of(context).textTheme.headline1,
         ),
         Spacer(),
-        NeuHamburgerButton()
       ],
     );
   }
@@ -102,5 +90,5 @@ class TimerService extends ChangeNotifier {
 
     notifyListeners();
   }
-  // source: https://stackoverflow.com/questions/53228993/how-to-implement-persistent-stopwatch-in-flutter
+// source: https://stackoverflow.com/questions/53228993/how-to-implement-persistent-stopwatch-in-flutter
 }

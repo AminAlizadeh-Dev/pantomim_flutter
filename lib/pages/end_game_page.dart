@@ -51,13 +51,13 @@ class EndGameState extends State<EndGamePage> {
                       child: Transform.rotate(
                         angle: -0.3,
                         child: Neumorphic(
-                          padding: EdgeInsets.all(6.5),
+                          padding: EdgeInsets.all(7),
                           style: NeumorphicStyle(
                               color: appTheme(context).accentColor,
                               depth: 4,
                               intensity: 10,
                               boxShape: NeumorphicBoxShape.circle()),
-                          child: Image.asset("assets/Sad.png"),
+                          child: Image.asset("assets/happy.png"),
                         ),
                       ),
                     ),
@@ -109,7 +109,7 @@ class EndGameState extends State<EndGamePage> {
                   width: fullWidth(context) / 6.5,
                   height: fullWidth(context) / 6.5,
                   child: NeuButton(
-                        () {},
+                    () {},
                     icon: Icons.arrow_forward_ios_rounded,
                   )),
             ),

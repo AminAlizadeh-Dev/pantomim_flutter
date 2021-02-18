@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 
+import 'package:pantomim_flutter/theme/app_theme.dart';
+
 class NeuProgressPainter extends CustomPainter {
   //
   Color defaultCircleColor;
@@ -48,7 +50,7 @@ class NeuProgressPainter extends CustomPainter {
 
     canvas.drawCircle(center, radius, defaultCirclePaint);
 
-    double arcAngle = 2 * pi * (completedPercentage / 100);
+    double arcAngle = 2 * pi * (completedPercentage / 200);
     canvas.drawArc(
       Rect.fromCircle(center: center, radius: radius),
       -pi / 2,
@@ -56,8 +58,8 @@ class NeuProgressPainter extends CustomPainter {
       false,
       paint(
         [
-          Color.fromRGBO(255, 219, 129, 1),
-          Color.fromRGBO(255, 126, 29, 1),
+          Color(0xffFFD1E2),
+          Color(0xffD81B60),
         ],
       ),
     );
