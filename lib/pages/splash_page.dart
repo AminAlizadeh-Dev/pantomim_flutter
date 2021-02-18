@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:lottie/lottie.dart';
 import 'package:pantomim_flutter/theme/app_theme.dart';
 import 'package:pantomim_flutter/theme/dimense.dart';
 import 'package:rive/rive.dart';
@@ -73,6 +74,13 @@ class SplashState extends State<SplashPage> {
                 child: Text("Version.0.0.1",
                     style:
                         theme.textTheme.caption.copyWith(color: Colors.grey)),
+              ),
+            ),
+            Align(
+              alignment: Alignment(0, 0.76),
+              child: Container(
+                width: fullWidth(context) / 5.8,
+                child: Lottie.asset("assets/loading.json"),
               ),
             ),
           ],
