@@ -38,7 +38,7 @@ Widget numPicker(BuildContext context, String number) {
           ),
         )),
         Positioned(
-          right: -2,
+          right: -4,
           top: 0,
           bottom: 0,
           child: NeumorphicButton(

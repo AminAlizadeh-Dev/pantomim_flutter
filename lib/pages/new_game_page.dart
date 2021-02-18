@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:pantomim_flutter/pages/guide_page.dart';
 import 'package:pantomim_flutter/theme/app_theme.dart';
 import 'package:pantomim_flutter/theme/colors.dart';
 import 'package:pantomim_flutter/theme/dimense.dart';
@@ -99,7 +100,10 @@ class NewGameState extends State<NewGame> {
                                                         Colors.transparent,
                                                     builder: (BuildContext
                                                             context) =>
-                                                        bottomSheetWidget(context));
+                                                        bottomSheetWidget(context, () {
+                                                          Navigator.push(context,
+                                                              MaterialPageRoute(builder: (context) => NewGame()));
+                                                        }));
                                               });
                                             },
                                             child: Container(
@@ -361,12 +365,14 @@ class NewGameState extends State<NewGame> {
                               icon: Icons.arrow_forward_ios_rounded,
                             ),
                           ),
-                          SizedBox(
-                            height: fullWidth(context) / 7,
-                            width: fullWidth(context) / 7,
+                          Container(
+                            height: fullWidth(context) / 8,
+                            width: fullWidth(context) / 8,
                             child: NeuButton(
-                              () {},
-                              svg: 'assets/role_icon.svg',
+                              () {
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => GuidePage()));
+                              },
+                              svg: 'assets/questions_icon.svg',
                             ),
                           ),
                           SizedBox(
