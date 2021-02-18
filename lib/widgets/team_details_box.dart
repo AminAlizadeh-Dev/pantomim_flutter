@@ -25,7 +25,7 @@ Widget teamDetailBox(
               style: NeumorphicStyle(
                 depth: 2,
                   intensity: 4,
-                  color: appTheme(context).baseColor,
+                  color: appTheme(context).accentColor,
                   boxShape: (NeumorphicBoxShape.roundRect(BorderRadius.circular(fullWidth(context)/1)))
               ),
               child: Container(
@@ -37,20 +37,14 @@ Widget teamDetailBox(
                       topic,
                       textAlign: TextAlign.start,
                       maxLines: 1,
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: fullWidth(context) / 16,
-                          height: fullWidth(context) / 185),
+                      style: appTheme(context).textTheme.headline4.copyWith(fontWeight: FontWeight.w300,color: Colors.black),
                       overflow: TextOverflow.ellipsis,
                     ),
                     Text(
                       point,
                       textAlign: TextAlign.start,
                       maxLines: 1,
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: fullWidth(context) / 16,
-                          height: fullWidth(context) / 185),
+                      style: appTheme(context).textTheme.headline4.copyWith(fontWeight: FontWeight.w300),
                       overflow: TextOverflow.ellipsis,
                     ),
                   ],
@@ -59,24 +53,22 @@ Widget teamDetailBox(
             ),
           ),
           Positioned(
-            right: -2,
+            right: -xxSmallSize(context),
             top: 0,
             bottom: 0,
             child: SizedBox(
-              width: fullWidth(context)/9,
-              height: fullWidth(context)/9,
+              width: fullWidth(context)/8.5,
+              height: fullWidth(context)/8.5,
               child: Neumorphic(
-                  padding: EdgeInsets.symmetric(horizontal: smallSize(context),vertical: mediumSize(context)),
+                  padding: EdgeInsets.symmetric(horizontal: smallSize(context),vertical: xSmallSize(context)),
                   style: NeumorphicStyle(
                     color: appTheme(context).accentColor,
-                    depth: 1,
-                    intensity: 2,
+                    depth: 2,
+                    intensity: 4,
                     boxShape: NeumorphicBoxShape.circle(),
                   ),
                   child: SvgPicture.asset(
                     svgIcon,
-                    height: mediumSize(context),
-                    width: mediumSize(context),
                     color: iconColor,
                   )),
             ),

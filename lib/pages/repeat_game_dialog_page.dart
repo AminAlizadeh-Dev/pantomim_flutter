@@ -6,9 +6,12 @@ class RepeatGameDialogPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
-    return Scaffold(
-      backgroundColor: NeumorphicTheme.accentColor(context),
-      body: DialogWidget(context , "می خواهید همین مسابقه را تکرار کنید ؟"),
+    return Directionality(
+      textDirection: TextDirection.rtl,
+      child: Scaffold(
+        backgroundColor: NeumorphicTheme.accentColor(context),
+        body: DialogWidget(context , "می خواهید همین مسابقه را تکرار کنید ؟"),
+      ),
     );
   }
 }

@@ -21,38 +21,36 @@ Widget scoreBox(
         overflow: Overflow.visible,
         children: [
           Positioned.fill(
-            child: Container(
-               decoration: BoxDecoration(
-                 color: Colors.grey.shade100,
-                 borderRadius: BorderRadius.circular(fullWidth(context)/1)
-               ),
-              child: Container(
-                margin: EdgeInsets.only(right: xSmallSize(context)),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Text(
+            child: Neumorphic(
+              style: NeumorphicStyle(
+                  color: appTheme(context).accentColor,
+                  depth: 8,
+                  intensity: 6,
+                  surfaceIntensity: 10,
+                  boxShape: NeumorphicBoxShape.roundRect(
+                      BorderRadius.circular(fullWidth(context) / 1))),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Container(
+                    alignment: Alignment.center,
+                    child: Text(
                       topic,
-                      textAlign: TextAlign.start,
                       maxLines: 1,
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: fullWidth(context) / 16,
-                          height: fullWidth(context) / 185),
+                      style: appTheme(context).textTheme.subtitle1,
                       overflow: TextOverflow.ellipsis,
                     ),
-                    Text(
+                  ),
+                  Container(
+                    alignment: Alignment.center,
+                    child: Text(
                       point,
-                      textAlign: TextAlign.start,
                       maxLines: 1,
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: fullWidth(context) / 16,
-                          height: fullWidth(context) / 185),
+                      style: appTheme(context).textTheme.subtitle1,
                       overflow: TextOverflow.ellipsis,
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
           ),
@@ -61,14 +59,16 @@ Widget scoreBox(
             top: 0,
             bottom: 0,
             child: SizedBox(
-              width: fullWidth(context)/9,
-              height: fullWidth(context)/9,
+              width: fullWidth(context) / 9,
+              height: fullWidth(context) / 9,
               child: Neumorphic(
-                padding: EdgeInsets.symmetric(horizontal: smallSize(context),vertical: mediumSize(context)),
+                  padding: EdgeInsets.symmetric(
+                      horizontal: smallSize(context),
+                      vertical: mediumSize(context)),
                   style: NeumorphicStyle(
                     color: appTheme(context).accentColor,
-                    depth: 1,
-                    intensity: 2,
+                    depth: 2,
+                    intensity: 4,
                     boxShape: NeumorphicBoxShape.circle(),
                   ),
                   child: SvgPicture.asset(

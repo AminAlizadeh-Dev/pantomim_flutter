@@ -9,6 +9,7 @@ NeumorphicThemeData appTheme(BuildContext context) {
   return NeumorphicThemeData(
     baseColor: AppColors.primaryColor,
     defaultTextColor: AppColors.textColorDark,
+variantColor: AppColors.primaryColor,
     buttonStyle: NeumorphicStyle(
         color: AppColors.accentColor,
         intensity: 5,

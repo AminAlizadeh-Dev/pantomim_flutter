@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:pantomim_flutter/pages/speed_score_page.dart';
 import 'package:pantomim_flutter/theme/app_theme.dart';
 import 'package:pantomim_flutter/theme/colors.dart';
 import 'package:pantomim_flutter/theme/dimense.dart';
 import 'package:pantomim_flutter/widgets/neu_button.dart';
+import 'package:pantomim_flutter/widgets/role_box.dart';
 import 'package:pantomim_flutter/widgets/score_box.dart';
 import 'package:pantomim_flutter/widgets/team_details_box.dart';
 
@@ -16,6 +18,126 @@ class RoundPage extends StatefulWidget {
 class RoundPageState extends State<RoundPage> {
   @override
   Widget build(BuildContext context) {
+    void _showDialog() {
+      showDialog(
+        useSafeArea: true,
+        context: context,
+        builder: (BuildContext context) {
+          return Directionality(
+            textDirection: TextDirection.rtl,
+            child: SingleChildScrollView(
+              physics: NeverScrollableScrollPhysics(),
+              child: Container(
+                width: fullWidth(context),
+                height: fullHeight(context),
+                child: Stack(
+                  children: [
+                    Positioned(
+                      top: fullWidth(context) / 4.5,
+                      right: standardSize(context),
+                      left: standardSize(context),
+                      bottom: xlargeSize(context),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius:
+                              BorderRadius.circular(standardSize(context)),
+                          color: appTheme(context).accentColor,
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                              top: fullWidth(context) / 10.2,
+                              bottom: fullWidth(context) / 14),
+                          child: SingleChildScrollView(
+                            physics: BouncingScrollPhysics(),
+                            child: Container(
+                              margin: EdgeInsets.symmetric(
+                                  vertical: smallSize(context),
+                                  horizontal: xxSmallSize(context)),
+                              child: Column(
+                                children: [
+                                  roleBox(
+                                    context,
+                                    'میتوانید یک نفر را به عنوان ناظر بی طرف \nبرای داوری انتخاب کنید',
+                                    'assets/thick_icon.svg',
+                                  ),
+                                  roleBox(
+                                    context,
+                                    'میتوانید یک نفر را به عنوان ناظر بی طرف \nبرای داوری انتخاب کنید',
+                                    'assets/thick_icon.svg',
+                                  ),
+                                  roleBox(
+                                    context,
+                                    'میتوانید یک نفر را به عنوان ناظر بی طرف \nبرای داوری انتخاب کنید',
+                                    'assets/thick_icon.svg',
+                                  ),
+                                  roleBox(
+                                    context,
+                                    'میتوانید یک نفر را به عنوان ناظر بی طرف \nبرای داوری انتخاب کنید',
+                                    'assets/thick_icon.svg',
+                                  ),
+                                  roleBox(
+                                    context,
+                                    'میتوانید یک نفر را به عنوان ناظر بی طرف \nبرای داوری انتخاب کنید',
+                                    'assets/thick_icon.svg',
+                                  ),
+                                  roleBox(
+                                    context,
+                                    'میتوانید یک نفر را به عنوان ناظر بی طرف \nبرای داوری انتخاب کنید',
+                                    'assets/thick_icon.svg',
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment(0.0, -0.88),
+                      child: Container(
+                        width: fullWidth(context) / 1.5,
+                        height: xlargeSize(context),
+                        margin: EdgeInsets.only(
+                            top: standardSize(context),
+                            bottom: mediumSize(context)),
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: AppColors.accentColor,
+                              borderRadius:
+                                  BorderRadius.circular(fullWidth(context) / 1),
+                              boxShadow: [BoxShadow(
+                                color: Color(0xffADADB2),
+                                blurRadius: 1,
+                                spreadRadius: 0.5,
+                                offset: Offset(
+                                  0.0,1
+                                )
+                              )]),
+                          child: Container(
+                            alignment: Alignment.center,
+                            child: Text(
+                              'قـــــوانین',
+                              textAlign: TextAlign.center,
+                              style: appTheme(context)
+                                  .textTheme
+                                  .headline3
+                                  .copyWith(
+                                      color: appTheme(context).baseColor,
+                                      fontSize: fullWidth(context) / 11),
+                            ),
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+          );
+        },
+      );
+    }
+
     return Scaffold(
       backgroundColor: NeumorphicTheme.accentColor(context),
       body: SingleChildScrollView(
@@ -27,51 +149,42 @@ class RoundPageState extends State<RoundPage> {
           child: Stack(
             children: [
               Positioned.fill(
-                top: fullWidth(context) / 2.5,
+                top: fullWidth(context) / 3.4,
                 right: standardSize(context),
                 left: standardSize(context),
-                bottom: xxLargeSize(context),
+                bottom: fullHeight(context) / 5.5,
                 child: Container(
-                    height: fullHeight(context) / 1.7,
+                    height: fullHeight(context) / 4,
                     width: fullWidth(context) / 1.2,
                     child: Neumorphic(
                       style: NeumorphicStyle(
                         boxShape: NeumorphicBoxShape.roundRect(
                             BorderRadius.circular(standardSize(context))),
                         color: appTheme(context).accentColor,
-                        depth: 3,
+                        depth: -7,
                         intensity: 6,
                       ),
-                      child: SingleChildScrollView(
+                      child: Container(
+                        margin: EdgeInsets.only(
+                            top: fullWidth(context) / 10,
+                            bottom: xxSmallSize(context)),
                         child: Column(
                           children: [
                             teamDetailBox(context, 'تیم اول', '36 امتیاز',
                                 'assets/play_icon.svg'),
-                            teamDetailBox(context, 'تیم دوم', '41 امتیاز',
-                                ''),
-                            teamDetailBox(context, 'تیم سوم', '33 امتیاز',
-                                ''),
-                            teamDetailBox(context, 'تیم چهارم', '22 امتیاز',
-                                ''),
-                            teamDetailBox(context, 'تیم پنجم', '26 امتیاز',
-                                ''),
-                            teamDetailBox(context, 'تیم ششم', '21 امتیاز',
-                                ''),
-                            teamDetailBox(context, 'تیم هفتم', '18 امتیاز',
-                                ''),
-                            teamDetailBox(context, 'تیم نهم', '29 امتیاز',
-                                ''),
-                            teamDetailBox(context, 'تیم دهم', '14 امتیاز',
-                                ''),
-                            teamDetailBox(context, 'تیم یازدهم', '40 امتیاز',
-                                '')
+                            teamDetailBox(context, 'تیم دوم', '41 امتیاز', ''),
+                            teamDetailBox(context, 'تیم سوم', '33 امتیاز', ''),
+                            teamDetailBox(
+                                context, 'تیم چهارم', '22 امتیاز', ''),
+                            teamDetailBox(context, 'تیم پنجم', '26 امتیاز', ''),
+                            teamDetailBox(context, 'تیم ششم', '21 امتیاز', ''),
                           ],
                         ),
                       ),
                     )),
               ),
               Positioned(
-                top: xxLargeSize(context),
+                top: fullHeight(context) / 12,
                 right: xlargeSize(context),
                 left: xlargeSize(context),
                 child: Container(
@@ -87,80 +200,58 @@ class RoundPageState extends State<RoundPage> {
                         boxShape: NeumorphicBoxShape.roundRect(
                           BorderRadius.circular(fullWidth(context) / 1),
                         )),
-                    child: NeumorphicText(
-                      'دور 1 از 3',
-                      textAlign: TextAlign.center,
-                      textStyle: NeumorphicTextStyle(
-                          fontFamily: 'kalameh',
-                          fontSize: fullWidth(context) / 13,
-                          height: fullWidth(context) / 230),
-                    ),
-                  ),
-                ),
-              ),
-              Positioned(
-                bottom: xxLargeSize(context),
-                right: standardSize(context),
-                left: standardSize(context),
-                child: Container(
-                  width: fullWidth(context),
-                  height: xlargeSize(context),
-                  child: Neumorphic(
-                    style: NeumorphicStyle(
-                        depth: 1.75,
-                        intensity: 3.5,
-                        color: AppColors.accentColor,
-                        boxShape: NeumorphicBoxShape.roundRect(
-                          BorderRadius.only(
-                              bottomLeft:
-                                  Radius.circular(standardSize(context)),
-                              bottomRight:
-                                  Radius.circular(standardSize(context))),
-                        )),
-                    child: NeumorphicText(
-                      'امتیازات این دور:  35',
-                      textAlign: TextAlign.center,
-                      textStyle: NeumorphicTextStyle(
-                          fontFamily: 'aviny',
-                          fontSize: fullWidth(context) / 13,
-                          height: fullWidth(context) / 190),
+                    child: Container(
+                      alignment: Alignment.center,
+                      child: Text('دور 1 از 3',
+                          style: appTheme(context)
+                              .textTheme
+                              .headline3
+                              .copyWith(color: appTheme(context).baseColor)),
                     ),
                   ),
                 ),
               ),
               Align(
-                alignment: Alignment.bottomCenter,
+                alignment: Alignment(0, 0.94),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    SizedBox(
-                      height: fullWidth(context) / 7,
-                      width: fullWidth(context) / 7,
-                      child: NeuButton(
-                            () {},
-                        svg: 'assets/play_icon.svg',
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      SizedBox(
+                        height: fullWidth(context) / 7,
+                        width: fullWidth(context) / 7,
+                        child: NeuButton(
+                          () {},
+                          svg: 'assets/power_icon.svg',
+                        ),
                       ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(right: mediumSize(context)),
-                      height: fullWidth(context) / 7,
-                      width: fullWidth(context) / 7,
-                      child: NeuButton(
-                            () {},
-                        svg: 'assets/power_icon.svg',
+                      SizedBox(
+                        height: fullWidth(context) / 7,
+                        width: fullWidth(context) / 7,
+                        child: NeuButton(
+                          () {
+                            setState(() {
+                              _showDialog();
+                            });
+                          },
+                          svg: 'assets/role_icon.svg',
+                        ),
                       ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(right: mediumSize(context)),
-                      height: fullWidth(context) / 7,
-                      width: fullWidth(context) / 7,
-                      child: NeuButton(
-                            () {},
-                        svg: 'assets/role_icon.svg',
-                      ),
-                    ),
-                  ],
-                ),
+                      SizedBox(
+                        height: fullWidth(context) / 7,
+                        width: fullWidth(context) / 7,
+                        child: NeuButton(
+                          () {
+                            setState(() {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => SpeedScore()));
+                            });
+                          },
+                          svg: 'assets/play_icon.svg',
+                        ),
+                      )
+                    ]),
               )
             ],
           ),

@@ -27,7 +27,7 @@ Widget wordDetailWidget(
                 BorderRadius.circular(fullWidth(context) / 1),
               )),
           child: Container(
-            margin: EdgeInsets.symmetric(horizontal: xlargeSize(context)),
+            margin: EdgeInsets.symmetric(horizontal: fullWidth(context)/6),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -51,24 +51,24 @@ Widget wordDetailWidget(
           right: 0,
           top: 0,
           bottom: 0,
-          child: NeumorphicButton(
-            pressed: false,
-            onPressed: () {},
-            provideHapticFeedback: false,
-            style: NeumorphicStyle(
-              color: appTheme(context).accentColor,
-              depth: 4,
-              intensity: 8,
-              boxShape: NeumorphicBoxShape.circle(),
-            ),
-            child: Text(
-              point,
-              style: TextStyle(
-                  fontFamily: "aviny",
-                  color: AppColors.primaryColor,
-                  fontSize: fullWidth(context) / 14,
-                  height: fullWidth(context) / 290),
-              textAlign: TextAlign.center,
+          child: Container(
+            width: fullWidth(context)/7.5,
+            height: fullWidth(context)/7.5,
+            child: Neumorphic(
+              style: NeumorphicStyle(
+                color: appTheme(context).accentColor,
+                depth: 1.5,
+                intensity: 3,
+                boxShape: NeumorphicBoxShape.circle(),
+              ),
+              child: Container(
+                alignment: Alignment.center,
+                child: Text(
+                  point,
+                  style: appTheme(context).textTheme.subtitle1.copyWith(color: appTheme(context).baseColor),
+                  textAlign: TextAlign.center,
+                ),
+              ),
             ),
           ),
         ),
