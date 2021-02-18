@@ -41,6 +41,12 @@ dependencies:
   flutter_neumorphic: ^3.0.4+1
   neumorphic: ^0.4.0
   draggable_scrollbar: 0.0.4
+  provider: ^4.0.5
+  rive: ^0.6.8
+
+
+
+
 
 
 
