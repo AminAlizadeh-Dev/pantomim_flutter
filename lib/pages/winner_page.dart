@@ -5,6 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pantomim_flutter/theme/app_theme.dart';
 import 'package:pantomim_flutter/theme/colors.dart';
 import 'package:pantomim_flutter/theme/dimense.dart';
+import 'package:pantomim_flutter/widgets/dialog_widget.dart';
 import 'package:pantomim_flutter/widgets/neu_button.dart';
 
 class WinnerPage extends StatefulWidget {
@@ -13,6 +14,18 @@ class WinnerPage extends StatefulWidget {
 }
 
 class WinnerState extends State<WinnerPage> {
+  void exitDialog() {
+    showDialog(
+        barrierDismissible: true,
+        context: context,
+        builder: (BuildContext context) => dialogWidget(context,
+            '"برای خروج و بازگـشــت \n به صفحه اصلی مطمئن هستید ؟"'));}
+  void gameAgain() {
+    showDialog(
+        barrierDismissible: true,
+        context: context,
+        builder: (BuildContext context) => dialogWidget(context,
+            '"از تکرار این مسابقه مطمئن هستید ؟"'));}
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
@@ -115,12 +128,16 @@ class WinnerState extends State<WinnerPage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     NeuButton(
-                      () {},
+                      () {
+                        gameAgain();
+                      },
                       svg: ("assets/icon_repeat.svg"),
                       size: mediumSize(context),
                     ),
                     NeuButton(
-                      () {},
+                      () {
+                        exitDialog();
+                      },
                       svg: ("assets/icon_home.svg"),
                       size: mediumSize(context),
                     ),

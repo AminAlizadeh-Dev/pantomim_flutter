@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
-import 'package:pantomim_flutter/pages/dialog_ghavanin.dart';
 import 'package:pantomim_flutter/pages/game_page.dart';
 import 'package:pantomim_flutter/pages/guide_page.dart';
 import 'package:pantomim_flutter/pages/home_page.dart';
@@ -10,6 +9,7 @@ import 'package:pantomim_flutter/pages/new_word_page.dart';
 import 'package:pantomim_flutter/pages/round_page.dart';
 import 'package:pantomim_flutter/pages/speed_score_page.dart';
 import 'package:pantomim_flutter/pages/start_game_page.dart';
+import 'package:pantomim_flutter/pages/winner_page.dart';
 import 'package:pantomim_flutter/theme/app_theme.dart';
 import 'package:pantomim_flutter/theme/colors.dart';
 
@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Pantomime',
       theme: appTheme(context),
-      home: HomePage(),
+      home: WinnerPage(),
     );
   }
 }
