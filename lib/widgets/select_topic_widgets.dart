@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:pantomim_flutter/pages/start_game_page.dart';
 import 'package:pantomim_flutter/theme/app_theme.dart';
 import 'package:pantomim_flutter/theme/colors.dart';
 import 'package:pantomim_flutter/theme/dimense.dart';
@@ -52,7 +53,9 @@ Widget selectTopicWidgets(BuildContext context, String topicName) {
           top: 0,
           bottom: 0,
           child: NeumorphicButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => StartGamePage()));
+            },
             style: NeumorphicStyle(
               color: appTheme(context).accentColor,
               depth: 4,
@@ -73,7 +76,10 @@ Widget selectTopicWidgets(BuildContext context, String topicName) {
           top: 0,
           bottom: 0,
           child: NeumorphicButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => StartGamePage()));
+
+            },
             style: NeumorphicStyle(
               color: appTheme(context).accentColor,
               depth: 4,
@@ -94,7 +100,10 @@ Widget selectTopicWidgets(BuildContext context, String topicName) {
           top: 0,
           bottom: 0,
           child: NeumorphicButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => StartGamePage()));
+
+            },
             style: NeumorphicStyle(
               color: appTheme(context).accentColor,
               depth: 4,

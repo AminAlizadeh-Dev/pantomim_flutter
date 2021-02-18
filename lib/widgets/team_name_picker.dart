@@ -19,6 +19,8 @@ Widget teamName(BuildContext context, String hintText) {
           color: AppColors.accentColor),
       child: NeuTextField(
         textDirection: TextDirection.rtl,
+        textInputAction: TextInputAction.go,
+
         inputFormatters:[
           LengthLimitingTextInputFormatter(5),
         ],

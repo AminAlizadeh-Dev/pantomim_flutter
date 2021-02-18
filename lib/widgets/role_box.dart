@@ -16,7 +16,7 @@ Widget roleBox(BuildContext context, String txt, String svgIcon,
           vertical: xSmallSize(context),
         ),
         width: fullWidth(context) / 1.4,
-        height: fullWidth(context) / 7,
+        height: fullWidth(context) / 6,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [

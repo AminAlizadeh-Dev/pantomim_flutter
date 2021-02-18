@@ -2,7 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:pantomim_flutter/pages/home_page.dart';
+import 'package:pantomim_flutter/pages/select_topic_page.dart';
 import 'package:pantomim_flutter/pages/speed_score_page.dart';
+import 'package:pantomim_flutter/pages/start_game_page.dart';
 import 'package:pantomim_flutter/theme/app_theme.dart';
 import 'package:pantomim_flutter/theme/colors.dart';
 import 'package:pantomim_flutter/theme/dimense.dart';
@@ -60,32 +63,32 @@ class RoundPageState extends State<RoundPage> {
                                   children: [
                                     roleBox(
                                       context,
-                                      'میتوانید یک نفر را به عنوان ناظر بی طرف \nبرای داوری انتخاب کنید',
+                                      'می توانید یک نفر را به عنوان  ناظر\n بی طرف برای داوری انتخاب کنید',
                                       'assets/thick_icon.svg',
                                     ),
                                     roleBox(
                                       context,
-                                      'میتوانید یک نفر را به عنوان ناظر بی طرف \nبرای داوری انتخاب کنید',
+                                      'می توانید یک نفر را به عنوان ناظر\n  بی طرف برای داوری انتخاب کنید',
                                       'assets/thick_icon.svg',
                                     ),
                                     roleBox(
                                       context,
-                                      'میتوانید یک نفر را به عنوان ناظر بی طرف \nبرای داوری انتخاب کنید',
+                                      'می توانید یک نفر را به عنوان ناظر\n  بی طرف برای داوری انتخاب کنید',
                                       'assets/thick_icon.svg',
                                     ),
                                     roleBox(
                                       context,
-                                      'میتوانید یک نفر را به عنوان ناظر بی طرف \nبرای داوری انتخاب کنید',
+                                      'می توانید یک نفر را به عنوان ناظر\n  بی طرف برای داوری انتخاب کنید',
                                       'assets/thick_icon.svg',
                                     ),
                                     roleBox(
                                       context,
-                                      'میتوانید یک نفر را به عنوان ناظر بی طرف \nبرای داوری انتخاب کنید',
+                                      'می توانید یک نفر را به عنوان ناظر\n  بی طرف برای داوری انتخاب کنید',
                                       'assets/thick_icon.svg',
                                     ),
                                     roleBox(
                                       context,
-                                      'میتوانید یک نفر را به عنوان ناظر بی طرف \nبرای داوری انتخاب کنید',
+                                      'می توانید یک نفر را به عنوان ناظر\n  بی طرف برای داوری انتخاب کنید',
                                       'assets/thick_icon.svg',
                                     ),
                                   ],
@@ -161,10 +164,16 @@ class RoundPageState extends State<RoundPage> {
           barrierDismissible: true,
           context: context,
           builder: (BuildContext context) => dialogWidget(context,
-              '"برای خروج و بازگـشــت \n به صفحه اصلی مطمئن هستید ؟"'));}
+                  "برای خروج و بازگـشــت \n به صفحه اصلی مطمئن هستید ؟", () {
+                Navigator.pushReplacement(context,
+                    MaterialPageRoute(builder: (context) => HomePage()));
+              }, () {
+                Navigator.pop(context);
+              }));
+    }
 
     return Scaffold(
-      backgroundColor: NeumorphicTheme.accentColor(context),
+      backgroundColor: appTheme(context).accentColor,
       body: SingleChildScrollView(
         physics: NeverScrollableScrollPhysics(),
         child: Container(
@@ -191,7 +200,7 @@ class RoundPageState extends State<RoundPage> {
                       ),
                       child: Container(
                         margin: EdgeInsets.only(
-                            top: fullWidth(context) / 10,
+                            top: fullWidth(context) / 8,
                             bottom: xxSmallSize(context)),
                         child: Column(
                           children: [
@@ -251,6 +260,7 @@ class RoundPageState extends State<RoundPage> {
                             });
                           },
                           svg: 'assets/power_icon.svg',
+                          size: smallSize(context),
                         ),
                       ),
                       SizedBox(
@@ -263,14 +273,18 @@ class RoundPageState extends State<RoundPage> {
                             });
                           },
                           svg: 'assets/role_icon.svg',
+                          size: smallSize(context),
                         ),
                       ),
                       SizedBox(
                         height: fullWidth(context) / 7,
                         width: fullWidth(context) / 7,
                         child: NeuButton(
-                          () {},
+                          () {
+                            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SelectTopic()));
+                          },
                           svg: 'assets/play_icon.svg',
+                          size: smallSize(context),
                         ),
                       )
                     ]),

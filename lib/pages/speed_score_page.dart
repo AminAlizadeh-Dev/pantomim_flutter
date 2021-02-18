@@ -16,7 +16,7 @@ class SpeedScore extends StatefulWidget {
 
 class SpeedScoreState extends State<SpeedScore> {
   ScrollController _rrectController =
-  ScrollController(initialScrollOffset: 50.0);
+  ScrollController(initialScrollOffset: 1.0);
   @override
   Widget build(BuildContext context) {
     return Directionality(
@@ -66,7 +66,7 @@ class SpeedScoreState extends State<SpeedScore> {
                     ),
                     child: Padding(
                       padding: EdgeInsets.only(
-                          top: fullWidth(context) / 10.2,
+                          top: fullWidth(context) / 9.4,
                           bottom: fullHeight(context)/11.6
                       ),
                       child: DraggableScrollbar.rrect(
@@ -80,7 +80,7 @@ class SpeedScoreState extends State<SpeedScore> {
                           children: [
                             Container(
                               margin: EdgeInsets.symmetric(
-                                  horizontal: smallSize(context)),
+                                  horizontal: smallSize(context),vertical: mediumSize(context)),
                               child: Column(
                                 children: [
                                   scoreBox(context, 'مگس کش', '1 امتیاز',
@@ -232,8 +232,8 @@ class SpeedScoreState extends State<SpeedScore> {
                   ),
                 ),
                 Positioned(
-                  bottom: mediumSize(context),
-                  right: smallSize(context),
+                  bottom: standardSize(context),
+                  right: standardSize(context),
                   child: SizedBox(
                     height: fullWidth(context) / 7,
                     width: fullWidth(context) / 7,

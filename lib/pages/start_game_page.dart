@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:lottie/lottie.dart';
+import 'package:pantomim_flutter/pages/game_page.dart';
 import 'package:pantomim_flutter/theme/app_theme.dart';
 import 'package:pantomim_flutter/theme/colors.dart';
 import 'package:pantomim_flutter/theme/dimense.dart';
@@ -63,7 +64,9 @@ class StartGamePageState extends State<StartGamePage> {
                     SizedBox(
                       width: fullWidth(context) / 6,
                       height: fullWidth(context) / 6,
-                      child: NeuButton(() {},
+                      child: NeuButton(() {
+                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => GamePage()));
+                      },
                           title: "شروع",
                           textHeight: 2.3,
                           color: Color(0xff388E3C),
