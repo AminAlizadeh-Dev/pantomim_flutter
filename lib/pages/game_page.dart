@@ -4,6 +4,7 @@ import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:lottie/lottie.dart';
 import 'package:pantomim_flutter/pages/screen.dart';
+import 'package:pantomim_flutter/pages/speed_score_page.dart';
 import 'package:pantomim_flutter/theme/app_theme.dart';
 import 'package:pantomim_flutter/theme/colors.dart';
 import 'package:pantomim_flutter/theme/dimense.dart';
@@ -43,7 +44,9 @@ class GamePageState extends State<GamePage> {
                       SizedBox(
                         width: fullWidth(context) / 6,
                         height: fullWidth(context) / 6,
-                        child: NeuButton(() {},
+                        child: NeuButton(() {
+                          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> SpeedScore()));
+                        },
                             title: "درست",
                             color: Color(0xff388E3C),
                             align: TextAlign.center),

@@ -202,17 +202,24 @@ class RoundPageState extends State<RoundPage> {
                         margin: EdgeInsets.only(
                             top: fullWidth(context) / 8,
                             bottom: xxSmallSize(context)),
-                        child: Column(
-                          children: [
-                            teamDetailBox(context, 'تیم اول', '36 امتیاز',
-                                'assets/play_icon.svg'),
-                            teamDetailBox(context, 'تیم دوم', '41 امتیاز', ''),
-                            teamDetailBox(context, 'تیم سوم', '33 امتیاز', ''),
-                            teamDetailBox(
-                                context, 'تیم چهارم', '22 امتیاز', ''),
-                            teamDetailBox(context, 'تیم پنجم', '26 امتیاز', ''),
-                            teamDetailBox(context, 'تیم ششم', '21 امتیاز', ''),
-                          ],
+                        child: SingleChildScrollView(
+                          physics: BouncingScrollPhysics(),
+                          child: Column(
+                            children: [
+                              teamDetailBox(context, 'تیم اول', '36 امتیاز',
+                                  'assets/play_icon.svg'),
+                              teamDetailBox(
+                                  context, 'تیم دوم', '41 امتیاز', ''),
+                              teamDetailBox(
+                                  context, 'تیم سوم', '33 امتیاز', ''),
+                              teamDetailBox(
+                                  context, 'تیم چهارم', '22 امتیاز', ''),
+                              teamDetailBox(
+                                  context, 'تیم پنجم', '26 امتیاز', ''),
+                              teamDetailBox(
+                                  context, 'تیم ششم', '21 امتیاز', ''),
+                            ],
+                          ),
                         ),
                       ),
                     )),
@@ -281,7 +288,10 @@ class RoundPageState extends State<RoundPage> {
                         width: fullWidth(context) / 7,
                         child: NeuButton(
                           () {
-                            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SelectTopic()));
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => SelectTopic()));
                           },
                           svg: 'assets/play_icon.svg',
                           size: smallSize(context),

@@ -48,92 +48,95 @@ class GuidePageState extends State<GuidePage> {
                       depth: 4,
                       intensity: 7,
                       color: appTheme(context).accentColor),
-                  child: Container(
-                    margin: EdgeInsets.only(top: smallSize(context),bottom: mediumSize(context)),
-                    child: Column(
-                      children: [
-                        Container(
-                          margin:
-                              EdgeInsets.only(top: xSmallSize(context)),
-                          child: Center(
-                            child: Text(
-                              "نوع مسابقه :",
-                              style: theme.textTheme.subtitle1,
-                              textAlign: TextAlign.center,
+                  child: SingleChildScrollView(
+                    physics: BouncingScrollPhysics(),
+                    child: Container(
+                      margin: EdgeInsets.only(top: smallSize(context),bottom: mediumSize(context)),
+                      child: Column(
+                        children: [
+                          Container(
+                            margin:
+                                EdgeInsets.only(top: xSmallSize(context)),
+                            child: Center(
+                              child: Text(
+                                "نوع مسابقه :",
+                                style: theme.textTheme.subtitle1,
+                                textAlign: TextAlign.center,
+                              ),
                             ),
                           ),
-                        ),
-                        Container(
-                          width: fullWidth(context) / 1.5,
-                          height: fullHeight(context) / 10,
-                          margin: EdgeInsets.symmetric(
-                              vertical: mediumSize(context)),
-                          child: Neumorphic(
-                            style: NeumorphicStyle(
-                              color:
-                              appTheme(context).accentColor,
-                              depth: 8,
-                              intensity: 16,
-                              boxShape:
-                              NeumorphicBoxShape.roundRect(
-                                  BorderRadius.circular(
-                                      12)),
-                            ),
-                            child: Row(
-                              children: [
-                                Expanded(
-                                  flex: 2,
-                                  child: Row(
-                                    mainAxisAlignment:
-                                    MainAxisAlignment
-                                        .spaceAround,
-                                    children: [
-                                      SvgPicture.asset(
-                                        'assets/arrow_down_icon.svg',
-                                        height:
-                                        smallSize(context),
-                                        width:
-                                        smallSize(context),
-                                      ),
+                          Container(
+                            width: fullWidth(context) / 1.5,
+                            height: fullHeight(context) / 10,
+                            margin: EdgeInsets.symmetric(
+                                vertical: mediumSize(context)),
+                            child: Neumorphic(
+                              style: NeumorphicStyle(
+                                color:
+                                appTheme(context).accentColor,
+                                depth: 8,
+                                intensity: 16,
+                                boxShape:
+                                NeumorphicBoxShape.roundRect(
+                                    BorderRadius.circular(
+                                        12)),
+                              ),
+                              child: Row(
+                                children: [
+                                  Expanded(
+                                    flex: 2,
+                                    child: Row(
+                                      mainAxisAlignment:
+                                      MainAxisAlignment
+                                          .spaceAround,
+                                      children: [
+                                        SvgPicture.asset(
+                                          'assets/arrow_down_icon.svg',
+                                          height:
+                                          smallSize(context),
+                                          width:
+                                          smallSize(context),
+                                        ),
 //                              NeumorphicIcon(Icons.keyboard_arrow_down,size: (context),),
-                                      Container(
-                                        margin: EdgeInsets.only(
-                                            right: mediumSize(
-                                                context)),
-                                        child: Center(
-                                          child: NeumorphicText(
-                                            "انتخاب کن",
-                                            textStyle:
-                                            NeumorphicTextStyle(
-                                              fontFamily:
-                                              "aviny",
-                                              height: 1.8,
-                                              fontSize: fullWidth(
-                                                  context) /
-                                                  23,
+                                        Container(
+                                          margin: EdgeInsets.only(
+                                              right: mediumSize(
+                                                  context)),
+                                          child: Center(
+                                            child: NeumorphicText(
+                                              "انتخاب کن",
+                                              textStyle:
+                                              NeumorphicTextStyle(
+                                                fontFamily:
+                                                "aviny",
+                                                height: 1.8,
+                                                fontSize: fullWidth(
+                                                    context) /
+                                                    23,
+                                              ),
+                                              textAlign: TextAlign
+                                                  .center,
+                                              style:
+                                              NeumorphicStyle(
+                                                  color: Colors
+                                                      .black),
                                             ),
-                                            textAlign: TextAlign
-                                                .center,
-                                            style:
-                                            NeumorphicStyle(
-                                                color: Colors
-                                                    .black),
                                           ),
                                         ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
-                                ),
-                                Expanded(
-                                    flex: 1, child: SizedBox())
-                              ],
+                                  Expanded(
+                                      flex: 1, child: SizedBox())
+                                ],
+                              ),
                             ),
                           ),
-                        ),
-                        TextGuideWidget(context),
-                        TextGuideWidget(context),
-                        TextGuideWidget(context),
-                      ],
+                          TextGuideWidget(context),
+                          TextGuideWidget(context),
+                          TextGuideWidget(context)
+                        ],
+                      ),
                     ),
                   ),
                 ),

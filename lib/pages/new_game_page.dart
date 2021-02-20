@@ -109,7 +109,7 @@ class NewGameState extends State<NewGame> {
                                                       builder: (BuildContext
                                                               context) =>
                                                           bottomSheetWidget(context, () {
-                                                            Navigator.push(context,
+                                                            Navigator.pushReplacement(context,
                                                                 MaterialPageRoute(builder: (context) => NewGame()));
                                                           }));
                                                 });
