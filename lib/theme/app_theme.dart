@@ -80,3 +80,7 @@ variantColor: AppColors.primaryColor,
     ),
   );
 }
+
+void closeKeybored (BuildContext context){
+  FocusScope.of(context).requestFocus(FocusNode());
+}

@@ -2,6 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:pantomim_flutter/pages/home_page.dart';
+import 'package:pantomim_flutter/pages/round_page.dart';
+import 'package:pantomim_flutter/pages/speed_score_page.dart';
 import 'package:pantomim_flutter/theme/app_theme.dart';
 import 'package:pantomim_flutter/theme/colors.dart';
 import 'package:pantomim_flutter/theme/dimense.dart';
@@ -18,14 +21,29 @@ class WinnerState extends State<WinnerPage> {
     showDialog(
         barrierDismissible: true,
         context: context,
-        builder: (BuildContext context) => dialogWidget(context,
-            '"برای خروج و بازگـشــت \n به صفحه اصلی مطمئن هستید ؟"'));}
+        builder: (BuildContext context) => dialogWidget(
+                context, "برای خروج و بازگـشــت \n به صفحه اصلی مطمئن هستید ؟",
+                () {
+              Navigator.pushReplacement(
+                  context, MaterialPageRoute(builder: (context) => HomePage()));
+            }, () {
+              Navigator.pop(context);
+            }));
+  }
+
   void gameAgain() {
     showDialog(
         barrierDismissible: true,
         context: context,
-        builder: (BuildContext context) => dialogWidget(context,
-            '"از تکرار این مسابقه مطمئن هستید ؟"'));}
+        builder: (BuildContext context) =>
+            dialogWidget(context, "آیا از تکرار این مسابقه مطمئن هستید ؟", () {
+              Navigator.pushReplacement(context,
+                  MaterialPageRoute(builder: (context) => RoundPage()));
+            }, () {
+              Navigator.pop(context);
+            }));
+  }
+
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);

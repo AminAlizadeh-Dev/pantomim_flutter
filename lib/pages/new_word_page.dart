@@ -26,7 +26,11 @@ class NewWordState extends State<NewWord> {
       textDirection: TextDirection.rtl,
       child: Scaffold(
         backgroundColor: NeumorphicTheme.accentColor(context),
-        appBar: neuAppbar(context, "تعریف واژه جدید"),
+        appBar: AppBar(
+          elevation: 0,
+          centerTitle: true,
+          title: Text("تعریف واژه جدید", style: theme.textTheme.headline3),
+        ),
         body: DraggableScrollbar.rrect(
           padding: EdgeInsets.only(bottom: xxSmallSize(context)),
           backgroundColor: AppColors.primaryColor,

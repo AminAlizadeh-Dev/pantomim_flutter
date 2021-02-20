@@ -18,8 +18,6 @@ class GuidePage extends StatefulWidget {
 }
 
 class GuidePageState extends State<GuidePage> {
-  ScrollController _rrectController =
-      ScrollController(initialScrollOffset: 1.0);
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +28,7 @@ class GuidePageState extends State<GuidePage> {
         backgroundColor: NeumorphicTheme.accentColor(context),
         appBar: AppBar(
           elevation: 0,
+          leading: SizedBox(),
           centerTitle: true,
           title: Text("راهنما", style: theme.textTheme.headline3),
         ),
@@ -45,128 +44,98 @@ class GuidePageState extends State<GuidePage> {
                 child: Neumorphic(
                   style: NeumorphicStyle(
                       boxShape: NeumorphicBoxShape.roundRect(
-                          BorderRadius.circular(xxSmallSize(context))),
+                          BorderRadius.circular(standardSize(context))),
                       depth: 4,
                       intensity: 7,
                       color: appTheme(context).accentColor),
-                  child: DraggableScrollbar.rrect(
-                      backgroundColor: AppColors.primaryColor,
-                      alwaysVisibleScrollThumb: true,
-                      controller: _rrectController,
-                      child: ListView(
-                        controller: _rrectController,
-                        children: [
-                          Container(
-                            margin: EdgeInsets.only(top: smallSize(context),bottom: mediumSize(context)),
-                            child: Column(
+                  child: Container(
+                    margin: EdgeInsets.only(top: smallSize(context),bottom: mediumSize(context)),
+                    child: Column(
+                      children: [
+                        Container(
+                          margin:
+                              EdgeInsets.only(top: xSmallSize(context)),
+                          child: Center(
+                            child: Text(
+                              "نوع مسابقه :",
+                              style: theme.textTheme.subtitle1,
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ),
+                        Container(
+                          width: fullWidth(context) / 1.5,
+                          height: fullHeight(context) / 10,
+                          margin: EdgeInsets.symmetric(
+                              vertical: mediumSize(context)),
+                          child: Neumorphic(
+                            style: NeumorphicStyle(
+                              color:
+                              appTheme(context).accentColor,
+                              depth: 8,
+                              intensity: 16,
+                              boxShape:
+                              NeumorphicBoxShape.roundRect(
+                                  BorderRadius.circular(
+                                      12)),
+                            ),
+                            child: Row(
                               children: [
-                                Container(
-                                  margin:
-                                      EdgeInsets.only(top: xSmallSize(context)),
-                                  child: Center(
-                                    child: Text(
-                                      "نوع مسابقه :",
-                                      style: theme.textTheme.subtitle1,
-                                      textAlign: TextAlign.center,
-                                    ),
-                                  ),
-                                ),
-                                Material(
-                                  color: Colors.transparent,
-                                  child: Ink(
-                                    child: InkWell(
-                                      onTap: () {
-                                        setState(() {
-                                          showModalBottomSheet<void>(
-                                              context: context,
-                                              backgroundColor:
-                                              Colors.transparent,
-                                              builder: (BuildContext
-                                              context) =>
-                                                  bottomSheetWidget(context, (){
-                                                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => GuidePage()));
-                                                  }));
-                                        });
-                                      },
-                                      child: Container(
-                                        width: fullWidth(context) / 1.5,
-                                        height: fullHeight(context) / 10,
-                                        margin: EdgeInsets.symmetric(
-                                            vertical: mediumSize(context)),
-                                        child: Neumorphic(
-                                          style: NeumorphicStyle(
-                                            color:
-                                            appTheme(context).accentColor,
-                                            depth: 8,
-                                            intensity: 16,
-                                            boxShape:
-                                            NeumorphicBoxShape.roundRect(
-                                                BorderRadius.circular(
-                                                    12)),
-                                          ),
-                                          child: Row(
-                                            children: [
-                                              Expanded(
-                                                flex: 2,
-                                                child: Row(
-                                                  mainAxisAlignment:
-                                                  MainAxisAlignment
-                                                      .spaceAround,
-                                                  children: [
-                                                    SvgPicture.asset(
-                                                      'assets/arrow_down_icon.svg',
-                                                      height:
-                                                      smallSize(context),
-                                                      width:
-                                                      smallSize(context),
-                                                    ),
+                                Expanded(
+                                  flex: 2,
+                                  child: Row(
+                                    mainAxisAlignment:
+                                    MainAxisAlignment
+                                        .spaceAround,
+                                    children: [
+                                      SvgPicture.asset(
+                                        'assets/arrow_down_icon.svg',
+                                        height:
+                                        smallSize(context),
+                                        width:
+                                        smallSize(context),
+                                      ),
 //                              NeumorphicIcon(Icons.keyboard_arrow_down,size: (context),),
-                                                    Container(
-                                                      margin: EdgeInsets.only(
-                                                          right: mediumSize(
-                                                              context)),
-                                                      child: Center(
-                                                        child: NeumorphicText(
-                                                          "انتخاب کن",
-                                                          textStyle:
-                                                          NeumorphicTextStyle(
-                                                            fontFamily:
-                                                            "aviny",
-                                                            height: 1.8,
-                                                            fontSize: fullWidth(
-                                                                context) /
-                                                                23,
-                                                          ),
-                                                          textAlign: TextAlign
-                                                              .center,
-                                                          style:
-                                                          NeumorphicStyle(
-                                                              color: Colors
-                                                                  .black),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                              Expanded(
-                                                  flex: 1, child: SizedBox())
-                                            ],
+                                      Container(
+                                        margin: EdgeInsets.only(
+                                            right: mediumSize(
+                                                context)),
+                                        child: Center(
+                                          child: NeumorphicText(
+                                            "انتخاب کن",
+                                            textStyle:
+                                            NeumorphicTextStyle(
+                                              fontFamily:
+                                              "aviny",
+                                              height: 1.8,
+                                              fontSize: fullWidth(
+                                                  context) /
+                                                  23,
+                                            ),
+                                            textAlign: TextAlign
+                                                .center,
+                                            style:
+                                            NeumorphicStyle(
+                                                color: Colors
+                                                    .black),
                                           ),
                                         ),
                                       ),
-                                    ),
+                                    ],
                                   ),
                                 ),
-                                TextGuideWidget(context),
-                                TextGuideWidget(context),
-                                TextGuideWidget(context),
-                                TextGuideWidget(context),
+                                Expanded(
+                                    flex: 1, child: SizedBox())
                               ],
                             ),
                           ),
-                        ],
-                      )),
+                        ),
+                        TextGuideWidget(context),
+                        TextGuideWidget(context),
+                        TextGuideWidget(context),
+                      ],
+                    ),
+                  ),
                 ),
               ),
               Container(
@@ -190,7 +159,9 @@ class GuidePageState extends State<GuidePage> {
                       width: fullWidth(context) / 7,
                       height: fullWidth(context) / 7,
                       child: NeuButton(
-                        () {},
+                        () {
+                          Navigator.pop(context);
+                        },
                         icon: Icons.arrow_back_ios_rounded,
                       ),
                     ),
