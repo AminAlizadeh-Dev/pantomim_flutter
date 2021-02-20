@@ -29,7 +29,7 @@ class HomeState extends State<HomePage> {
                 child: Lottie.asset("assets/play.json"),
                 style: NeumorphicStyle(
                     boxShape: NeumorphicBoxShape.circle(),
-                    color: appTheme(context).accentColor,
+                    color: appTheme(context).variantColor,
                     depth: 5,
                     intensity: 10),
               ),
@@ -41,25 +41,49 @@ class HomeState extends State<HomePage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    NeuButton(
-                      () {},
-                      svg: ("assets/icon_repeat.svg"),
-                      size: mediumSize(context),
+                    SizedBox(
+                      height: fullWidth(context) / 6.9,
+                      width: fullWidth(context) / 6.9,
+                      child: NeuButton(
+                        () {},
+                        svg: ("assets/icon_rate.svg"),
+                        size: mediumSize(context),
+                      ),
                     ),
-                    NeuButton(
-                      () {},
-                      svg: ("assets/icon_repeat.svg"),
-                      size: mediumSize(context),
+                    SizedBox(
+                      height: fullWidth(context) / 6.9,
+                      width: fullWidth(context) / 6.9,
+                      child: NeuButton(
+                        () {},
+                        svg: ("assets/icon_add_word.svg"),
+                        size: mediumSize(context),
+                      ),
                     ),
-                    NeuButton(
-                      () {},
-                      svg: ("assets/icon_repeat.svg"),
-                      size: mediumSize(context),
+                    SizedBox(
+                      height: fullWidth(context) / 6.9,
+                      width: fullWidth(context) / 6.9,
+                      child: NeuButton(
+                        () {},
+                        svg: ("assets/power_icon.svg"),
+                        size: mediumSize(context),
+                      ),
                     ),
                   ],
                 ),
               ),
             ),
+            Align(
+              alignment: Alignment(-0.78,0.67),
+                child: SizedBox(
+              height: fullWidth(context) / 6.9,
+              width: fullWidth(context) / 6.9,
+              child: NeuButton(
+                () {},
+                svg: ("assets/power_icon.svg"),
+                radius: largeSize(context),
+                size: mediumSize(context),
+              ),
+            ))
           ],
         ),
       ),

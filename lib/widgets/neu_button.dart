@@ -11,6 +11,7 @@ class NeuButton extends StatelessWidget {
   IconData icon;
   Color color , colorSvg;
   TextAlign align;
+  double radius;
   String svg;
   double textHeight , size;
 
@@ -18,6 +19,7 @@ class NeuButton extends StatelessWidget {
       {this.icon,
       this.svg,
       this.title,
+        this.radius:12,
       this.align: TextAlign.center,
       this.color,
       this.colorSvg,
@@ -33,7 +35,7 @@ class NeuButton extends StatelessWidget {
           color: AppColors.accentColor,
           intensity: 1.2,
           depth: 4,
-          boxShape: NeumorphicBoxShape.roundRect(BorderRadius.circular(12))),
+          boxShape: NeumorphicBoxShape.roundRect(BorderRadius.circular(radius))),
       child: childNeuButton(context),
     );
   }
