@@ -27,9 +27,10 @@ class NewWordState extends State<NewWord> {
       child: Scaffold(
         backgroundColor: NeumorphicTheme.accentColor(context),
         appBar: AppBar(
+          leading: SizedBox(),
           elevation: 0,
           centerTitle: true,
-          title: Text("تعریف واژه جدید", style: theme.textTheme.headline3),
+          title: Text("تعریف واژه جدید", style: theme.textTheme.headline3.copyWith()),
         ),
         body: DraggableScrollbar.rrect(
           padding: EdgeInsets.only(bottom: xxSmallSize(context)),

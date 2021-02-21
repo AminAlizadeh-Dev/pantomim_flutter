@@ -23,8 +23,9 @@ class HomeState extends State<HomePage> {
       showDialog(
           barrierDismissible: true,
           context: context,
-          builder: (BuildContext context) => dialogWidget(context,
-                  "برای خروج از بازی مطمئن هستید ؟", ()=>exit(0),() {
+          builder: (BuildContext context) => dialogWidget(
+                  context, "برای خروج از بازی مطمئن هستید ؟", () => exit(0),
+                  () {
                 Navigator.pop(context);
               }));
     }
@@ -41,7 +42,8 @@ class HomeState extends State<HomePage> {
               width: fullWidth(context) / 2.55,
               child: NeumorphicButton(
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=> NewGame()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => NewGame()));
                 },
                 child: Lottie.asset("assets/play.json"),
                 style: NeumorphicStyle(
@@ -63,7 +65,7 @@ class HomeState extends State<HomePage> {
                       width: fullWidth(context) / 6.9,
                       child: NeuButton(
                         () {},
-                        svg: ("assets/icon_rate.svg"),
+                        svg: ("assets/icon_music.svg"),
                         size: mediumSize(context),
                       ),
                     ),
@@ -101,12 +103,6 @@ class HomeState extends State<HomePage> {
                 child: SizedBox(
                   height: fullWidth(context) / 6.9,
                   width: fullWidth(context) / 6.9,
-                  child: NeuButton(
-                    () {},
-                    svg: ("assets/icon_music.svg"),
-                    radius: largeSize(context),
-                    size: mediumSize(context),
-                  ),
                 ))
           ],
         ),
