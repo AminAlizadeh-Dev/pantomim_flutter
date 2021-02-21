@@ -23,6 +23,7 @@ class RoundPage extends StatefulWidget {
 class RoundPageState extends State<RoundPage> {
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     void roleDialog() {
       showDialog(
         context: context,
@@ -243,11 +244,9 @@ class RoundPageState extends State<RoundPage> {
                         )),
                     child: Container(
                       alignment: Alignment.center,
-                      child: Text('دور 1 از 3',
-                          style: appTheme(context)
-                              .textTheme
-                              .headline3
-                              .copyWith(color: appTheme(context).baseColor)),
+                      child: Text("دور 1 از 3",
+                          style: theme.textTheme.headline3
+                              .copyWith(fontSize: headline3Size(context) / 1.4)),
                     ),
                   ),
                 ),
