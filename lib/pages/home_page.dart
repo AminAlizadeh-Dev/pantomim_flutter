@@ -49,61 +49,38 @@ class HomeState extends State<HomePage> {
                 style: NeumorphicStyle(
                     boxShape: NeumorphicBoxShape.circle(),
                     color: appTheme(context).variantColor,
-                    depth: 5,
-                    intensity: 10),
+                    depth: 4,
+                    intensity: 8),
               ),
             )),
             Container(
-              margin: EdgeInsets.only(bottom: standardSize(context)),
+              margin: EdgeInsets.all(standardSize(context)),
               child: Align(
-                alignment: Alignment.bottomCenter,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    SizedBox(
-                      height: fullWidth(context) / 6.9,
-                      width: fullWidth(context) / 6.9,
-                      child: NeuButton(
-                        () {},
-                        svg: ("assets/icon_music.svg"),
-                        size: mediumSize(context),
-                      ),
-                    ),
-                    SizedBox(
-                      height: fullWidth(context) / 6.9,
-                      width: fullWidth(context) / 6.9,
-                      child: NeuButton(
-                        () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => NewWord()));
-                        },
-                        svg: ("assets/icon_add_word.svg"),
-                        size: mediumSize(context),
-                      ),
-                    ),
-                    SizedBox(
-                      height: fullWidth(context) / 6.9,
-                      width: fullWidth(context) / 6.9,
-                      child: NeuButton(
-                        () {
-                          exitDialog();
-                        },
-                        svg: ("assets/power_icon.svg"),
-                        size: mediumSize(context),
-                      ),
-                    ),
-                  ],
+                alignment: Alignment.bottomRight,
+                child: SizedBox(
+                  height: fullWidth(context) / 6.9,
+                  width: fullWidth(context) / 6.9,
+                  child: NeuButton(
+                    () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => NewWord()));
+                    },
+                    svg: ("assets/icon_add_word.svg"),
+                    size: mediumSize(context),
+                  ),
                 ),
               ),
             ),
             Align(
-                alignment: Alignment(-0.78, 0.67),
-                child: SizedBox(
-                  height: fullWidth(context) / 6.9,
-                  width: fullWidth(context) / 6.9,
-                ))
+              alignment: Alignment.bottomCenter,
+              child: Container(
+                margin: EdgeInsets.only(bottom: standardSize(context)),
+                child: Text("ادا بــــــازی",
+                    style: theme.textTheme.headline3.copyWith(
+                        fontFamily: "aviny",
+                        fontSize: largeSize(context) / 1.1)),
+              ),
+            )
           ],
         ),
       ),
