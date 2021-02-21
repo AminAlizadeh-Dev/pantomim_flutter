@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:lottie/lottie.dart';
 import 'package:pantomim_flutter/pages/home_page.dart';
 import 'package:pantomim_flutter/pages/round_page.dart';
 import 'package:pantomim_flutter/pages/speed_score_page.dart';
@@ -126,14 +127,9 @@ class WinnerState extends State<WinnerPage> {
                       )),
                   child: Container(
                     alignment: Alignment.center,
-                    child: Text(
-                      "بــرنــده !",
-                      textAlign: TextAlign.center,
-                      style: appTheme(context).textTheme.headline3.copyWith(
-                            color: appTheme(context).baseColor,
-                            fontSize: fullWidth(context) / 13,
-                          ),
-                    ),
+                    child: Text("بــرنــده !",
+                        style: theme.textTheme.headline3
+                            .copyWith(fontSize: headline3Size(context) / 1.4)),
                   ),
                 ),
               ),
@@ -161,6 +157,13 @@ class WinnerState extends State<WinnerPage> {
                     ),
                   ],
                 ),
+              ),
+            ),
+            Align(
+              alignment: Alignment(0,0),
+              child: Container(
+                width: fullWidth(context) / 1,
+                child: Lottie.asset("assets/winner.json"),
               ),
             ),
           ],
