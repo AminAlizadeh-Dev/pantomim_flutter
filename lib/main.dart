@@ -9,6 +9,7 @@ import 'package:pantomim_flutter/pages/new_word_page.dart';
 import 'package:pantomim_flutter/pages/round_page.dart';
 import 'package:pantomim_flutter/pages/select_topic_page.dart';
 import 'package:pantomim_flutter/pages/speed_score_page.dart';
+import 'package:pantomim_flutter/pages/splash_page.dart';
 import 'package:pantomim_flutter/pages/start_game_page.dart';
 import 'package:pantomim_flutter/pages/sum_points_page.dart';
 import 'package:pantomim_flutter/pages/winner_page.dart';
@@ -18,6 +19,7 @@ import 'package:pantomim_flutter/theme/colors.dart';
 void main() {
   runApp(MaterialApp(debugShowCheckedModeBanner: false, home: MyApp()));
 }
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

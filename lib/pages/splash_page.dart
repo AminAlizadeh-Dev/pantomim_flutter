@@ -38,14 +38,11 @@ class SplashState extends State<SplashPage> {
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-        statusBarColor: Color(0xffecf2f3),
-        statusBarIconBrightness: Brightness.dark));
     var theme = Theme.of(context);
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
-        backgroundColor: Color(0xffecf2f3),
+        backgroundColor: appTheme(context).accentColor,
         body: Stack(
           children: [
             Center(
