@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:lottie/lottie.dart';
+import 'package:pantomim_flutter/pages/new_game_page.dart';
 import 'package:pantomim_flutter/theme/app_theme.dart';
 import 'package:pantomim_flutter/theme/colors.dart';
 import 'package:pantomim_flutter/theme/dimense.dart';
@@ -72,7 +73,10 @@ class HomeState extends State<HomePage> {
               child: SizedBox(
                 height: fullHeight(context) / 2.4,
                 width: fullWidth(context) / 2.4,
-                child: Lottie.asset("assets/play.json"),
+                child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=> NewGame()));
+                    }, child: Lottie.asset("assets/play.json")),
               ),
             ),
             Align(

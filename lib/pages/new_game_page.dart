@@ -53,7 +53,7 @@ class NewGameState extends State<NewGame> {
                         width: fullWidth(context) / 1.1,
                         height: fullHeight(context) / 1.4,
                         margin: EdgeInsets.only(
-                            bottom: fullWidth(context)/8.5, top: smallSize(context)),
+                            bottom: fullWidth(context)/11.5, top: smallSize(context)),
                         child: Neumorphic(
                           style: NeumorphicStyle(
                               boxShape: NeumorphicBoxShape.roundRect(
@@ -352,8 +352,8 @@ class NewGameState extends State<NewGame> {
                         ),
                       ),
                       Container(
-                        // margin:
-                        //     EdgeInsets.symmetric(horizontal: mediumSize(context)),
+                         margin:
+                             EdgeInsets.only(bottom: largeSize(context)),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [

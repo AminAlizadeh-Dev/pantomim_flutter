@@ -11,6 +11,8 @@ import 'package:pantomim_flutter/widgets/point_button.dart';
 import 'package:pantomim_flutter/widgets/text_field_widgets.dart';
 import 'package:pantomim_flutter/widgets/word_detail_widget.dart';
 
+import 'home_page.dart';
+
 class NewWord extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => NewWordState();
@@ -114,7 +116,9 @@ class NewWordState extends State<NewWord> {
                   child: NeumorphicButton(
                     padding: EdgeInsets.symmetric(
                         horizontal: fullWidth(context) / 10, vertical: 0),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> HomePage()));
+                    },
                     style: NeumorphicStyle(
                       color: appTheme(context).accentColor,
                       depth: 6,
