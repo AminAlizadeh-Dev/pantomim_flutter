@@ -1,8 +1,12 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:lottie/lottie.dart';
+import 'package:page_transition/page_transition.dart';
+import 'package:pantomim_flutter/pages/home_page.dart';
 import 'package:pantomim_flutter/theme/app_theme.dart';
 import 'package:pantomim_flutter/theme/dimense.dart';
 import 'package:rive/rive.dart';
@@ -32,6 +36,18 @@ class SplashState extends State<SplashPage> {
           artboard.addController(_controller = SimpleAnimation('idle'));
           setState(() => _riveArtboard = artboard);
         }
+      },
+    );
+    Timer(
+      Duration(seconds: 6),
+      () {
+        Navigator.pushReplacement(
+          context,
+          PageTransition(
+              type: PageTransitionType.fade,
+              child: HomePage(),
+              duration: Duration(milliseconds: 2000)),
+        );
       },
     );
   }
