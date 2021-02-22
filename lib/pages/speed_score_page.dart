@@ -21,6 +21,7 @@ class SpeedScoreState extends State<SpeedScore> {
   ScrollController(initialScrollOffset: 1.0);
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
@@ -142,13 +143,9 @@ class SpeedScoreState extends State<SpeedScore> {
                           )),
                       child: Container(
                         alignment: Alignment.center,
-                        child: Text(
-                          'امتیازات این دور:  35',
-                          textAlign: TextAlign.center,
-                          style: appTheme(context).textTheme.headline3.copyWith(
-                              color: appTheme(context).baseColor,
-                              fontSize: fullWidth(context) / 11),
-                        ),
+                        child: Text("امتیازات این دور: 35",
+                            style: theme.textTheme.headline3
+                                .copyWith(fontSize: headline3Size(context) / 1.4)),
                       ),
                     ),
                   ),

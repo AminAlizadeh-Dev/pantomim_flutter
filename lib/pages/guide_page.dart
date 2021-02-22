@@ -30,7 +30,9 @@ class GuidePageState extends State<GuidePage> {
           elevation: 0,
           leading: SizedBox(),
           centerTitle: true,
-          title: Text("راهنما", style: theme.textTheme.headline3),
+          title: Text("راهنما",
+              style: theme.textTheme.headline3
+                  .copyWith(fontSize: headline3Size(context) / 1.4)),
         ),
         body: SingleChildScrollView(
           physics: NeverScrollableScrollPhysics(),
@@ -38,7 +40,7 @@ class GuidePageState extends State<GuidePage> {
             children: [
               Container(
                 width: fullWidth(context) / 1.1,
-                height: fullHeight(context) / 1.45,
+                height: fullHeight(context) / 1.4,
                 margin: EdgeInsets.only(
                     bottom: standardSize(context), top: smallSize(context),right: standardSize(context),left: standardSize(context)),
                 child: Neumorphic(
@@ -56,7 +58,7 @@ class GuidePageState extends State<GuidePage> {
                         children: [
                           Container(
                             margin:
-                                EdgeInsets.only(top: xSmallSize(context)),
+                                EdgeInsets.only(top: xxSmallSize(context)),
                             child: Center(
                               child: Text(
                                 "نوع مسابقه :",
@@ -67,9 +69,9 @@ class GuidePageState extends State<GuidePage> {
                           ),
                           Container(
                             width: fullWidth(context) / 1.5,
-                            height: fullHeight(context) / 10,
+                            height: fullHeight(context) / 15,
                             margin: EdgeInsets.symmetric(
-                                vertical: mediumSize(context)),
+                                vertical: xSmallSize(context)),
                             child: Neumorphic(
                               style: NeumorphicStyle(
                                 color:
@@ -97,7 +99,6 @@ class GuidePageState extends State<GuidePage> {
                                           width:
                                           smallSize(context),
                                         ),
-//                              NeumorphicIcon(Icons.keyboard_arrow_down,size: (context),),
                                         Container(
                                           margin: EdgeInsets.only(
                                               right: mediumSize(
@@ -134,7 +135,8 @@ class GuidePageState extends State<GuidePage> {
                           ),
                           TextGuideWidget(context),
                           TextGuideWidget(context),
-                          TextGuideWidget(context)
+                          TextGuideWidget(context),
+                          TextGuideWidget(context),
                         ],
                       ),
                     ),
@@ -165,7 +167,8 @@ class GuidePageState extends State<GuidePage> {
                         () {
                           Navigator.pop(context);
                         },
-                        icon: Icons.arrow_back_ios_rounded,
+                        svg: "assets/power_icon.svg",
+                        size: mediumSize(context),
                       ),
                     ),
                   ],

@@ -27,7 +27,7 @@ class EndGameState extends State<EndGamePage> {
                   horizontal: xlargeSize(context),
                 ),
                 width: fullWidth(context),
-                height: fullHeight(context) / 7,
+                height: fullHeight(context) / 9,
                 child: Stack(
                   overflow: Overflow.visible,
                   children: [

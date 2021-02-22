@@ -38,19 +38,11 @@ class NewGameState extends State<NewGame> {
               backgroundColor: NeumorphicTheme.accentColor(context),
               appBar: AppBar(
                 elevation: 0,
+                leading: SizedBox(),
                 centerTitle: true,
-                title: NeumorphicText(
-                  'شروع مسابقه جدید',
-                  textAlign: TextAlign.center,
-                  style: NeumorphicStyle(
-                    depth: 4, //cu// stomize depth here
-                    color: appTheme(context).baseColor, //customize color here
-                  ),
-                  textStyle: NeumorphicTextStyle(
-                    fontFamily: 'kalameh',
-                    fontSize: fullWidth(context) / 14, //// customize size here
-                  ),
-                ),
+                title: Text("شروع مسابقه جدید",
+                    style: theme.textTheme.headline3
+                        .copyWith(fontSize: headline3Size(context) / 1.4)),
               ),
               body: SingleChildScrollView(
                 physics: NeverScrollableScrollPhysics(),
@@ -116,7 +108,7 @@ class NewGameState extends State<NewGame> {
                                               },
                                               child: Container(
                                                 width: fullWidth(context) / 1.5,
-                                                height: fullHeight(context) / 10,
+                                                height: fullHeight(context) / 15,
                                                 margin: EdgeInsets.symmetric(
                                                     vertical: mediumSize(context)),
                                                 child: Neumorphic(

@@ -18,7 +18,8 @@ class NewWord extends StatefulWidget {
 
 class NewWordState extends State<NewWord> {
   ScrollController _rrectController =
-  ScrollController(initialScrollOffset: 50.0);
+      ScrollController(initialScrollOffset: 50.0);
+
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
@@ -30,16 +31,21 @@ class NewWordState extends State<NewWord> {
           leading: SizedBox(),
           elevation: 0,
           centerTitle: true,
-          title: Text("تعریف واژه جدید", style: theme.textTheme.headline3.copyWith()),
+          title: Text("تعریف واژه جدید",
+              style: theme.textTheme.headline3
+                  .copyWith(fontSize: headline3Size(context) / 1.4)),
+          actions: [
+            IconButton(icon: Icon(Icons.arrow_back_ios_rounded , color: AppColors.primaryColor, size: standardSize(context),), onPressed: (){
+              Navigator.pop(context);
+            })
+          ],
         ),
         body: DraggableScrollbar.rrect(
           padding: EdgeInsets.only(bottom: xxSmallSize(context)),
           backgroundColor: AppColors.primaryColor,
           alwaysVisibleScrollThumb: true,
           controller: _rrectController,
-          child: ListView(
-              controller: _rrectController,
-              children: [
+          child: ListView(controller: _rrectController, children: [
             Column(
               children: [
                 Center(
@@ -113,8 +119,8 @@ class NewWordState extends State<NewWord> {
                       color: appTheme(context).accentColor,
                       depth: 6,
                       intensity: 10,
-                      boxShape:
-                          NeumorphicBoxShape.roundRect(BorderRadius.circular(12)),
+                      boxShape: NeumorphicBoxShape.roundRect(
+                          BorderRadius.circular(12)),
                     ),
                     child: NeumorphicText(
                       "ذخیره",
@@ -128,6 +134,8 @@ class NewWordState extends State<NewWord> {
                     ),
                   ),
                 ),
+                wordDetailWidget(context, "پرتقال", "امتیاز 4", "4"),
+                wordDetailWidget(context, "پرتقال", "امتیاز 4", "4"),
                 wordDetailWidget(context, "پرتقال", "امتیاز 4", "4"),
                 wordDetailWidget(context, "پرتقال", "امتیاز 4", "4"),
                 wordDetailWidget(context, "پرتقال", "امتیاز 4", "4"),
