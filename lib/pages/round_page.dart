@@ -4,16 +4,15 @@ import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pantomim_flutter/pages/home_page.dart';
 import 'package:pantomim_flutter/pages/select_topic_page.dart';
-import 'package:pantomim_flutter/pages/speed_score_page.dart';
-import 'package:pantomim_flutter/pages/start_game_page.dart';
 import 'package:pantomim_flutter/theme/app_theme.dart';
 import 'package:pantomim_flutter/theme/colors.dart';
 import 'package:pantomim_flutter/theme/dimense.dart';
 import 'package:pantomim_flutter/widgets/dialog_widget.dart';
 import 'package:pantomim_flutter/widgets/neu_button.dart';
 import 'package:pantomim_flutter/widgets/role_box.dart';
-import 'package:pantomim_flutter/widgets/score_box.dart';
 import 'package:pantomim_flutter/widgets/team_details_box.dart';
+
+import '../local_data.dart';
 
 void roleDialog(BuildContext context) {
   showDialog(
@@ -200,26 +199,18 @@ class RoundPageState extends State<RoundPage> {
                   ),
                   child: Container(
                     margin: EdgeInsets.only(
-                        top: fullWidth(context) / 8,
+                        top: mediumSize(context),
                         bottom: xxSmallSize(context)),
-                    child: SingleChildScrollView(
-                      physics: BouncingScrollPhysics(),
-                      child: Column(
-                        children: [
-                          teamDetailBox(context, 'تیم اول', '36 امتیاز',
-                              'assets/play_icon.svg'),
-                          teamDetailBox(
-                              context, 'تیم دوم', '41 امتیاز', ''),
-                          teamDetailBox(
-                              context, 'تیم سوم', '33 امتیاز', ''),
-                          teamDetailBox(
-                              context, 'تیم چهارم', '22 امتیاز', ''),
-                          teamDetailBox(
-                              context, 'تیم پنجم', '26 امتیاز', ''),
-                          teamDetailBox(
-                              context, 'تیم ششم', '21 امتیاز', ''),
-                        ],
-                      ),
+                    height: fullHeight(context) / 5,
+                    width: fullWidth(context),
+                    child: ListView.builder(
+                      physics: NeverScrollableScrollPhysics(),
+                      addAutomaticKeepAlives: true,
+                      scrollDirection: Axis.vertical,
+                      itemCount: teamData().length,
+                      shrinkWrap: true,
+                      itemBuilder: (context, index) =>
+                          (teamDetailBox(teamData()[index], context)),
                     ),
                   ),
                 ),

@@ -13,7 +13,6 @@ class SumPointsPage extends StatefulWidget {
 class SumPointsState extends State<SumPointsPage> {
   @override
   Widget build(BuildContext context) {
-    var theme = Theme.of(context);
     return Directionality(
       textDirection: TextDirection.ltr,
       child: Scaffold(
@@ -125,7 +124,7 @@ class SumPointsState extends State<SumPointsPage> {
                                       EdgeInsets.only(top: smallSize(context)),
                                   child: Text(
                                     "! تـبـریــک",
-                                    style: theme.textTheme.subtitle2.copyWith(
+                                    style: appTheme(context).textTheme.subtitle2.copyWith(
                                         color: Color(0xff388E3C),
                                         height: 1,
                                         fontSize: fullWidth(context) / 12),
@@ -134,7 +133,7 @@ class SumPointsState extends State<SumPointsPage> {
                                 Container(
                                   child: Text(
                                     "3 امـتیاز گـرفتی",
-                                    style: theme.textTheme.bodyText2.copyWith(
+                                    style: appTheme(context).textTheme.bodyText2.copyWith(
                                       color: Color(0xff388E3C),
                                     ),
                                   ),
@@ -182,7 +181,6 @@ class SumPointsState extends State<SumPointsPage> {
 
 Widget negativeScoreWidget(
     BuildContext context, String textExplanation, String negativeScore) {
-  var theme = Theme.of(context);
   return Align(
     alignment: Alignment.centerLeft,
     child: Container(
@@ -204,7 +202,7 @@ Widget negativeScoreWidget(
                 child: Text(
                   textExplanation,
                   textAlign: TextAlign.right,
-                  style: theme.textTheme.caption,
+                  style: appTheme(context).textTheme.caption,
                 ),
               ),
             ),
@@ -222,7 +220,7 @@ Widget negativeScoreWidget(
                 child: Text(
                   negativeScore,
                   textAlign: TextAlign.center,
-                  style: theme.textTheme.bodyText2
+                  style: appTheme(context).textTheme.bodyText2
                       .copyWith(color: Color(0xffd81010)),
                 ),
               ),

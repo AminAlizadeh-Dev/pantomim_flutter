@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:pantomim_flutter/local_data.dart';
 import 'package:pantomim_flutter/theme/app_theme.dart';
 import 'package:pantomim_flutter/theme/colors.dart';
 import 'package:pantomim_flutter/theme/dimense.dart';
@@ -123,10 +124,21 @@ class GuidePageState extends State<GuidePage> {
                               ),
                             ),
                           ),
-                          TextGuideWidget(context),
-                          TextGuideWidget(context),
-                          TextGuideWidget(context),
-                          TextGuideWidget(context),
+                          Container(
+                            margin: EdgeInsets.only(
+                                top: smallSize(context),
+                                bottom: xxSmallSize(context)),
+                            height: fullHeight(context) / 2,
+                            width: fullWidth(context),
+                            child: ListView.builder(
+                              addAutomaticKeepAlives: true,
+                              scrollDirection: Axis.vertical,
+                              itemCount: guideType().length,
+                              shrinkWrap: true,
+                              itemBuilder: (context, index) =>
+                              (textGuideWidget(guideType()[index], context)),
+                            ),
+                          ),
                         ],
                       ),
                     ),

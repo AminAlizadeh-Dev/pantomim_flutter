@@ -47,7 +47,6 @@ class WinnerState extends State<WinnerPage> {
 
   @override
   Widget build(BuildContext context) {
-    var theme = Theme.of(context);
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
@@ -128,7 +127,7 @@ class WinnerState extends State<WinnerPage> {
                   child: Container(
                     alignment: Alignment.center,
                     child: Text("بــرنــده !",
-                        style: theme.textTheme.headline3
+                        style: appTheme(context).textTheme.headline3
                             .copyWith(fontSize: headline3Size(context) / 1.4)),
                   ),
                 ),
@@ -176,7 +175,6 @@ class WinnerState extends State<WinnerPage> {
 ////////////////////// Winner Widget //////////////////////
 
 Widget winnerWidget(BuildContext context, String text, String svg) {
-  var theme = Theme.of(context);
   return Container(
     margin:
         EdgeInsets.only(right: largeSize(context), top: standardSize(context)),
@@ -200,7 +198,7 @@ Widget winnerWidget(BuildContext context, String text, String svg) {
                     child: Text(
                       text,
                       textAlign: TextAlign.end,
-                      style: theme.textTheme.caption,
+                      style: appTheme(context).textTheme.caption,
                     ),
                   ),
                 ),

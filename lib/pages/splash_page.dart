@@ -54,7 +54,6 @@ class SplashState extends State<SplashPage> {
 
   @override
   Widget build(BuildContext context) {
-    var theme = Theme.of(context);
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
@@ -75,7 +74,7 @@ class SplashState extends State<SplashPage> {
               child: Container(
                 margin: EdgeInsets.only(bottom: largeSize(context)),
                 child: Text("ادا بــــــازی",
-                    style: theme.textTheme.headline3.copyWith(
+                    style: appTheme(context).textTheme.headline3.copyWith(
                         fontFamily: "aviny",
                         fontSize: largeSize(context) / 1.1)),
               ),
@@ -86,7 +85,7 @@ class SplashState extends State<SplashPage> {
                 margin: EdgeInsets.only(bottom: smallSize(context)),
                 child: Text("Version.0.0.1",
                     style:
-                        theme.textTheme.caption.copyWith(color: Colors.grey)),
+                        appTheme(context).textTheme.caption.copyWith(color: Colors.grey)),
               ),
             ),
             Align(

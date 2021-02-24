@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:pantomim_flutter/local_data.dart';
 import 'package:pantomim_flutter/theme/dimense.dart';
 import 'package:pantomim_flutter/widgets/neu_app_bar.dart';
 import 'package:pantomim_flutter/widgets/select_topic_widgets.dart';
@@ -28,16 +29,16 @@ class SelectTopicState extends State<SelectTopic> {
                 .copyWith(fontSize: headline3Size(context) / 1.4),
           ),
         ),
-        body: SingleChildScrollView(
-          physics: BouncingScrollPhysics(),
-          child: Column(
-            children: [
-              selectTopicWidgets(context, "تکنولوژی"),
-              selectTopicWidgets(context, "سریال"),
-              selectTopicWidgets(context, "ورزش"),
-              selectTopicWidgets(context, "سینما"),
-              selectTopicWidgets(context, "ادبیات"),
-            ],
+        body: Container(
+          height: fullHeight(context) / 7,
+          width: fullWidth(context),
+          child: ListView.builder(
+            addAutomaticKeepAlives: true,
+            scrollDirection: Axis.horizontal,
+            itemCount: topicData().length,
+            shrinkWrap: true,
+            itemBuilder: (context, index) =>
+                selectTopicWidgets(topicData()[index], context),
           ),
         ),
       ),

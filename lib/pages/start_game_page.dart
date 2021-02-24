@@ -17,7 +17,6 @@ class StartGamePage extends StatefulWidget {
 class StartGamePageState extends State<StartGamePage> {
   @override
   Widget build(BuildContext context) {
-    var theme = Theme.of(context);
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
@@ -93,7 +92,7 @@ class StartGamePageState extends State<StartGamePage> {
                   child: Center(
                     child: Text(
                       "تعداد دور",
-                      style: theme.textTheme.subtitle1,
+                      style: appTheme(context).textTheme.subtitle1,
                       textAlign: TextAlign.center,
                     ),
                   ),
@@ -109,14 +108,14 @@ class StartGamePageState extends State<StartGamePage> {
               Align(
                 alignment: Alignment(0,-0.1),
                 child: Text("صندلی",
-                  style: theme.textTheme.headline3,
+                  style: appTheme(context).textTheme.headline3,
                 ),
               ),
               Align(
                 alignment: Alignment(0,-0.8),
                 child: Container(
                   child: Text("01:59",
-                    style: theme.textTheme.subtitle2.copyWith(fontSize: subTitleSize(context) / 0.7),
+                    style: appTheme(context).textTheme.subtitle2.copyWith(fontSize: subTitleSize(context) / 0.7),
                   ),
                 ),
               ),

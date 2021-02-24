@@ -13,7 +13,6 @@ class EndGamePage extends StatefulWidget {
 class EndGameState extends State<EndGamePage> {
   @override
   Widget build(BuildContext context) {
-    var theme = Theme.of(context);
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
@@ -76,7 +75,7 @@ class EndGameState extends State<EndGamePage> {
                                 child: Text(
                                   "پــایان مسابقه",
                                   textAlign: TextAlign.center,
-                                  style: theme.textTheme.subtitle2.copyWith(
+                                  style: appTheme(context).textTheme.subtitle2.copyWith(
                                       color: Color(0xff388E3C),
                                       fontSize: fullWidth(context) / 12,
                                       height: 1),
@@ -88,7 +87,7 @@ class EndGameState extends State<EndGamePage> {
                                 child: Text(
                                   "بریم برای دیدن نتـایج !",
                                   textAlign: TextAlign.center,
-                                  style: theme.textTheme.bodyText2.copyWith(
+                                  style: appTheme(context).textTheme.bodyText2.copyWith(
                                     color: Color(0xff388E3C),
                                   ),
                                 ),

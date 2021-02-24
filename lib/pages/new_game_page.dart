@@ -27,7 +27,6 @@ class NewGameState extends State<NewGame> {
 
   @override
   Widget build(BuildContext context) {
-    var theme = Theme.of(context);
     return GestureDetector(
       onTap: (){
         closeKeybored(context);
@@ -41,7 +40,7 @@ class NewGameState extends State<NewGame> {
                 leading: SizedBox(),
                 centerTitle: true,
                 title: Text("شروع مسابقه جدید",
-                    style: theme.textTheme.headline3
+                    style: appTheme(context).textTheme.headline3
                         .copyWith(fontSize: headline3Size(context) / 1.4)),
               ),
               body: SingleChildScrollView(
