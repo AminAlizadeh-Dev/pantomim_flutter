@@ -18,31 +18,35 @@ class GuidePage extends StatefulWidget {
 }
 
 class GuidePageState extends State<GuidePage> {
-
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
-    return Directionality(
-      textDirection: TextDirection.rtl,
-      child: Scaffold(
-        backgroundColor: NeumorphicTheme.accentColor(context),
-        appBar: AppBar(
-          elevation: 0,
-          leading: SizedBox(),
-          centerTitle: true,
-          title: Text("راهنما",
-              style: theme.textTheme.headline3
-                  .copyWith(fontSize: headline3Size(context) / 1.4)),
-        ),
-        body: SingleChildScrollView(
-          physics: NeverScrollableScrollPhysics(),
-          child: Column(
+    return SafeArea(
+      top: false,
+      bottom: true,
+      child: Directionality(
+        textDirection: TextDirection.rtl,
+        child: Scaffold(
+          backgroundColor: NeumorphicTheme.accentColor(context),
+          appBar: AppBar(
+            elevation: 0,
+            leading: SizedBox(),
+            centerTitle: true,
+            title: Text("راهنما",
+                style: theme.textTheme.headline3
+                    .copyWith(fontSize: headline3Size(context) / 1.4)),
+          ),
+          body: ListView(
+            physics: NeverScrollableScrollPhysics(),
             children: [
               Container(
                 width: fullWidth(context) / 1.1,
                 height: fullHeight(context) / 1.4,
                 margin: EdgeInsets.only(
-                    bottom: standardSize(context), top: smallSize(context),right: standardSize(context),left: standardSize(context)),
+                    bottom: standardSize(context),
+                    top: smallSize(context),
+                    right: standardSize(context),
+                    left: standardSize(context)),
                 child: Neumorphic(
                   style: NeumorphicStyle(
                       boxShape: NeumorphicBoxShape.roundRect(
@@ -53,12 +57,12 @@ class GuidePageState extends State<GuidePage> {
                   child: SingleChildScrollView(
                     physics: BouncingScrollPhysics(),
                     child: Container(
-                      margin: EdgeInsets.only(top: smallSize(context),bottom: mediumSize(context)),
+                      margin: EdgeInsets.only(
+                          top: smallSize(context), bottom: mediumSize(context)),
                       child: Column(
                         children: [
                           Container(
-                            margin:
-                                EdgeInsets.only(top: xxSmallSize(context)),
+                            margin: EdgeInsets.only(top: xxSmallSize(context)),
                             child: Center(
                               child: Text(
                                 "نوع مسابقه :",
@@ -74,14 +78,11 @@ class GuidePageState extends State<GuidePage> {
                                 vertical: xSmallSize(context)),
                             child: Neumorphic(
                               style: NeumorphicStyle(
-                                color:
-                                appTheme(context).accentColor,
+                                color: appTheme(context).accentColor,
                                 depth: 8,
                                 intensity: 16,
-                                boxShape:
-                                NeumorphicBoxShape.roundRect(
-                                    BorderRadius.circular(
-                                        12)),
+                                boxShape: NeumorphicBoxShape.roundRect(
+                                    BorderRadius.circular(12)),
                               ),
                               child: Row(
                                 children: [
@@ -89,46 +90,35 @@ class GuidePageState extends State<GuidePage> {
                                     flex: 2,
                                     child: Row(
                                       mainAxisAlignment:
-                                      MainAxisAlignment
-                                          .spaceAround,
+                                      MainAxisAlignment.spaceAround,
                                       children: [
                                         SvgPicture.asset(
                                           'assets/arrow_down_icon.svg',
-                                          height:
-                                          smallSize(context),
-                                          width:
-                                          smallSize(context),
+                                          height: smallSize(context),
+                                          width: smallSize(context),
                                         ),
                                         Container(
                                           margin: EdgeInsets.only(
-                                              right: mediumSize(
-                                                  context)),
+                                              right: mediumSize(context)),
                                           child: Center(
                                             child: NeumorphicText(
                                               "انتخاب کن",
-                                              textStyle:
-                                              NeumorphicTextStyle(
-                                                fontFamily:
-                                                "aviny",
+                                              textStyle: NeumorphicTextStyle(
+                                                fontFamily: "aviny",
                                                 height: 1.8,
-                                                fontSize: fullWidth(
-                                                    context) /
-                                                    23,
+                                                fontSize:
+                                                fullWidth(context) / 23,
                                               ),
-                                              textAlign: TextAlign
-                                                  .center,
-                                              style:
-                                              NeumorphicStyle(
-                                                  color: Colors
-                                                      .black),
+                                              textAlign: TextAlign.center,
+                                              style: NeumorphicStyle(
+                                                  color: Colors.black),
                                             ),
                                           ),
                                         ),
                                       ],
                                     ),
                                   ),
-                                  Expanded(
-                                      flex: 1, child: SizedBox())
+                                  Expanded(flex: 1, child: SizedBox())
                                 ],
                               ),
                             ),
@@ -145,10 +135,10 @@ class GuidePageState extends State<GuidePage> {
               ),
               Container(
                 margin: EdgeInsets.only(
-                    right: largeSize(context),
-                    top: largeSize(context),
-                    left: largeSize(context),
-                    bottom: xlargeSize(context)),
+                  right: largeSize(context),
+                  top: xSmallSize(context),
+                  left: largeSize(context),
+                ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -156,7 +146,7 @@ class GuidePageState extends State<GuidePage> {
                       width: fullWidth(context) / 7,
                       height: fullWidth(context) / 7,
                       child: NeuButton(
-                        () {},
+                            () {},
                         icon: Icons.arrow_forward_ios_rounded,
                       ),
                     ),
@@ -164,7 +154,7 @@ class GuidePageState extends State<GuidePage> {
                       width: fullWidth(context) / 7,
                       height: fullWidth(context) / 7,
                       child: NeuButton(
-                        () {
+                            () {
                           Navigator.pop(context);
                         },
                         svg: "assets/power_icon.svg",
@@ -174,6 +164,7 @@ class GuidePageState extends State<GuidePage> {
                   ],
                 ),
               ),
+              SizedBox(height: largeSize(context),),
             ],
           ),
         ),
