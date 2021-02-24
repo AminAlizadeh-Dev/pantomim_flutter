@@ -1,16 +1,11 @@
-import 'package:draggable_scrollbar/draggable_scrollbar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:pantomim_flutter/local_data.dart';
 import 'package:pantomim_flutter/theme/app_theme.dart';
-import 'package:pantomim_flutter/theme/colors.dart';
 import 'package:pantomim_flutter/theme/dimense.dart';
-import 'package:pantomim_flutter/widgets/bottom_sheet_widget.dart';
 import 'package:pantomim_flutter/widgets/neu_button.dart';
-import 'package:pantomim_flutter/widgets/num_picker_buttons.dart';
-import 'package:pantomim_flutter/widgets/team_name_picker.dart';
 import 'package:pantomim_flutter/widgets/text_guide_widget.dart';
 
 class GuidePage extends StatefulWidget {

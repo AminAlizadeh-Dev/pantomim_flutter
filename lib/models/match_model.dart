@@ -1,13 +1,13 @@
 class MatchModel {
   bool isManual;
   int roundNumbers;
-  List<String> teams;
-  int typeId;
+  int teamNumbers;
+  int matchTypeId;
   List<String> teamNames;
   int time;
   int id;
 
-  MatchModel(this.teams,this.teamNames,this.roundNumbers,this.typeId,this.isManual,this.time,this.id);
+  MatchModel(this.teamNumbers,this.teamNames,this.roundNumbers,this.matchTypeId,this.isManual,this.time,this.id);
 
 }
 
