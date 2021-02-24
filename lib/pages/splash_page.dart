@@ -26,20 +26,16 @@ class SplashState extends State<SplashPage> {
       (data) async {
         final file = RiveFile();
 
-        // Load the RiveFile from the binary data.
         if (file.import(data)) {
-          // The artboard is the root of the animation and gets drawn in the
-          // Rive widget.
           final artboard = file.mainArtboard;
-          // Add a controller to play back a known animation on the main/default
-          // artboard.We store a reference to it so we can toggle playback.
+
           artboard.addController(_controller = SimpleAnimation('idle'));
           setState(() => _riveArtboard = artboard);
         }
       },
     );
     Timer(
-      Duration(seconds: 6),
+      Duration(seconds: 5),
       () {
         Navigator.pushReplacement(
           context,

@@ -5,7 +5,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:lottie/lottie.dart';
 import 'package:pantomim_flutter/pages/home_page.dart';
 import 'package:pantomim_flutter/pages/round_page.dart';
-import 'package:pantomim_flutter/pages/speed_score_page.dart';
 import 'package:pantomim_flutter/theme/app_theme.dart';
 import 'package:pantomim_flutter/theme/colors.dart';
 import 'package:pantomim_flutter/theme/dimense.dart';

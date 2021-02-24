@@ -4,15 +4,12 @@ import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pantomim_flutter/pages/home_page.dart';
 import 'package:pantomim_flutter/pages/select_topic_page.dart';
-import 'package:pantomim_flutter/pages/speed_score_page.dart';
-import 'package:pantomim_flutter/pages/start_game_page.dart';
 import 'package:pantomim_flutter/theme/app_theme.dart';
 import 'package:pantomim_flutter/theme/colors.dart';
 import 'package:pantomim_flutter/theme/dimense.dart';
 import 'package:pantomim_flutter/widgets/dialog_widget.dart';
 import 'package:pantomim_flutter/widgets/neu_button.dart';
 import 'package:pantomim_flutter/widgets/role_box.dart';
-import 'package:pantomim_flutter/widgets/score_box.dart';
 import 'package:pantomim_flutter/widgets/team_details_box.dart';
 
 void roleDialog(BuildContext context) {
@@ -23,127 +20,120 @@ void roleDialog(BuildContext context) {
         color: Colors.transparent,
         child: Directionality(
           textDirection: TextDirection.rtl,
-          child: SingleChildScrollView(
-            physics: NeverScrollableScrollPhysics(),
-            child: Container(
-              width: fullWidth(context),
-              height: fullHeight(context),
-              child: Stack(
-                children: [
-                  Positioned(
-                    top: fullWidth(context) / 4.5,
-                    right: standardSize(context),
-                    left: standardSize(context),
-                    bottom: xlargeSize(context),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius:
-                            BorderRadius.circular(standardSize(context)),
-                        color: appTheme(context).accentColor,
-                      ),
-                      child: Padding(
-                        padding: EdgeInsets.only(
-                            top: fullWidth(context) / 10.2,
-                            bottom: fullWidth(context) / 14),
-                        child: SingleChildScrollView(
-                          physics: BouncingScrollPhysics(),
-                          child: Container(
-                            margin: EdgeInsets.symmetric(
-                                vertical: smallSize(context),
-                                horizontal: xxSmallSize(context)),
-                            child: Column(
-                              children: [
-                                roleBox(
-                                  context,
-                                  'می توانید یک نفر را به عنوان  ناظر\n بی طرف برای داوری انتخاب کنید',
-                                  'assets/thick_icon.svg',
-                                ),
-                                roleBox(
-                                  context,
-                                  'می توانید یک نفر را به عنوان ناظر\n  بی طرف برای داوری انتخاب کنید',
-                                  'assets/thick_icon.svg',
-                                ),
-                                roleBox(
-                                  context,
-                                  'می توانید یک نفر را به عنوان ناظر\n  بی طرف برای داوری انتخاب کنید',
-                                  'assets/thick_icon.svg',
-                                ),
-                                roleBox(
-                                  context,
-                                  'می توانید یک نفر را به عنوان ناظر\n  بی طرف برای داوری انتخاب کنید',
-                                  'assets/thick_icon.svg',
-                                ),
-                                roleBox(
-                                  context,
-                                  'می توانید یک نفر را به عنوان ناظر\n  بی طرف برای داوری انتخاب کنید',
-                                  'assets/thick_icon.svg',
-                                ),
-                                roleBox(
-                                  context,
-                                  'می توانید یک نفر را به عنوان ناظر\n  بی طرف برای داوری انتخاب کنید',
-                                  'assets/thick_icon.svg',
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
+          child: Stack(
+            children: [
+              Positioned(
+                top: fullWidth(context) / 4.5,
+                right: standardSize(context),
+                left: standardSize(context),
+                bottom: xxLargeSize(context),
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius:
+                        BorderRadius.circular(standardSize(context)),
+                    color: appTheme(context).accentColor,
                   ),
-                  Align(
-                    alignment: Alignment(-0.76, -0.7),
-                    child: InkWell(
-                      onTap: () {
-                        Navigator.pop(context);
-                      },
-                      child: SvgPicture.asset(
-                        'assets/close_small_icon.svg',
-                        color: appTheme(context).baseColor,
-                      ),
-                    ),
-                  ),
-                  Align(
-                    alignment: Alignment(0.0, -0.88),
-                    child: Container(
-                      width: fullWidth(context) / 1.8,
-                      height: xlargeSize(context) / 1.2,
-                      margin: EdgeInsets.only(
-                          top: standardSize(context),
-                          bottom: mediumSize(context)),
+                  child: Padding(
+                    padding: EdgeInsets.only(
+                        top: fullWidth(context) / 10.2,
+                        bottom: fullWidth(context) / 14),
+                    child: SingleChildScrollView(
+                      physics: BouncingScrollPhysics(),
                       child: Container(
-                        decoration: BoxDecoration(
-                            color: AppColors.accentColor,
-                            borderRadius:
-                                BorderRadius.circular(fullWidth(context) / 1),
-                            boxShadow: [
-                              BoxShadow(
-                                  color: Color(0xffADADB2),
-                                  blurRadius: 1,
-                                  spreadRadius: 0.5,
-                                  offset: Offset(0.0, 1))
-                            ]),
-                        child: Container(
-                          alignment: Alignment.center,
-                          child: Material(
-                            color: Colors.transparent,
-                            child: Text(
-                              'قـــــوانین',
-                              textAlign: TextAlign.center,
-                              style: appTheme(context)
-                                  .textTheme
-                                  .headline3
-                                  .copyWith(
-                                      color: appTheme(context).baseColor,
-                                      fontSize: fullWidth(context) / 11),
+                        margin: EdgeInsets.symmetric(
+                            vertical: smallSize(context),
+                            horizontal: xxSmallSize(context)),
+                        child: Column(
+                          children: [
+                            roleBox(
+                              context,
+                              'می توانید یک نفر را به عنوان  ناظر\n بی طرف برای داوری انتخاب کنید',
+                              'assets/thick_icon.svg',
                             ),
-                          ),
+                            roleBox(
+                              context,
+                              'می توانید یک نفر را به عنوان ناظر\n  بی طرف برای داوری انتخاب کنید',
+                              'assets/thick_icon.svg',
+                            ),
+                            roleBox(
+                              context,
+                              'می توانید یک نفر را به عنوان ناظر\n  بی طرف برای داوری انتخاب کنید',
+                              'assets/thick_icon.svg',
+                            ),
+                            roleBox(
+                              context,
+                              'می توانید یک نفر را به عنوان ناظر\n  بی طرف برای داوری انتخاب کنید',
+                              'assets/thick_icon.svg',
+                            ),
+                            roleBox(
+                              context,
+                              'می توانید یک نفر را به عنوان ناظر\n  بی طرف برای داوری انتخاب کنید',
+                              'assets/thick_icon.svg',
+                            ),
+                            roleBox(
+                              context,
+                              'می توانید یک نفر را به عنوان ناظر\n  بی طرف برای داوری انتخاب کنید',
+                              'assets/thick_icon.svg',
+                            ),
+                          ],
                         ),
                       ),
                     ),
-                  )
-                ],
+                  ),
+                ),
               ),
-            ),
+              Align(
+                alignment: Alignment(-0.76, -0.7),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: SvgPicture.asset(
+                    'assets/close_small_icon.svg',
+                    color: appTheme(context).baseColor,
+                  ),
+                ),
+              ),
+              Align(
+                alignment: Alignment(0.0, -0.88),
+                child: Container(
+                  width: fullWidth(context) / 1.8,
+                  height: xlargeSize(context) / 1.2,
+                  margin: EdgeInsets.only(
+                      top: standardSize(context),
+                      bottom: mediumSize(context)),
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: AppColors.accentColor,
+                        borderRadius:
+                            BorderRadius.circular(fullWidth(context) / 1),
+                        boxShadow: [
+                          BoxShadow(
+                              color: Color(0xffADADB2),
+                              blurRadius: 1,
+                              spreadRadius: 0.5,
+                              offset: Offset(0.0, 1))
+                        ]),
+                    child: Container(
+                      alignment: Alignment.center,
+                      child: Material(
+                        color: Colors.transparent,
+                        child: Text(
+                          'قـــــوانین',
+                          textAlign: TextAlign.center,
+                          style: appTheme(context)
+                              .textTheme
+                              .headline3
+                              .copyWith(
+                                  color: appTheme(context).baseColor,
+                                  fontSize: fullWidth(context) / 11),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              )
+            ],
           ),
         ),
       );
@@ -185,12 +175,12 @@ class RoundPageState extends State<RoundPage> {
 //          margin: EdgeInsets.only(top: fullWidth(context) / 10.5),
           child: Stack(
             children: [
-              Positioned.fill(
+              Positioned(
                 top: fullWidth(context) / 3.4,
                 right: standardSize(context),
                 left: standardSize(context),
-                bottom: fullHeight(context) / 5.5,
                 child: Neumorphic(
+                  padding: EdgeInsets.only(bottom: smallSize(context)),
                   style: NeumorphicStyle(
                     boxShape: NeumorphicBoxShape.roundRect(
                         BorderRadius.circular(standardSize(context))),

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 
-import 'package:pantomim_flutter/theme/app_theme.dart';
 
 class NeuProgressPainter extends CustomPainter {
   //

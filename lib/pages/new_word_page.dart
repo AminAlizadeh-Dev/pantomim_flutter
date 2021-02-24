@@ -6,7 +6,6 @@ import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:pantomim_flutter/theme/app_theme.dart';
 import 'package:pantomim_flutter/theme/colors.dart';
 import 'package:pantomim_flutter/theme/dimense.dart';
-import 'package:pantomim_flutter/widgets/neu_app_bar.dart';
 import 'package:pantomim_flutter/widgets/point_button.dart';
 import 'package:pantomim_flutter/widgets/text_field_widgets.dart';
 import 'package:pantomim_flutter/widgets/word_detail_widget.dart';

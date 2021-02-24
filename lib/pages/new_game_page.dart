@@ -3,18 +3,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:line_icons/line_icons.dart';
 import 'package:pantomim_flutter/pages/guide_page.dart';
 import 'package:pantomim_flutter/pages/round_page.dart';
 import 'package:pantomim_flutter/theme/app_theme.dart';
 import 'package:pantomim_flutter/theme/colors.dart';
 import 'package:pantomim_flutter/theme/dimense.dart';
 import 'package:pantomim_flutter/widgets/bottom_sheet_widget.dart';
-import 'package:pantomim_flutter/widgets/dialog_widget.dart';
 import 'package:pantomim_flutter/widgets/neu_button.dart';
 import 'package:pantomim_flutter/widgets/num_picker_buttons.dart';
 import 'package:pantomim_flutter/widgets/team_name_picker.dart';
-import 'package:pantomim_flutter/widgets/word_detail_widget.dart';
 
 class NewGame extends StatefulWidget {
   @override
@@ -29,7 +26,7 @@ class NewGameState extends State<NewGame> {
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
     return GestureDetector(
-      onTap: (){
+      onTap: () {
         closeKeybored(context);
       },
       child: Directionality(
@@ -53,7 +50,8 @@ class NewGameState extends State<NewGame> {
                         width: fullWidth(context) / 1.1,
                         height: fullHeight(context) / 1.4,
                         margin: EdgeInsets.only(
-                            bottom: fullWidth(context)/11.5, top: smallSize(context)),
+                            bottom: fullWidth(context) / 11.5,
+                            top: smallSize(context)),
                         child: Neumorphic(
                           style: NeumorphicStyle(
                               boxShape: NeumorphicBoxShape.roundRect(
@@ -62,17 +60,16 @@ class NewGameState extends State<NewGame> {
                               intensity: 4,
                               color: appTheme(context).accentColor),
                           child: DraggableScrollbar.rrect(
-
+                              padding: EdgeInsets.only(top: smallSize(context)),
                               backgroundColor: AppColors.primaryColor,
                               alwaysVisibleScrollThumb: true,
-
                               controller: _rrectController,
                               child: ListView(
                                 controller: _rrectController,
                                 children: [
                                   Container(
-                                    margin:
-                                        EdgeInsets.only(top: smallSize(context)),
+                                    margin: EdgeInsets.only(
+                                        top: smallSize(context)),
                                     child: Column(
                                       children: [
                                         Center(
@@ -100,27 +97,33 @@ class NewGameState extends State<NewGame> {
                                                           Colors.transparent,
                                                       builder: (BuildContext
                                                               context) =>
-                                                          bottomSheetWidget(context, () {
-                                                            Navigator.pushReplacement(context,
-                                                                MaterialPageRoute(builder: (context) => NewGame()));
+                                                          bottomSheetWidget(
+                                                              context, () {
+                                                            Navigator.pushReplacement(
+                                                                context,
+                                                                MaterialPageRoute(
+                                                                    builder:
+                                                                        (context) =>
+                                                                            NewGame()));
                                                           }));
                                                 });
                                               },
                                               child: Container(
                                                 width: fullWidth(context) / 1.5,
-                                                height: fullHeight(context) / 15,
+                                                height:
+                                                    fullHeight(context) / 15,
                                                 margin: EdgeInsets.symmetric(
-                                                    vertical: mediumSize(context)),
+                                                    vertical:
+                                                        mediumSize(context)),
                                                 child: Neumorphic(
                                                   style: NeumorphicStyle(
-                                                    color:
-                                                        appTheme(context).accentColor,
+                                                    color: appTheme(context)
+                                                        .accentColor,
                                                     depth: 8,
                                                     intensity: 16,
-                                                    boxShape:
-                                                        NeumorphicBoxShape.roundRect(
-                                                            BorderRadius.circular(
-                                                                12)),
+                                                    boxShape: NeumorphicBoxShape
+                                                        .roundRect(BorderRadius
+                                                            .circular(12)),
                                                   ),
                                                   child: Row(
                                                     children: [
@@ -133,10 +136,10 @@ class NewGameState extends State<NewGame> {
                                                           children: [
                                                             SvgPicture.asset(
                                                               'assets/arrow_down_icon.svg',
-                                                              height:
-                                                                  smallSize(context),
-                                                              width:
-                                                                  smallSize(context),
+                                                              height: smallSize(
+                                                                  context),
+                                                              width: smallSize(
+                                                                  context),
                                                             ),
 //                              NeumorphicIcon(Icons.keyboard_arrow_down,size: (context),),
                                                             Container(
@@ -144,23 +147,24 @@ class NewGameState extends State<NewGame> {
                                                                   right: mediumSize(
                                                                       context)),
                                                               child: Center(
-                                                                child: NeumorphicText(
+                                                                child:
+                                                                    NeumorphicText(
                                                                   "انتخاب کن",
                                                                   textStyle:
                                                                       NeumorphicTextStyle(
                                                                     fontFamily:
                                                                         "aviny",
                                                                     height: 1.8,
-                                                                    fontSize: fullWidth(
-                                                                            context) /
-                                                                        23,
+                                                                    fontSize:
+                                                                        fullWidth(context) /
+                                                                            23,
                                                                   ),
-                                                                  textAlign: TextAlign
-                                                                      .center,
-                                                                  style:
-                                                                      NeumorphicStyle(
-                                                                          color: Colors
-                                                                              .black),
+                                                                  textAlign:
+                                                                      TextAlign
+                                                                          .center,
+                                                                  style: NeumorphicStyle(
+                                                                      color: Colors
+                                                                          .black),
                                                                 ),
                                                               ),
                                                             ),
@@ -168,7 +172,8 @@ class NewGameState extends State<NewGame> {
                                                         ),
                                                       ),
                                                       Expanded(
-                                                          flex: 1, child: SizedBox())
+                                                          flex: 1,
+                                                          child: SizedBox())
                                                     ],
                                                   ),
                                                 ),
@@ -210,7 +215,8 @@ class NewGameState extends State<NewGame> {
                                             children: [
                                               Row(
                                                 mainAxisAlignment:
-                                                    MainAxisAlignment.spaceEvenly,
+                                                    MainAxisAlignment
+                                                        .spaceEvenly,
                                                 children: [
                                                   teamName(context, 'تیم اول'),
                                                   teamName(context, 'تیم دوم'),
@@ -218,19 +224,24 @@ class NewGameState extends State<NewGame> {
                                               ),
                                               Container(
                                                 margin: EdgeInsets.symmetric(
-                                                    vertical: mediumSize(context)),
+                                                    vertical:
+                                                        mediumSize(context)),
                                                 child: Row(
                                                   mainAxisAlignment:
-                                                      MainAxisAlignment.spaceEvenly,
+                                                      MainAxisAlignment
+                                                          .spaceEvenly,
                                                   children: [
-                                                    teamName(context, 'تیم سوم'),
-                                                    teamName(context, 'تیم چهارم'),
+                                                    teamName(
+                                                        context, 'تیم سوم'),
+                                                    teamName(
+                                                        context, 'تیم چهارم'),
                                                   ],
                                                 ),
                                               ),
                                               Row(
                                                 mainAxisAlignment:
-                                                    MainAxisAlignment.spaceEvenly,
+                                                    MainAxisAlignment
+                                                        .spaceEvenly,
                                                 children: [
                                                   teamName(context, 'تیم پنجم'),
                                                   teamName(context, 'تیم ششم'),
@@ -291,9 +302,11 @@ class NewGameState extends State<NewGame> {
                                                         fontFamily: "aviny",
                                                         height: 1.8,
                                                         fontSize:
-                                                            fullWidth(context) / 23,
+                                                            fullWidth(context) /
+                                                                23,
                                                       ),
-                                                      textAlign: TextAlign.center,
+                                                      textAlign:
+                                                          TextAlign.center,
                                                       style: NeumorphicStyle(
                                                           color: Colors.black),
                                                     ),
@@ -318,9 +331,11 @@ class NewGameState extends State<NewGame> {
                                                         fontFamily: "aviny",
                                                         height: 1.8,
                                                         fontSize:
-                                                            fullWidth(context) / 23,
+                                                            fullWidth(context) /
+                                                                23,
                                                       ),
-                                                      textAlign: TextAlign.center,
+                                                      textAlign:
+                                                          TextAlign.center,
                                                       style: NeumorphicStyle(
                                                           color: Colors.black),
                                                     ),
@@ -352,8 +367,7 @@ class NewGameState extends State<NewGame> {
                         ),
                       ),
                       Container(
-                         margin:
-                             EdgeInsets.only(bottom: largeSize(context)),
+                        margin: EdgeInsets.only(bottom: largeSize(context)),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
@@ -362,7 +376,10 @@ class NewGameState extends State<NewGame> {
                               width: fullWidth(context) / 7,
                               child: NeuButton(
                                 () {
-                                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => RoundPage()));
+                                  Navigator.pushReplacement(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => RoundPage()));
                                 },
                                 icon: Icons.arrow_forward_ios_rounded,
                               ),
@@ -372,11 +389,13 @@ class NewGameState extends State<NewGame> {
                               width: fullWidth(context) / 7,
                               child: NeuButton(
                                 () {
-                                  Navigator.push(context, MaterialPageRoute(builder: (context) => GuidePage()));
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => GuidePage()));
                                 },
                                 svg: 'assets/questions_icon.svg',
-                                size: smallSize(context),
-
+                                size: xSmallSize(context),
                               ),
                             ),
                             SizedBox(

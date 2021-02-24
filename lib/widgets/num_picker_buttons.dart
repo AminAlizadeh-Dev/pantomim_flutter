@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:pantomim_flutter/theme/app_theme.dart';
 import 'package:pantomim_flutter/theme/colors.dart';
 import 'package:pantomim_flutter/theme/dimense.dart';
@@ -37,10 +36,8 @@ Widget numPicker(BuildContext context, String number) {
             ),
           ),
         )),
-        Positioned(
-          right: -4,
-          top: 0,
-          bottom: 0,
+        Align(
+          alignment: Alignment(1.09,0.0),
           child: NeumorphicButton(
               pressed: false,
               onPressed: () {},
@@ -56,10 +53,8 @@ Widget numPicker(BuildContext context, String number) {
                 color: Color(0xffD81B60),
               )),
         ),
-        Positioned(
-          left: 0,
-          top: 0,
-          bottom: 0,
+        Align(
+          alignment: Alignment(-1.09,0.0),
           child: NeumorphicButton(
             onPressed: () {},
             style: NeumorphicStyle(

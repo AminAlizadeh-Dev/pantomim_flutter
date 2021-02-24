@@ -8,8 +8,7 @@ import 'neu_button.dart';
 
 Widget dialogWidget(BuildContext context, String title, Function onPressPush,
     Function onPressClose) {
-  var theme = Theme.of(context);
-  return Material(
+ return Material(
     color: Colors.transparent,
     child: Stack(children: [
       Align(
