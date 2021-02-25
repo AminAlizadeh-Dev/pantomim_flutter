@@ -25,7 +25,7 @@ class SelectTopicState extends State<SelectTopic> {
           elevation: 0,
           centerTitle: true,
           title: Text(
-            "تعریف واژه جدید",
+            "انتخاب موضوع",
             style: theme.textTheme.headline3
                 .copyWith(fontSize: headline3Size(context) / 1.4),
           ),
@@ -34,6 +34,7 @@ class SelectTopicState extends State<SelectTopic> {
           height: fullHeight(context) / 1,
           width: fullWidth(context),
           child: ListView.builder(
+            physics: BouncingScrollPhysics(),
             addAutomaticKeepAlives: true,
             scrollDirection: Axis.vertical,
             itemCount: topicData().length,

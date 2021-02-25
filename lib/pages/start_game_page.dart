@@ -44,7 +44,7 @@ class StartGamePageState extends State<StartGamePage> {
                 top: 0,
                 child: Neumorphic(
                   style: NeumorphicStyle(
-                    shape: NeumorphicShape.flat,
+                    shape: NeumorphicShape.concave,
                     boxShape: NeumorphicBoxShape.circle(),
                     depth: 10,
                     lightSource: LightSource.topLeft,
