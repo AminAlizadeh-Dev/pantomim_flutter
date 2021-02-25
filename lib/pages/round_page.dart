@@ -57,8 +57,10 @@ void roleDialog(BuildContext context) {
               ),
               Align(
                 alignment: Alignment(-0.92, -0.78),
-                child:  GestureDetector(
-                  onTap: (){Navigator.pop(context);},
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
                   child: Container(
                     padding: EdgeInsets.all(xxSmallSize(context)),
                     decoration: BoxDecoration(
@@ -129,6 +131,7 @@ class RoundPageState extends State<RoundPage> {
       closeGameDialog(context);
       return false; // return true if the route to be popped
     }
+
     return WillPopScope(
       onWillPop: _willPopCallback,
       child: Scaffold(
@@ -141,8 +144,8 @@ class RoundPageState extends State<RoundPage> {
                 children: [
                   Center(
                     child: Neumorphic(
-                      margin:
-                          EdgeInsets.symmetric(horizontal: standardSize(context)),
+                      margin: EdgeInsets.symmetric(
+                          horizontal: standardSize(context)),
                       padding: EdgeInsets.only(bottom: smallSize(context)),
                       style: NeumorphicStyle(
                         boxShape: NeumorphicBoxShape.roundRect(

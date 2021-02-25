@@ -1,4 +1,5 @@
 import 'package:pantomim_flutter/models/guide_model.dart';
+import 'package:pantomim_flutter/models/point_model.dart';
 import 'package:pantomim_flutter/models/roles_model.dart';
 import 'package:pantomim_flutter/models/team_model.dart';
 import 'package:pantomim_flutter/models/topic_model.dart';
@@ -52,10 +53,27 @@ List teamData() {
 List roleData() {
   List<RolesModel> role = new List();
 
-  role.add(RolesModel('می توانید یک نفر را به عنوان  ناظر بی طرف\nبرای داوری انتخاب کنید', 1));
-  role.add(RolesModel('می توانید یک نفر را به عنوان  ناظر بی طرف\nبرای داوری انتخاب کنید', 2));
-  role.add(RolesModel('می توانید یک نفر را به عنوان  ناظر بی طرف\nبرای داوری انتخاب کنید', 3));
-  role.add(RolesModel('می توانید یک نفر را به عنوان  ناظر بی طرف\nبرای داوری انتخاب کنید', 4));
-  role.add(RolesModel('می توانید یک نفر را به عنوان  ناظر بی طرف\nبرای داوری انتخاب کنید', 5));
+  role.add(RolesModel(
+      'می توانید یک نفر را به عنوان  ناظر بی طرف\nبرای داوری انتخاب کنید', 1));
+  role.add(RolesModel(
+      'می توانید یک نفر را به عنوان  ناظر بی طرف\nبرای داوری انتخاب کنید', 2));
+  role.add(RolesModel(
+      'می توانید یک نفر را به عنوان  ناظر بی طرف\nبرای داوری انتخاب کنید', 3));
+  role.add(RolesModel(
+      'می توانید یک نفر را به عنوان  ناظر بی طرف\nبرای داوری انتخاب کنید', 4));
+  role.add(RolesModel(
+      'می توانید یک نفر را به عنوان  ناظر بی طرف\nبرای داوری انتخاب کنید', 5));
   return role;
+}
+
+List speedScoreData() {
+  List<PointModel> speedScore = new List();
+
+  speedScore.add(PointModel('مگس کش', '1 امتیاز', 'assets/thick_icon.svg', 1));
+  speedScore.add(PointModel('مگس کش', '1 امتیاز', 'assets/thick_icon.svg', 1));
+  speedScore.add(PointModel('مگس کش', '1 امتیاز', 'assets/thick_icon.svg', 1));
+  speedScore.add(PointModel('مگس کش', '1 امتیاز', 'assets/thick_icon.svg', 1));
+  speedScore.add(PointModel('مگس کش', '1 امتیاز', 'assets/thick_icon.svg', 1));
+
+  return speedScore;
 }

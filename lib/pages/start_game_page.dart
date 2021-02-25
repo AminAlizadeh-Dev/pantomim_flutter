@@ -63,7 +63,10 @@ class StartGamePageState extends State<StartGamePage> {
                       width: fullWidth(context) / 6,
                       height: fullWidth(context) / 6,
                       child: NeuButton(() {
-                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => GamePage()));
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => GamePage()));
                       },
                           title: "شروع",
                           textHeight: 2.3,
@@ -73,11 +76,13 @@ class StartGamePageState extends State<StartGamePage> {
                     SizedBox(
                       width: fullWidth(context) / 6,
                       height: fullWidth(context) / 6,
-                      child: NeuButton(() {},
-                          title: "تعویض",
-                          textHeight: 2.3,
-                          color: Color(0xff0090FF),
-                          align: TextAlign.center,),
+                      child: NeuButton(
+                        () {},
+                        title: "تعویض",
+                        textHeight: 2.3,
+                        color: Color(0xff0090FF),
+                        align: TextAlign.center,
+                      ),
                     ),
                   ],
                 ),
@@ -105,21 +110,26 @@ class StartGamePageState extends State<StartGamePage> {
                 ),
               ),
               Align(
-                alignment: Alignment(0,-0.1),
-                child: Text("صندلی",
+                alignment: Alignment(0, -0.1),
+                child: Text(
+                  "صندلی",
                   style: appTheme(context).textTheme.headline3,
                 ),
               ),
               Align(
-                alignment: Alignment(0,-0.8),
+                alignment: Alignment(0, -0.8),
                 child: Container(
-                  child: Text("01:59",
-                    style: appTheme(context).textTheme.subtitle2.copyWith(fontSize: subTitleSize(context) / 0.7),
+                  child: Text(
+                    "01:59",
+                    style: appTheme(context)
+                        .textTheme
+                        .subtitle2
+                        .copyWith(fontSize: subTitleSize(context) / 0.7),
                   ),
                 ),
               ),
               Align(
-                alignment: Alignment(0.2,-0.8),
+                alignment: Alignment(0.2, -0.8),
                 child: Container(
                   width: fullWidth(context) / 10,
                   height: fullWidth(context) / 10,
