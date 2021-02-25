@@ -60,7 +60,7 @@ Widget selectTopicWidgets(Topic topicBox, BuildContext context) {
                   ),
                   child: Center(
                     child: Text(
-                      "6",
+                      "2",
                       textAlign: TextAlign.center,
                       style: theme.textTheme.subtitle2,
                     ),
@@ -81,7 +81,7 @@ Widget selectTopicWidgets(Topic topicBox, BuildContext context) {
                   ),
                   child: Center(
                     child: Text(
-                      "6",
+                      "4",
                       textAlign: TextAlign.center,
                       style: theme.textTheme.subtitle2,
                     ),

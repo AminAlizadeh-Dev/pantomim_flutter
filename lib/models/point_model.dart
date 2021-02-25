@@ -4,6 +4,6 @@ class PointModel{
   String point;
   int id;
 
-  PointModel(this.icon,this.word,this.point,this.id);
+  PointModel(this.word,this.point,this.icon,this.id);
 
 }

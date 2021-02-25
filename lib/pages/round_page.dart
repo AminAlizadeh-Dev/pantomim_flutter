@@ -56,21 +56,16 @@ void roleDialog(BuildContext context) {
                 ),
               ),
               Align(
-                alignment: Alignment(-0.92, -0.78),
+                alignment: Alignment(-0.8, -0.7),
                 child: GestureDetector(
                   onTap: () {
                     Navigator.pop(context);
                   },
-                  child: Container(
-                    padding: EdgeInsets.all(xxSmallSize(context)),
-                    decoration: BoxDecoration(
-                      color: appTheme(context).variantColor,
-                      shape: BoxShape.circle,
-                    ),
-                    child: SvgPicture.asset(
-                      "assets/close_small_icon.svg",
-                      color: AppColors.accentColor,
-                    ),
+                  child: SvgPicture.asset(
+                    "assets/close_small_icon.svg",
+                    color: Colors.red,
+                    height: standardSize(context),
+                    width: standardSize(context),
                   ),
                 ),
               ),

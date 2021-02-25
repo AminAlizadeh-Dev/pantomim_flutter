@@ -41,6 +41,7 @@ class SelectTopicState extends State<SelectTopic> {
             height: fullHeight(context) / 1,
             width: fullWidth(context),
             child: ListView.builder(
+              physics: BouncingScrollPhysics(),
               addAutomaticKeepAlives: true,
               scrollDirection: Axis.vertical,
               itemCount: topicData().length,

@@ -70,10 +70,16 @@ List speedScoreData() {
   List<PointModel> speedScore = new List();
 
   speedScore.add(PointModel('مگس کش', '1 امتیاز', 'assets/thick_icon.svg', 1));
+  speedScore
+      .add(PointModel('مگس کش', '1 امتیاز', 'assets/close_large_icon.svg', 2));
+  speedScore.add(PointModel('مگس کش', '1 امتیاز', 'assets/thick_icon.svg', 3));
+  speedScore.add(PointModel('مگس کش', '1 امتیاز', 'assets/thick_icon.svg', 4));
+  speedScore
+      .add(PointModel('مگس کش', '1 امتیاز', 'assets/close_large_icon.svg', 5));
   speedScore.add(PointModel('مگس کش', '1 امتیاز', 'assets/thick_icon.svg', 1));
-  speedScore.add(PointModel('مگس کش', '1 امتیاز', 'assets/thick_icon.svg', 1));
-  speedScore.add(PointModel('مگس کش', '1 امتیاز', 'assets/thick_icon.svg', 1));
-  speedScore.add(PointModel('مگس کش', '1 امتیاز', 'assets/thick_icon.svg', 1));
+  speedScore
+      .add(PointModel('مگس کش', '1 امتیاز', 'assets/close_large_icon.svg', 2));
+  speedScore.add(PointModel('مگس کش', '1 امتیاز', 'assets/thick_icon.svg', 3));
 
   return speedScore;
 }
