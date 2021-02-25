@@ -155,7 +155,11 @@ class WinnerState extends State<WinnerPage> {
                     children: [
                       NeuButton(
                         () {
-                          closeGameDialog(context,title: "می خواهید همین مسابقه را تکرار کنید؟");
+                          closeGameDialog(context,title: "می خواهید همین مسابقه را تکرار کنید؟",onPress: (){
+                            Navigator.of(context, rootNavigator: true)?.pop();
+                            Navigator.pushReplacement(
+                                context, MaterialPageRoute(builder: (context) => RoundPage()));
+                          });
                         },
                         svg: ("assets/icon_repeat.svg"),
                         size: mediumSize(context),

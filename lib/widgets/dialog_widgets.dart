@@ -68,13 +68,12 @@ import 'package:flutter/material.dart';
 import 'package:pantomim_flutter/pages/home_page.dart';
 import 'package:pantomim_flutter/theme/app_theme.dart';
 
-AwesomeDialog closeGameDialog(BuildContext context , {String title : "برای خروج و بازگشت به صفحه اصلی مطمئن هستید؟"}) {
+AwesomeDialog closeGameDialog(BuildContext context , {String title : "برای خروج و بازگشت به صفحه اصلی مطمئن هستید؟",Function onPress  }) {
   return AwesomeDialog(
     context: context,
     dialogType: DialogType.WARNING,
     headerAnimationLoop: false,
     animType: AnimType.SCALE,
-
     showCloseIcon: false,
 
     body: Container(
@@ -89,7 +88,7 @@ AwesomeDialog closeGameDialog(BuildContext context , {String title : "برای �
           appTheme(context).textTheme.subtitle1.copyWith(color: Colors.white),
       color: Colors.redAccent,
       isFixedHeight: false,
-      pressEvent: () {
+      pressEvent: onPress != null ? onPress : () {
         Navigator.of(context, rootNavigator: true)?.pop();
         Navigator.pushReplacement(
             context, MaterialPageRoute(builder: (context) => HomePage()));
