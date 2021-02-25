@@ -37,7 +37,9 @@ class NewGameState extends State<NewGame> {
                 leading: SizedBox(),
                 centerTitle: true,
                 title: Text("شروع مسابقه جدید",
-                    style: appTheme(context).textTheme.headline3
+                    style: appTheme(context)
+                        .textTheme
+                        .headline3
                         .copyWith(fontSize: headline3Size(context) / 1.4)),
               ),
               body: SingleChildScrollView(
@@ -134,10 +136,12 @@ class NewGameState extends State<NewGame> {
                                                                   .spaceAround,
                                                           children: [
                                                             SvgPicture.asset(
-                                                              'assets/arrow_down_icon.svg',
-                                                              height: smallSize(
+                                                              'assets/icon_down.svg',
+                                                              color: AppColors
+                                                                  .primaryColor,
+                                                              height: mediumSize(
                                                                   context),
-                                                              width: smallSize(
+                                                              width: mediumSize(
                                                                   context),
                                                             ),
 //                              NeumorphicIcon(Icons.keyboard_arrow_down,size: (context),),
@@ -380,7 +384,9 @@ class NewGameState extends State<NewGame> {
                                       MaterialPageRoute(
                                           builder: (context) => RoundPage()));
                                 },
-                                icon: Icons.arrow_forward_ios_rounded,
+                                svg: ("assets/icon_next.svg"),
+                                colorSvg: AppColors.primaryColor,
+                                size: mediumSize(context) / 1.15,
                               ),
                             ),
                             Container(
@@ -404,7 +410,9 @@ class NewGameState extends State<NewGame> {
                                 () {
                                   Navigator.pop(context);
                                 },
-                                icon: Icons.arrow_back_ios_rounded,
+                                svg: ("assets/icon_back.svg"),
+                                colorSvg: AppColors.primaryColor,
+                                size: mediumSize(context) / 1.15,
                               ),
                             ),
                           ],

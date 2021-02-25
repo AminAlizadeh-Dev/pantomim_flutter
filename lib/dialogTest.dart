@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 
 
-class HomePage extends StatefulWidget {
-  const HomePage({
+class HomePage1 extends StatefulWidget {
+  const HomePage1({
     Key key,
   }) : super(key: key);
 
@@ -12,7 +12,7 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
