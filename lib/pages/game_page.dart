@@ -6,6 +6,7 @@ import 'package:pantomim_flutter/pages/screen.dart';
 import 'package:pantomim_flutter/pages/speed_score_page.dart';
 import 'package:pantomim_flutter/theme/colors.dart';
 import 'package:pantomim_flutter/theme/dimense.dart';
+import 'package:pantomim_flutter/widgets/dialog_widgets.dart';
 import 'package:pantomim_flutter/widgets/neu_button.dart';
 import 'package:provider/provider.dart';
 
@@ -19,24 +20,18 @@ class GamePage extends StatefulWidget {
 class GamePageState extends State<GamePage> {
   final timeService = TimerService();
 
-  // Future<bool> _willPopCallback() async {
-  //
-  //   // await showDialog(context: null);
-  //   //todo
-  //   return Future.value(true);
-  // }
+  Future<bool> _willPopCallback() async {
+    closeGameDialog(context);
+    return false;
+  }
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
-    return ChangeNotifierProvider<TimerService>(
-      builder: (context, child) => Directionality(
-        textDirection: TextDirection.rtl,
-        child: WillPopScope(
-          // onWillPop: ()async{
-          //   //todo show dialog or sheet
-          // },
-          onWillPop: () async => false,
-
+    return WillPopScope(
+      onWillPop: _willPopCallback,
+      child: ChangeNotifierProvider<TimerService>(
+        builder: (context, child) => Directionality(
+          textDirection: TextDirection.rtl,
           child: Scaffold(
               backgroundColor: NeumorphicTheme.accentColor(context),
               body: Stack(
@@ -130,8 +125,8 @@ class GamePageState extends State<GamePage> {
                 ],
               )),
         ),
+        create: (_) => timeService,
       ),
-      create: (_) => timeService,
     );
   }
 }

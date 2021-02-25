@@ -120,7 +120,7 @@ class RoundPageState extends State<RoundPage> {
 
     Future<bool> _willPopCallback() async {
       closeGameDialog(context);
-      return false; // return true if the route to be popped
+      return false;
     }
     return WillPopScope(
       onWillPop: _willPopCallback,
