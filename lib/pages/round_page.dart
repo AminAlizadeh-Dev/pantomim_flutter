@@ -198,46 +198,49 @@ class RoundPageState extends State<RoundPage> {
             ),
             Expanded(
               flex: 1,
-              child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    SizedBox(
-                      height: fullWidth(context) / 7,
-                      width: fullWidth(context) / 7,
-                      child: NeuButton(
-                        () {
-                          closeGameDialog(context);
-                        },
-                        svg: 'assets/power_icon.svg',
-                        size: smallSize(context),
+              child: Container(
+                margin: EdgeInsets.symmetric(horizontal: standardSize(context)),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      SizedBox(
+                        height: fullWidth(context) / 7,
+                        width: fullWidth(context) / 7,
+                        child: NeuButton(
+                          () {
+                            closeGameDialog(context);
+                          },
+                          svg: 'assets/power_icon.svg',
+                          size: smallSize(context),
+                        ),
                       ),
-                    ),
-                    SizedBox(
-                      height: fullWidth(context) / 7,
-                      width: fullWidth(context) / 7,
-                      child: NeuButton(
-                        () {
-                          roleDialog(context);
-                        },
-                        svg: 'assets/role_icon.svg',
-                        size: smallSize(context),
+                      SizedBox(
+                        height: fullWidth(context) / 7,
+                        width: fullWidth(context) / 7,
+                        child: NeuButton(
+                          () {
+                            roleDialog(context);
+                          },
+                          svg: 'assets/role_icon.svg',
+                          size: smallSize(context),
+                        ),
                       ),
-                    ),
-                    SizedBox(
-                      height: fullWidth(context) / 7,
-                      width: fullWidth(context) / 7,
-                      child: NeuButton(
-                        () {
-                          Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => SelectTopic()));
-                        },
-                        svg: 'assets/play_icon.svg',
-                        size: smallSize(context),
-                      ),
-                    )
-                  ]),
+                      SizedBox(
+                        height: fullWidth(context) / 7,
+                        width: fullWidth(context) / 7,
+                        child: NeuButton(
+                          () {
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => SelectTopic()));
+                          },
+                          svg: 'assets/play_icon.svg',
+                          size: smallSize(context),
+                        ),
+                      )
+                    ]),
+              ),
             ),
           ],
         ),

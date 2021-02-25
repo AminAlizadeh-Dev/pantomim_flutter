@@ -40,9 +40,9 @@ class GamePageState extends State<GamePage> {
                     child: NeuProgressPieBar(),
                   ),
                   Positioned(
-                    right: fullWidth(context) / 10,
-                    left: fullWidth(context) / 10,
-                    bottom: fullWidth(context) / 10,
+                    right: standardSize(context),
+                    left: standardSize(context),
+                    bottom: largeSize(context),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [

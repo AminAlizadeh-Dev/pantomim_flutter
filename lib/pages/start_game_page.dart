@@ -60,8 +60,8 @@ class StartGamePageState extends State<StartGamePage> {
                   ),
                 ),
                 Positioned(
-                  right: fullWidth(context) / 10,
-                  left: fullWidth(context) / 10,
+                  right: standardSize(context),
+                  left: standardSize(context),
                   bottom: fullWidth(context) / 10,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,

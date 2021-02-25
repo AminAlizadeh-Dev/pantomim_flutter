@@ -365,9 +365,9 @@ class NewGameState extends State<NewGame> {
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.only(bottom: largeSize(context)),
+                        margin: EdgeInsets.only(bottom: largeSize(context),left: standardSize(context),right: standardSize(context)),
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             SizedBox(
                               height: fullWidth(context) / 7,

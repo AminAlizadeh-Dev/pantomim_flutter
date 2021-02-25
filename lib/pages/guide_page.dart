@@ -144,9 +144,9 @@ class GuidePageState extends State<GuidePage> {
               ),
               Container(
                 margin: EdgeInsets.only(
-                  right: largeSize(context),
+                  right: standardSize(context),
                   top: xSmallSize(context),
-                  left: largeSize(context),
+                  left: standardSize(context),
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
