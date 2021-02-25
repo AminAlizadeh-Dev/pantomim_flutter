@@ -172,7 +172,7 @@ class RoundPageState extends State<RoundPage> {
                         bottom: xxSmallSize(context)),
                     height: fullHeight(context) / 2, width: fullWidth(context),
                     child: ListView.builder(
-                      physics: NeverScrollableScrollPhysics(),
+                      physics: BouncingScrollPhysics(),
                       padding: EdgeInsets.all(0),
                       addAutomaticKeepAlives: true,
                       scrollDirection: Axis.vertical,
