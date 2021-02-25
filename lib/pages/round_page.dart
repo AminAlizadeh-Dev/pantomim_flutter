@@ -62,15 +62,11 @@ void roleDialog(BuildContext context) {
                 ),
               Align(
                 alignment: Alignment(-0.78, -0.8),
-                child:  RaisedButton(
-                  padding: EdgeInsets.all(5),
-                  onPressed: () {},
-//                  shape:,
-                      color: AppColors.accentColor,
+                child:  GestureDetector(
+                  onTap: (){Navigator.pop(context);},
                   child: SvgPicture.asset(
                     "assets/close_small_icon.svg",
                     color: AppColors.primaryColor,
-                    width: standardSize(context),
                   ),
                 ),
               ),
@@ -170,8 +166,8 @@ class RoundPageState extends State<RoundPage> {
                   ),
                   child: Container(
                     margin: EdgeInsets.only(
-                        top: mediumSize(context),
-                        bottom: xxSmallSize(context)),
+                        top: largeSize(context),
+                        bottom: 0),
                     height: fullHeight(context) / 2, width: fullWidth(context),
                     child: ListView.builder(
                       physics: BouncingScrollPhysics(),
@@ -187,7 +183,7 @@ class RoundPageState extends State<RoundPage> {
                 ),
               ),
               Align(
-                alignment: Alignment(0.0,-0.84),
+                alignment: Alignment(0.0,-0.81),
                 child: Container(
                   width: fullWidth(context) / 1.7,
                   height: xlargeSize(context),
