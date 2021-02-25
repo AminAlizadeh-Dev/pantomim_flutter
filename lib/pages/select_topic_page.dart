@@ -1,7 +1,9 @@
+import 'package:draggable_scrollbar/draggable_scrollbar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:pantomim_flutter/local_data.dart';
+import 'package:pantomim_flutter/theme/colors.dart';
 import 'package:pantomim_flutter/theme/dimense.dart';
 import 'package:pantomim_flutter/widgets/select_topic_widgets.dart';
 
@@ -29,7 +31,7 @@ class SelectTopicState extends State<SelectTopic> {
           ),
         ),
         body: Container(
-          height: fullHeight(context) / 1.2,
+          height: fullHeight(context) / 1,
           width: fullWidth(context),
           child: ListView.builder(
             addAutomaticKeepAlives: true,
