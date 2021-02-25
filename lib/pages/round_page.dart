@@ -57,8 +57,10 @@ void roleDialog(BuildContext context) {
               ),
               Align(
                 alignment: Alignment(-0.78, -0.8),
-                child:  GestureDetector(
-                  onTap: (){Navigator.pop(context);},
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
                   child: SvgPicture.asset(
                     "assets/close_small_icon.svg",
                     color: AppColors.primaryColor,
@@ -122,6 +124,7 @@ class RoundPageState extends State<RoundPage> {
       closeGameDialog(context);
       return false;
     }
+
     return WillPopScope(
       onWillPop: _willPopCallback,
       child: Scaffold(
@@ -134,8 +137,8 @@ class RoundPageState extends State<RoundPage> {
                 children: [
                   Center(
                     child: Neumorphic(
-                      margin:
-                          EdgeInsets.symmetric(horizontal: standardSize(context)),
+                      margin: EdgeInsets.symmetric(
+                          horizontal: standardSize(context)),
                       padding: EdgeInsets.only(bottom: smallSize(context)),
                       style: NeumorphicStyle(
                         boxShape: NeumorphicBoxShape.roundRect(

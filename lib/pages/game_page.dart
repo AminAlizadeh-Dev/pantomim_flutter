@@ -57,14 +57,14 @@ class GamePageState extends State<GamePage> {
                               align: TextAlign.center),
                         ),
                         SizedBox(
-                          width: fullWidth(context) / 6,
-                          height: fullWidth(context) / 6,
+                          width: fullWidth(context) / 6.5,
+                          height: fullWidth(context) / 6.5,
                           child: NeuButton(
-                            () {},
+                                () {},
                             svg: "assets/error_icon.svg",
                             colorSvg: Color(0xffF57C00),
                             align: TextAlign.center,
-                            size: 14,
+                            size: mediumSize(context) / 1.15,
                           ),
                         ),
                         SizedBox(

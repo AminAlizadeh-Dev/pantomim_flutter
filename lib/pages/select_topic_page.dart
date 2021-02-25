@@ -21,6 +21,7 @@ class SelectTopicState extends State<SelectTopic> {
       closeGameDialog(context);
       return false;
     }
+
     return WillPopScope(
       onWillPop: _willPopCallback,
       child: Directionality(

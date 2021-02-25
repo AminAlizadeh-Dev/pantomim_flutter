@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:pantomim_flutter/theme/app_theme.dart';
+import 'package:pantomim_flutter/theme/colors.dart';
 import 'package:pantomim_flutter/theme/dimense.dart';
 import 'package:pantomim_flutter/widgets/neu_button.dart';
 
@@ -26,7 +27,7 @@ class EndGameState extends State<EndGamePage> {
                   horizontal: xlargeSize(context),
                 ),
                 width: fullWidth(context),
-                height: fullHeight(context) / 9,
+                height: fullHeight(context) / 7.5,
                 child: Stack(
                   overflow: Overflow.visible,
                   children: [
@@ -75,10 +76,13 @@ class EndGameState extends State<EndGamePage> {
                                 child: Text(
                                   "پــایان مسابقه",
                                   textAlign: TextAlign.center,
-                                  style: appTheme(context).textTheme.subtitle2.copyWith(
-                                      color: Color(0xff388E3C),
-                                      fontSize: fullWidth(context) / 12,
-                                      height: 1),
+                                  style: appTheme(context)
+                                      .textTheme
+                                      .subtitle2
+                                      .copyWith(
+                                          color: Color(0xff388E3C),
+                                          fontSize: fullWidth(context) / 12,
+                                          height: 1),
                                 ),
                               ),
                             ),
@@ -87,9 +91,12 @@ class EndGameState extends State<EndGamePage> {
                                 child: Text(
                                   "بریم برای دیدن نتـایج !",
                                   textAlign: TextAlign.center,
-                                  style: appTheme(context).textTheme.bodyText2.copyWith(
-                                    color: Color(0xff388E3C),
-                                  ),
+                                  style: appTheme(context)
+                                      .textTheme
+                                      .bodyText2
+                                      .copyWith(
+                                        color: Color(0xff388E3C),
+                                      ),
                                 ),
                               ),
                             ),
@@ -102,16 +109,18 @@ class EndGameState extends State<EndGamePage> {
               ),
             ),
             Positioned(
-              bottom: largeSize(context),
-              right: largeSize(context),
-              child: SizedBox(
-                  width: fullWidth(context) / 6.5,
-                  height: fullWidth(context) / 6.5,
+                bottom: largeSize(context),
+                right: largeSize(context),
+                child: SizedBox(
+                  width: fullWidth(context) / 7,
+                  height: fullWidth(context) / 7,
                   child: NeuButton(
                     () {},
-                    icon: Icons.arrow_forward_ios_rounded,
-                  )),
-            ),
+                    svg: ("assets/icon_next.svg"),
+                    colorSvg: AppColors.primaryColor,
+                    size: mediumSize(context) / 1.15,
+                  ),
+                )),
           ],
         ),
       ),
