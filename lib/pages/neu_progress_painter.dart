@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 
-
 class NeuProgressPainter extends CustomPainter {
   //
   Color defaultCircleColor;
@@ -37,7 +36,7 @@ class NeuProgressPainter extends CustomPainter {
       final Gradient gradient = LinearGradient(
         begin: Alignment.topCenter,
         end: Alignment.bottomRight,
-        colors: colors,
+        // colors: colors,
       );
 
       return Paint()
