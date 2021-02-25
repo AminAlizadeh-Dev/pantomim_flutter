@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:pantomim_flutter/pages/guide_page.dart';
 import 'package:pantomim_flutter/pages/loser_page.dart';
 import 'package:pantomim_flutter/pages/splash_page.dart';
 import 'package:pantomim_flutter/pages/sum_points_page.dart';
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Pantomime',
       theme: appTheme(context),
-      home: SumPointsPage(),
+      home: SplashPage(),
     );
   }
 }

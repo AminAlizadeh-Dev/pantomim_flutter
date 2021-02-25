@@ -37,62 +37,38 @@ void roleDialog(BuildContext context) {
                   ),
                   child: Padding(
                     padding: EdgeInsets.only(
-                        top: fullWidth(context) / 10.2,
-                        bottom: fullWidth(context) / 14),
-                    child: SingleChildScrollView(
-                      physics: BouncingScrollPhysics(),
-                      child: Container(
+                        top: fullWidth(context) / 23,
+                        bottom: xxSmallSize(context)),
+                    child: Container(
                         margin: EdgeInsets.symmetric(
                             vertical: smallSize(context),
                             horizontal: xxSmallSize(context)),
-                        child: Column(
-                          children: [
-                            roleBox(
-                              context,
-                              'می توانید یک نفر را به عنوان  ناظر\n بی طرف برای داوری انتخاب کنید',
-                              'assets/thick_icon.svg',
-                            ),
-                            roleBox(
-                              context,
-                              'می توانید یک نفر را به عنوان ناظر\n  بی طرف برای داوری انتخاب کنید',
-                              'assets/thick_icon.svg',
-                            ),
-                            roleBox(
-                              context,
-                              'می توانید یک نفر را به عنوان ناظر\n  بی طرف برای داوری انتخاب کنید',
-                              'assets/thick_icon.svg',
-                            ),
-                            roleBox(
-                              context,
-                              'می توانید یک نفر را به عنوان ناظر\n  بی طرف برای داوری انتخاب کنید',
-                              'assets/thick_icon.svg',
-                            ),
-                            roleBox(
-                              context,
-                              'می توانید یک نفر را به عنوان ناظر\n  بی طرف برای داوری انتخاب کنید',
-                              'assets/thick_icon.svg',
-                            ),
-                            roleBox(
-                              context,
-                              'می توانید یک نفر را به عنوان ناظر\n  بی طرف برای داوری انتخاب کنید',
-                              'assets/thick_icon.svg',
-                            ),
-                          ],
+                        child:
+                        ListView.builder(
+                          padding: EdgeInsets.all(0),
+                          physics: BouncingScrollPhysics(),
+                          addAutomaticKeepAlives: true,
+                          scrollDirection: Axis.vertical,
+                          itemCount: roleData().length,
+                          shrinkWrap: true,
+                          itemBuilder: (context, index) =>
+                          (roleBox(roleData()[index], context)),
                         ),
                       ),
                     ),
                   ),
                 ),
-              ),
               Align(
-                alignment: Alignment(-0.76, -0.7),
-                child: InkWell(
-                  onTap: () {
-                    Navigator.pop(context);
-                  },
+                alignment: Alignment(-0.78, -0.8),
+                child:  RaisedButton(
+                  padding: EdgeInsets.all(5),
+                  onPressed: () {},
+//                  shape:,
+                      color: AppColors.accentColor,
                   child: SvgPicture.asset(
-                    'assets/close_small_icon.svg',
-                    color: appTheme(context).baseColor,
+                    "assets/close_small_icon.svg",
+                    color: AppColors.primaryColor,
+                    width: standardSize(context),
                   ),
                 ),
               ),
@@ -194,10 +170,10 @@ class RoundPageState extends State<RoundPage> {
                     margin: EdgeInsets.only(
                         top: mediumSize(context),
                         bottom: xxSmallSize(context)),
-                    height: fullHeight(context) / 5,
-                    width: fullWidth(context),
+                    height: fullHeight(context) / 2, width: fullWidth(context),
                     child: ListView.builder(
                       physics: NeverScrollableScrollPhysics(),
+                      padding: EdgeInsets.all(0),
                       addAutomaticKeepAlives: true,
                       scrollDirection: Axis.vertical,
                       itemCount: teamData().length,
@@ -208,10 +184,8 @@ class RoundPageState extends State<RoundPage> {
                   ),
                 ),
               ),
-              Positioned(
-                top: fullHeight(context) / 12,
-                right: xlargeSize(context),
-                left: xlargeSize(context),
+              Align(
+                alignment: Alignment(0.0,-0.84),
                 child: Container(
                   width: fullWidth(context) / 1.7,
                   height: xlargeSize(context),

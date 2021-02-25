@@ -1,11 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:pantomim_flutter/local_data.dart';
+import 'package:pantomim_flutter/models/topic_model.dart';
 import 'package:pantomim_flutter/pages/start_game_page.dart';
 import 'package:pantomim_flutter/theme/app_theme.dart';
 import 'package:pantomim_flutter/theme/colors.dart';
 import 'package:pantomim_flutter/theme/dimense.dart';
 
-Widget selectTopicWidgets(BuildContext context, String topicName) {
+Widget selectTopicWidgets(Topic topicBox,BuildContext context) {
   var theme = Theme.of(context);
   return Neumorphic(
     padding: EdgeInsets.all(standardSize(context)),
@@ -27,7 +29,7 @@ Widget selectTopicWidgets(BuildContext context, String topicName) {
           flex: 1,
           child: Container(
             child: Text(
-              topicName,
+              topicBox.topic,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
               style: theme.textTheme.subtitle2,

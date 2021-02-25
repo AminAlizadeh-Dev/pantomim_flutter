@@ -126,6 +126,8 @@ class GuidePageState extends State<GuidePage> {
                             height: fullHeight(context) / 2,
                             width: fullWidth(context),
                             child: ListView.builder(
+                              padding: EdgeInsets.all(0),
+                              physics: NeverScrollableScrollPhysics(),
                               addAutomaticKeepAlives: true,
                               scrollDirection: Axis.vertical,
                               itemCount: guideType().length,

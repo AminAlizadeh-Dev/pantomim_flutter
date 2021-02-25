@@ -29,11 +29,11 @@ class SelectTopicState extends State<SelectTopic> {
           ),
         ),
         body: Container(
-          height: fullHeight(context) / 7,
+          height: fullHeight(context) / 1.2,
           width: fullWidth(context),
           child: ListView.builder(
             addAutomaticKeepAlives: true,
-            scrollDirection: Axis.horizontal,
+            scrollDirection: Axis.vertical,
             itemCount: topicData().length,
             shrinkWrap: true,
             itemBuilder: (context, index) =>
