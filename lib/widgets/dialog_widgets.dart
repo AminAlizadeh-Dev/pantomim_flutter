@@ -68,7 +68,7 @@ import 'package:flutter/material.dart';
 import 'package:pantomim_flutter/pages/home_page.dart';
 import 'package:pantomim_flutter/theme/app_theme.dart';
 
-AwesomeDialog closeGameDialog(BuildContext context) {
+AwesomeDialog closeGameDialog(BuildContext context , {String title : "برای خروج و بازگشت به صفحه اصلی مطمئن هستید؟"}) {
   return AwesomeDialog(
     context: context,
     dialogType: DialogType.WARNING,
@@ -79,8 +79,7 @@ AwesomeDialog closeGameDialog(BuildContext context) {
 
     body: Container(
         // alignment: Alignment.center,
-        child: Text(
-      "برای خروج و بازگشت به صفحه اصلی مطمئن هستید؟",
+        child: Text(title,
       style: appTheme(context).textTheme.subtitle1,
       textAlign: TextAlign.center,
     )),
