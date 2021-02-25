@@ -20,7 +20,7 @@ class NewGame extends StatefulWidget {
 
 class NewGameState extends State<NewGame> {
   ScrollController _rrectController =
-      ScrollController(initialScrollOffset: 1.0);
+      ScrollController(initialScrollOffset: 0.0);
 
   @override
   Widget build(BuildContext context) {

@@ -9,6 +9,8 @@ import 'package:pantomim_flutter/pages/winner_page.dart';
 import 'package:pantomim_flutter/theme/app_theme.dart';
 import 'package:pantomim_flutter/theme/colors.dart';
 
+import 'dialogTest.dart';
+
 
 void main() {
   runApp(MaterialApp(debugShowCheckedModeBanner: false, home: MyApp()));
@@ -30,7 +32,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Pantomime',
       theme: appTheme(context),
-      home: SplashPage(),
+      home: HomePage(),
     );
   }
 }
