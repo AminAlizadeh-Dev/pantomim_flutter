@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pantomim_flutter/theme/app_theme.dart';
 import 'package:pantomim_flutter/theme/colors.dart';
 import 'package:pantomim_flutter/theme/dimense.dart';
@@ -37,24 +38,29 @@ Widget numPicker(BuildContext context, String number) {
           ),
         )),
         Align(
-          alignment: Alignment(1.09,0.0),
+          alignment: Alignment(1.06, 0.0),
           child: NeumorphicButton(
-              pressed: false,
-              onPressed: () {},
-              provideHapticFeedback: false,
-              style: NeumorphicStyle(
-                color: appTheme(context).accentColor,
-                depth: 4,
-                intensity: 8,
-                boxShape: NeumorphicBoxShape.circle(),
+            pressed: false,
+            onPressed: () {},
+            provideHapticFeedback: false,
+            style: NeumorphicStyle(
+              color: appTheme(context).accentColor,
+              depth: 4,
+              intensity: 8,
+              boxShape: NeumorphicBoxShape.circle(),
+            ),
+            child: SizedBox(
+              height: fullHeight(context) / 20,
+              width: fullWidth(context) / 20,
+              child: SvgPicture.asset(
+                "assets/icon_plus.svg",
+                color: AppColors.primaryColor,
               ),
-              child: Icon(
-                Icons.add,
-                color: Color(0xffD81B60),
-              )),
+            ),
+          ),
         ),
         Align(
-          alignment: Alignment(-1.09,0.0),
+          alignment: Alignment(-1.06, 0.0),
           child: NeumorphicButton(
             onPressed: () {},
             style: NeumorphicStyle(
@@ -63,9 +69,13 @@ Widget numPicker(BuildContext context, String number) {
               intensity: 8,
               boxShape: NeumorphicBoxShape.circle(),
             ),
-            child: Icon(
-              Icons.remove,
-              color: Color(0xffD81B60),
+            child: SizedBox(
+              height: fullHeight(context) / 17,
+              width: fullWidth(context) / 17,
+              child: SvgPicture.asset(
+                "assets/icon_minus.svg",
+                color: AppColors.primaryColor,
+              ),
             ),
           ),
         ),

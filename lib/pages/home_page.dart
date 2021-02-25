@@ -22,6 +22,7 @@ class HomeState extends State<HomePage> {
         statusBarIconBrightness: Brightness.dark));
     var theme = Theme.of(context);
     return NeumorphicApp(
+      debugShowCheckedModeBanner: false,
       home: Directionality(
         textDirection: TextDirection.rtl,
         child: Scaffold(
@@ -75,8 +76,10 @@ class HomeState extends State<HomePage> {
                   width: fullWidth(context) / 2.4,
                   child: GestureDetector(
                       onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=> NewGame()));
-                      }, child: Lottie.asset("assets/play.json")),
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => NewGame()));
+                      },
+                      child: Lottie.asset("assets/play.json")),
                 ),
               ),
               Align(
@@ -120,7 +123,7 @@ class HomeState extends State<HomePage> {
                           BorderRadius.circular(largeSize(context)))),
                   child: SvgPicture.asset(
                     "assets/close_small_icon.svg",
-                    color: AppColors.primaryColor,
+                    color: Color(0xffD32F2F),
                     width: smallSize(context),
                   ),
                 ),

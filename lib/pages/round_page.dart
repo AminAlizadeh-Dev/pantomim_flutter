@@ -57,15 +57,11 @@ void roleDialog(BuildContext context) {
               ),
               Align(
                 alignment: Alignment(-0.78, -0.8),
-                child: RaisedButton(
-                  padding: EdgeInsets.all(5),
-                  onPressed: () {},
-//                  shape:,
-                  color: AppColors.accentColor,
+                child:  GestureDetector(
+                  onTap: (){Navigator.pop(context);},
                   child: SvgPicture.asset(
                     "assets/close_small_icon.svg",
                     color: AppColors.primaryColor,
-                    width: standardSize(context),
                   ),
                 ),
               ),
