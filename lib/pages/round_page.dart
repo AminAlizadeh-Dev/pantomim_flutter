@@ -1,3 +1,4 @@
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
@@ -13,6 +14,7 @@ import 'package:pantomim_flutter/widgets/role_box.dart';
 import 'package:pantomim_flutter/widgets/team_details_box.dart';
 
 import '../local_data.dart';
+import 'home_page.dart';
 
 void roleDialog(BuildContext context) {
   showDialog(
@@ -218,7 +220,22 @@ class RoundPageState extends State<RoundPage> {
                         width: fullWidth(context) / 7,
                         child: NeuButton(
                           () {
-                            exitDialog(context);
+                            AwesomeDialog(
+                              context: context,
+                              borderSide: BorderSide(color: Colors.green, width: 2),
+                              width: 280,
+                              buttonsBorderRadius: BorderRadius.all(Radius.circular(2)),
+                              headerAnimationLoop: false,
+                              animType: AnimType.BOTTOMSLIDE,
+                              title: 'INFO',
+                              desc: 'Dialog description here...',
+                              showCloseIcon: true,
+                              btnCancelOnPress: () {},
+                              btnOkOnPress: () {
+                                
+                                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> HomePage()));
+                              },
+                            )..show();
                           },
                           svg: 'assets/power_icon.svg',
                           size: smallSize(context),
