@@ -8,7 +8,7 @@ import 'package:pantomim_flutter/pages/round_page.dart';
 import 'package:pantomim_flutter/theme/app_theme.dart';
 import 'package:pantomim_flutter/theme/colors.dart';
 import 'package:pantomim_flutter/theme/dimense.dart';
-import 'package:pantomim_flutter/widgets/dialog_widget.dart';
+import 'package:pantomim_flutter/widgets/dialog_widgets.dart';
 import 'package:pantomim_flutter/widgets/neu_button.dart';
 
 class WinnerPage extends StatefulWidget {
@@ -17,32 +17,32 @@ class WinnerPage extends StatefulWidget {
 }
 
 class WinnerState extends State<WinnerPage> {
-  void exitDialog() {
-    showDialog(
-        barrierDismissible: true,
-        context: context,
-        builder: (BuildContext context) => dialogWidget(
-                context, "برای خروج و بازگـشــت \n به صفحه اصلی مطمئن هستید ؟",
-                () {
-              Navigator.pushReplacement(
-                  context, MaterialPageRoute(builder: (context) => HomePage()));
-            }, () {
-              Navigator.pop(context);
-            }));
-  }
+  // void exitDialog() {
+  //   showDialog(
+  //       barrierDismissible: true,
+  //       context: context,
+  //       builder: (BuildContext context) => dialogWidget(
+  //               context, "برای خروج و بازگـشــت \n به صفحه اصلی مطمئن هستید ؟",
+  //               () {
+  //             Navigator.pushReplacement(
+  //                 context, MaterialPageRoute(builder: (context) => HomePage()));
+  //           }, () {
+  //             Navigator.pop(context);
+  //           }));
+  // }
 
-  void gameAgain() {
-    showDialog(
-        barrierDismissible: true,
-        context: context,
-        builder: (BuildContext context) =>
-            dialogWidget(context, "آیا از تکرار این مسابقه مطمئن هستید ؟", () {
-              Navigator.pushReplacement(context,
-                  MaterialPageRoute(builder: (context) => RoundPage()));
-            }, () {
-              Navigator.pop(context);
-            }));
-  }
+  // void gameAgain() {
+  //   showDialog(
+  //       barrierDismissible: true,
+  //       context: context,
+  //       builder: (BuildContext context) =>
+  //           dialogWidget(context, "آیا از تکرار این مسابقه مطمئن هستید ؟", () {
+  //             Navigator.pushReplacement(context,
+  //                 MaterialPageRoute(builder: (context) => RoundPage()));
+  //           }, () {
+  //             Navigator.pop(context);
+  //           }));
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -141,14 +141,14 @@ class WinnerState extends State<WinnerPage> {
                   children: [
                     NeuButton(
                       () {
-                        gameAgain();
+                        // gameAgain();
                       },
                       svg: ("assets/icon_repeat.svg"),
                       size: mediumSize(context),
                     ),
                     NeuButton(
                       () {
-                        exitDialog();
+                        // exitDialog();
                       },
                       svg: ("assets/icon_home.svg"),
                       size: mediumSize(context),

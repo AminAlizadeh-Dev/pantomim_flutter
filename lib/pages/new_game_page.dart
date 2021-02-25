@@ -89,7 +89,7 @@ class NewGameState extends State<NewGame> {
                                           child: Ink(
                                             child: InkWell(
                                               onTap: () {
-                                                setState(() {
+
                                                   showModalBottomSheet<void>(
                                                       context: context,
                                                       backgroundColor:
@@ -98,14 +98,9 @@ class NewGameState extends State<NewGame> {
                                                               context) =>
                                                           bottomSheetWidget(
                                                               context, () {
-                                                            Navigator.pushReplacement(
-                                                                context,
-                                                                MaterialPageRoute(
-                                                                    builder:
-                                                                        (context) =>
-                                                                            NewGame()));
+                                                            Navigator.pop(context);
                                                           }));
-                                                });
+
                                               },
                                               child: Container(
                                                 width: fullWidth(context) / 1.5,
