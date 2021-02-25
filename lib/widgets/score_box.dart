@@ -1,11 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:pantomim_flutter/models/point_model.dart';
 import 'package:pantomim_flutter/theme/app_theme.dart';
 import 'package:pantomim_flutter/theme/dimense.dart';
 
-Widget scoreBox(
-    BuildContext context, String topic, String point, String svgIcon,
+Widget scoreBox(PointModel score,
+    BuildContext context,
     {Color iconColor}) {
   return Directionality(
     textDirection: TextDirection.rtl,
@@ -34,7 +35,7 @@ Widget scoreBox(
                   Container(
                     alignment: Alignment.center,
                     child: Text(
-                      topic,
+                      score.word,
                       maxLines: 1,
                       style: appTheme(context).textTheme.subtitle1,
                       overflow: TextOverflow.ellipsis,
@@ -43,7 +44,7 @@ Widget scoreBox(
                   Container(
                     alignment: Alignment.center,
                     child: Text(
-                      point,
+                      score.point,
                       maxLines: 1,
                       style: appTheme(context).textTheme.subtitle1,
                       overflow: TextOverflow.ellipsis,
@@ -71,7 +72,7 @@ Widget scoreBox(
                     boxShape: NeumorphicBoxShape.circle(),
                   ),
                   child: SvgPicture.asset(
-                    svgIcon,
+                    score.icon,
                     height: mediumSize(context),
                     width: mediumSize(context),
                     color: iconColor,

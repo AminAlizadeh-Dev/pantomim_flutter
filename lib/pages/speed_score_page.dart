@@ -11,6 +11,8 @@ import 'package:pantomim_flutter/widgets/dialog_widgets.dart';
 import 'package:pantomim_flutter/widgets/neu_button.dart';
 import 'package:pantomim_flutter/widgets/score_box.dart';
 
+import '../local_data.dart';
+
 class SpeedScore extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => SpeedScoreState();
@@ -83,49 +85,55 @@ class SpeedScoreState extends State<SpeedScore> {
                           alwaysVisibleScrollThumb: true,
                           controller: _rrectController,
                           padding: EdgeInsets.only(bottom: smallSize(context)),
-                          child: ListView(
+                          child: ListView.builder(
                             padding: EdgeInsets.all(0),
                             controller: _rrectController,
-                            children: [
-                              Container(
-                                margin: EdgeInsets.symmetric(
-                                    horizontal: smallSize(context),vertical: mediumSize(context)),
-                                child: Column(
-                                  children: [
-                                    scoreBox(context, 'مگس کش', '1 امتیاز',
-                                        'assets/close_large_icon.svg',
-                                        ),
-                                    scoreBox(context, 'مگس کش', '1 امتیاز',
-                                        'assets/thick_icon.svg',
-                                        ),
-                                    scoreBox(context, 'مگس کش', '1 امتیاز',
-                                        'assets/close_large_icon.svg',
-                                        ),
-                                    scoreBox(context, 'مگس کش', '1 امتیاز',
-                                        'assets/close_large_icon.svg',
-                                        ),
-                                    scoreBox(context, 'مگس کش', '1 امتیاز',
-                                        'assets/close_large_icon.svg',
-                                        ),
-                                    scoreBox(context, 'مگس کش', '1 امتیاز',
-                                        'assets/close_large_icon.svg',
-                                        ),
-                                    scoreBox(context, 'پاس', '1 امتیاز',
-                                        'assets/thick_icon.svg',
-                                        ),
-                                    scoreBox(context, 'دست', '1 امتیاز',
-                                        'assets/thick_icon.svg',
-                                        ),
-                                    scoreBox(context, 'گل', '1 امتیاز',
-                                        'assets/close_large_icon.svg',
-                                        ),
-                                    scoreBox(context, 'پروتون', '1 امتیاز',
-                                        'assets/thick_icon.svg',
-                                        )
-                                  ],
-                                ),
-                              ),
-                            ],
+                            addAutomaticKeepAlives: true,
+                            scrollDirection: Axis.vertical,
+                            itemCount: speedScoreData().length,
+                            shrinkWrap: true,
+                            itemBuilder: (context, index) =>
+                                scoreBox(speedScoreData()[index], context),
+
+
+//                              Container(
+//                                margin: EdgeInsets.symmetric(
+//                                    horizontal: smallSize(context),vertical: mediumSize(context)),
+//                                child: Column(
+//                                  children: [
+//                                    scoreBox(context, 'مگس کش', '1 امتیاز',
+//                                        'assets/close_large_icon.svg',
+//                                        ),
+//                                    scoreBox(context, 'مگس کش', '1 امتیاز',
+//                                        'assets/thick_icon.svg',
+//                                        ),
+//                                    scoreBox(context, 'مگس کش', '1 امتیاز',
+//                                        'assets/close_large_icon.svg',
+//                                        ),
+//                                    scoreBox(context, 'مگس کش', '1 امتیاز',
+//                                        'assets/close_large_icon.svg',
+//                                        ),
+//                                    scoreBox(context, 'مگس کش', '1 امتیاز',
+//                                        'assets/close_large_icon.svg',
+//                                        ),
+//                                    scoreBox(context, 'مگس کش', '1 امتیاز',
+//                                        'assets/close_large_icon.svg',
+//                                        ),
+//                                    scoreBox(context, 'پاس', '1 امتیاز',
+//                                        'assets/thick_icon.svg',
+//                                        ),
+//                                    scoreBox(context, 'دست', '1 امتیاز',
+//                                        'assets/thick_icon.svg',
+//                                        ),
+//                                    scoreBox(context, 'گل', '1 امتیاز',
+//                                        'assets/close_large_icon.svg',
+//                                        ),
+//                                    scoreBox(context, 'پروتون', '1 امتیاز',
+//                                        'assets/thick_icon.svg',
+//                                        )
+//                                  ],
+//                                ),
+//                              ),
                           ),
                         ),
                       ),

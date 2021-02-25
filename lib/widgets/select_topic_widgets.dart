@@ -7,7 +7,7 @@ import 'package:pantomim_flutter/theme/app_theme.dart';
 import 'package:pantomim_flutter/theme/colors.dart';
 import 'package:pantomim_flutter/theme/dimense.dart';
 
-Widget selectTopicWidgets(Topic topicBox,BuildContext context) {
+Widget selectTopicWidgets(Topic topicBox, BuildContext context) {
   var theme = Theme.of(context);
   return Neumorphic(
     padding: EdgeInsets.all(standardSize(context)),
@@ -60,7 +60,7 @@ Widget selectTopicWidgets(Topic topicBox,BuildContext context) {
                   ),
                   child: Center(
                     child: Text(
-                      "6",
+                      "2",
                       textAlign: TextAlign.center,
                       style: theme.textTheme.subtitle2,
                     ),
@@ -81,7 +81,7 @@ Widget selectTopicWidgets(Topic topicBox,BuildContext context) {
                   ),
                   child: Center(
                     child: Text(
-                      "6",
+                      "4",
                       textAlign: TextAlign.center,
                       style: theme.textTheme.subtitle2,
                     ),

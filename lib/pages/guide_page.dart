@@ -86,7 +86,7 @@ class GuidePageState extends State<GuidePage> {
                                     flex: 2,
                                     child: Row(
                                       mainAxisAlignment:
-                                      MainAxisAlignment.spaceAround,
+                                          MainAxisAlignment.spaceAround,
                                       children: [
                                         SvgPicture.asset(
                                           'assets/arrow_down_icon.svg',
@@ -103,7 +103,7 @@ class GuidePageState extends State<GuidePage> {
                                                 fontFamily: "aviny",
                                                 height: 1.8,
                                                 fontSize:
-                                                fullWidth(context) / 23,
+                                                    fullWidth(context) / 23,
                                               ),
                                               textAlign: TextAlign.center,
                                               style: NeumorphicStyle(
@@ -132,8 +132,8 @@ class GuidePageState extends State<GuidePage> {
                               scrollDirection: Axis.vertical,
                               itemCount: guideType().length,
                               shrinkWrap: true,
-                              itemBuilder: (context, index) =>
-                              (textGuideWidget(guideType()[index], context)),
+                              itemBuilder: (context, index) => (textGuideWidget(
+                                  guideType()[index], context)),
                             ),
                           ),
                         ],
@@ -155,7 +155,7 @@ class GuidePageState extends State<GuidePage> {
                       width: fullWidth(context) / 7,
                       height: fullWidth(context) / 7,
                       child: NeuButton(
-                            () {},
+                        () {},
                         icon: Icons.arrow_forward_ios_rounded,
                       ),
                     ),
@@ -163,7 +163,7 @@ class GuidePageState extends State<GuidePage> {
                       width: fullWidth(context) / 7,
                       height: fullWidth(context) / 7,
                       child: NeuButton(
-                            () {
+                        () {
                           Navigator.pop(context);
                         },
                         svg: "assets/power_icon.svg",
@@ -173,7 +173,9 @@ class GuidePageState extends State<GuidePage> {
                   ],
                 ),
               ),
-              SizedBox(height: largeSize(context),),
+              SizedBox(
+                height: largeSize(context),
+              ),
             ],
           ),
         ),

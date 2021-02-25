@@ -56,14 +56,16 @@ void roleDialog(BuildContext context) {
                 ),
               ),
               Align(
-                alignment: Alignment(-0.78, -0.8),
+                alignment: Alignment(-0.8, -0.7),
                 child: GestureDetector(
                   onTap: () {
                     Navigator.pop(context);
                   },
                   child: SvgPicture.asset(
                     "assets/close_small_icon.svg",
-                    color: AppColors.primaryColor,
+                    color: Colors.red,
+                    height: standardSize(context),
+                    width: standardSize(context),
                   ),
                 ),
               ),
@@ -167,7 +169,7 @@ class RoundPageState extends State<RoundPage> {
                     ),
                   ),
                   Align(
-                    alignment: Alignment(0.0, -0.79),
+                    alignment: Alignment(0.0, -0.81),
                     child: Container(
                       width: fullWidth(context) / 1.7,
                       height: fullWidth(context) / 8,
