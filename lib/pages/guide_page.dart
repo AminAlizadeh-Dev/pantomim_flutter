@@ -144,38 +144,37 @@ class GuidePageState extends State<GuidePage> {
                   ),
                 ),
               ),
-              Container(
-                margin: EdgeInsets.only(
-                  right: standardSize(context),
-                  top: xSmallSize(context),
-                  left: standardSize(context),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    SizedBox(
-                      width: fullWidth(context) / 7,
-                      height: fullWidth(context) / 7,
-                      child: NeuButton(
-                        () {},
-                        svg: ("assets/icon_next.svg"),
-                        colorSvg: AppColors.primaryColor,
-                        size: mediumSize(context) / 1.15,
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: Container(
+                  margin: EdgeInsets.all(standardSize(context)),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      SizedBox(
+                        width: fullWidth(context) / 7,
+                        height: fullWidth(context) / 7,
+                        child: NeuButton(
+                          () {},
+                          svg: ("assets/icon_next.svg"),
+                          colorSvg: AppColors.primaryColor,
+                          size: mediumSize(context) / 1.15,
+                        ),
                       ),
-                    ),
-                    SizedBox(
-                      width: fullWidth(context) / 7,
-                      height: fullWidth(context) / 7,
-                      child: NeuButton(
-                        () {
-                          Navigator.pop(context);
-                        },
-                        svg: ("assets/icon_power.svg"),
-                        colorSvg: AppColors.primaryColor,
-                        size: mediumSize(context) / 1.15,
+                      SizedBox(
+                        width: fullWidth(context) / 7,
+                        height: fullWidth(context) / 7,
+                        child: NeuButton(
+                          () {
+                            Navigator.pop(context);
+                          },
+                          svg: ("assets/icon_power.svg"),
+                          colorSvg: AppColors.primaryColor,
+                          size: mediumSize(context) / 1.15,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
               SizedBox(
