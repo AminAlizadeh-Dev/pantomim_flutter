@@ -4,6 +4,7 @@ import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:lottie/lottie.dart';
 import 'package:pantomim_flutter/pages/screen.dart';
 import 'package:pantomim_flutter/pages/speed_score_page.dart';
+import 'package:pantomim_flutter/pages/winner_page.dart';
 import 'package:pantomim_flutter/theme/colors.dart';
 import 'package:pantomim_flutter/theme/dimense.dart';
 import 'package:pantomim_flutter/widgets/dialog_widgets.dart';
@@ -57,7 +58,7 @@ class GamePageState extends State<GamePage> {
                                 Navigator.pushReplacement(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => SpeedScore()));
+                                        builder: (context) => WinnerPage()));
                               },
                                   title: "درست",
                                   color: Color(0xff388E3C),

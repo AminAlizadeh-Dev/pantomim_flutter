@@ -57,11 +57,13 @@ class GuidePageState extends State<GuidePage> {
                         physics: BouncingScrollPhysics(),
                         child: Container(
                           margin: EdgeInsets.only(
-                              top: smallSize(context), bottom: mediumSize(context)),
+                              top: smallSize(context),
+                              bottom: mediumSize(context)),
                           child: Column(
                             children: [
                               Container(
-                                margin: EdgeInsets.only(top: xxSmallSize(context)),
+                                margin:
+                                    EdgeInsets.only(top: xxSmallSize(context)),
                                 child: Center(
                                   child: Text(
                                     "نوع مسابقه :",
@@ -89,7 +91,7 @@ class GuidePageState extends State<GuidePage> {
                                         flex: 2,
                                         child: Row(
                                           mainAxisAlignment:
-                                          MainAxisAlignment.spaceAround,
+                                              MainAxisAlignment.spaceAround,
                                           children: [
                                             SvgPicture.asset(
                                               'assets/icon_down.svg',
@@ -103,11 +105,12 @@ class GuidePageState extends State<GuidePage> {
                                               child: Center(
                                                 child: NeumorphicText(
                                                   "انتخاب کن",
-                                                  textStyle: NeumorphicTextStyle(
+                                                  textStyle:
+                                                      NeumorphicTextStyle(
                                                     fontFamily: "aviny",
                                                     height: 1.8,
                                                     fontSize:
-                                                    fullWidth(context) / 23,
+                                                        fullWidth(context) / 23,
                                                   ),
                                                   textAlign: TextAlign.center,
                                                   style: NeumorphicStyle(
@@ -136,8 +139,9 @@ class GuidePageState extends State<GuidePage> {
                                   scrollDirection: Axis.vertical,
                                   itemCount: guideType().length,
                                   shrinkWrap: true,
-                                  itemBuilder: (context, index) => (textGuideWidget(
-                                      guideType()[index], context)),
+                                  itemBuilder: (context, index) =>
+                                      (textGuideWidget(
+                                          guideType()[index], context)),
                                 ),
                               ),
                             ],
@@ -162,7 +166,7 @@ class GuidePageState extends State<GuidePage> {
                         width: fullWidth(context) / 7,
                         height: fullWidth(context) / 7,
                         child: NeuButton(
-                              () {},
+                          () {},
                           svg: ("assets/icon_next.svg"),
                           colorSvg: AppColors.primaryColor,
                           size: mediumSize(context) / 1.15,
@@ -172,7 +176,7 @@ class GuidePageState extends State<GuidePage> {
                         width: fullWidth(context) / 7,
                         height: fullWidth(context) / 7,
                         child: NeuButton(
-                              () {
+                          () {
                             Navigator.pop(context);
                           },
                           svg: ("assets/icon_power.svg"),
