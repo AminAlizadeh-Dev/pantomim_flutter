@@ -173,18 +173,20 @@ class SumPointsState extends State<SumPointsPage> {
                     ),
                   ],
                 ),
-                Positioned(
-                  bottom: largeSize(context),
-                  right: largeSize(context),
-                  child: SizedBox(
-                      width: fullWidth(context) / 7,
-                      height: fullWidth(context) / 7,
-                      child: NeuButton(
-                        () {},
-                        svg: ("assets/icon_next.svg"),
-                        colorSvg: AppColors.primaryColor,
-                        size: mediumSize(context) / 1.15,
-                      )),
+                Align(
+                  alignment: Alignment.bottomRight,
+                  child: Container(
+                    margin: EdgeInsets.all(standardSize(context)),
+                    child: SizedBox(
+                        width: fullWidth(context) / 7,
+                        height: fullWidth(context) / 7,
+                        child: NeuButton(
+                          () {},
+                          svg: ("assets/icon_next.svg"),
+                          colorSvg: AppColors.primaryColor,
+                          size: mediumSize(context) / 1.15,
+                        )),
+                  ),
                 ),
               ],
             ),

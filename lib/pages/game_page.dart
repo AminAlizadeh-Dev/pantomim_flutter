@@ -43,42 +43,43 @@ class GamePageState extends State<GamePage> {
                     Center(
                       child: NeuProgressPieBar(),
                     ),
-                    Positioned(
-                      right: standardSize(context),
-                      left: standardSize(context),
-                      bottom: largeSize(context),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          SizedBox(
-                            width: fullWidth(context) / 6.5,
-                            height: fullWidth(context) / 6.5,
-                            child: NeuButton(() {
-                              Navigator.pushReplacement(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => SpeedScore()));
-                            },
-                                title: "درست",
-                                color: Color(0xff388E3C),
-                                align: TextAlign.center),
-                          ),
-                          SizedBox(
-                            width: fullWidth(context) / 6.5,
-                            height: fullWidth(context) / 6.5,
-                            child: NeuButton(
-                              () {},
-                              svg: "assets/error_icon.svg",
-                              colorSvg: Color(0xffF57C00),
-                              align: TextAlign.center,
-                              size: mediumSize(context) / 1.15,
+                    Align(
+                      alignment: Alignment.bottomCenter,
+                      child: Container(
+                        margin: EdgeInsets.all(standardSize(context)),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            SizedBox(
+                              width: fullWidth(context) / 6.5,
+                              height: fullWidth(context) / 6.5,
+                              child: NeuButton(() {
+                                Navigator.pushReplacement(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => SpeedScore()));
+                              },
+                                  title: "درست",
+                                  color: Color(0xff388E3C),
+                                  align: TextAlign.center),
                             ),
-                          ),
-                          SizedBox(
-                              width: fullWidth(context) / 6,
-                              height: fullWidth(context) / 6,
-                              child: NeuStartButton()),
-                        ],
+                            SizedBox(
+                              width: fullWidth(context) / 6.5,
+                              height: fullWidth(context) / 6.5,
+                              child: NeuButton(
+                                () {},
+                                svg: "assets/error_icon.svg",
+                                colorSvg: Color(0xffF57C00),
+                                align: TextAlign.center,
+                                size: mediumSize(context) / 1.15,
+                              ),
+                            ),
+                            SizedBox(
+                                width: fullWidth(context) / 6,
+                                height: fullWidth(context) / 6,
+                                child: NeuStartButton()),
+                          ],
+                        ),
                       ),
                     ),
                     Positioned(

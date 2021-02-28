@@ -63,39 +63,40 @@ class StartGamePageState extends State<StartGamePage> {
                       ),
                     ),
                   ),
-                  Positioned(
-                    right: standardSize(context),
-                    left: standardSize(context),
-                    bottom: fullWidth(context) / 10,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        SizedBox(
-                          width: fullWidth(context) / 6.5,
-                          height: fullWidth(context) / 6.5,
-                          child: NeuButton(() {
-                            Navigator.pushReplacement(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => GamePage()));
-                          },
-                              title: "شروع",
-                              textHeight: 2.3,
-                              color: Color(0xff388E3C),
-                              align: TextAlign.center),
-                        ),
-                        SizedBox(
-                          width: fullWidth(context) / 6.5,
-                          height: fullWidth(context) / 6.5,
-                          child: NeuButton(
-                            () {},
-                            title: "تعویض",
-                            textHeight: 2.3,
-                            color: Color(0xff0090FF),
-                            align: TextAlign.center,
+                  Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Container(
+                      margin: EdgeInsets.all(standardSize(context)),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          SizedBox(
+                            width: fullWidth(context) / 6.5,
+                            height: fullWidth(context) / 6.5,
+                            child: NeuButton(() {
+                              Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => GamePage()));
+                            },
+                                title: "شروع",
+                                textHeight: 2.3,
+                                color: Color(0xff388E3C),
+                                align: TextAlign.center),
                           ),
-                        ),
-                      ],
+                          SizedBox(
+                            width: fullWidth(context) / 6.5,
+                            height: fullWidth(context) / 6.5,
+                            child: NeuButton(
+                              () {},
+                              title: "تعویض",
+                              textHeight: 2.3,
+                              color: Color(0xff0090FF),
+                              align: TextAlign.center,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   Positioned(

@@ -358,55 +358,65 @@ class NewGameState extends State<NewGame> {
                             )),
                       ),
                     ),
-                    Container(
-                      margin: EdgeInsets.only(bottom: mediumSize(context)),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          SizedBox(
-                            height: fullWidth(context) / 7,
-                            width: fullWidth(context) / 7,
-                            child: NeuButton(
-                              () {
-                                Navigator.pushReplacement(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => RoundPage()));
-                              },
-                              svg: ("assets/icon_next.svg"),
-                              colorSvg: AppColors.primaryColor,
-                              size: mediumSize(context) / 1.15,
+                    Stack(
+                      children: [
+                        Container(
+                          margin: EdgeInsets.only(top: largeSize(context) / 0.7),
+                          child: Align(
+                            alignment: Alignment.bottomCenter,
+                            child: Container(
+                              margin: EdgeInsets.all(standardSize(context)),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  SizedBox(
+                                    height: fullWidth(context) / 7,
+                                    width: fullWidth(context) / 7,
+                                    child: NeuButton(
+                                          () {
+                                        Navigator.pushReplacement(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) => RoundPage()));
+                                      },
+                                      svg: ("assets/icon_next.svg"),
+                                      colorSvg: AppColors.primaryColor,
+                                      size: mediumSize(context) / 1.15,
+                                    ),
+                                  ),
+                                  Container(
+                                    height: fullWidth(context) / 7,
+                                    width: fullWidth(context) / 7,
+                                    child: NeuButton(
+                                          () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) => GuidePage()));
+                                      },
+                                      svg: 'assets/icon_Question.svg',
+                                      size: mediumSize(context) / 1.15,
+                                      colorSvg: AppColors.primaryColor,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: fullWidth(context) / 7,
+                                    width: fullWidth(context) / 7,
+                                    child: NeuButton(
+                                          () {
+                                        Navigator.pop(context);
+                                      },
+                                      svg: ("assets/icon_back.svg"),
+                                      colorSvg: AppColors.primaryColor,
+                                      size: mediumSize(context) / 1.15,
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
-                          Container(
-                            height: fullWidth(context) / 7,
-                            width: fullWidth(context) / 7,
-                            child: NeuButton(
-                              () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => GuidePage()));
-                              },
-                              svg: 'assets/icon_Question.svg',
-                              size: mediumSize(context) / 1.15,
-                              colorSvg: AppColors.primaryColor,
-                            ),
-                          ),
-                          SizedBox(
-                            height: fullWidth(context) / 7,
-                            width: fullWidth(context) / 7,
-                            child: NeuButton(
-                              () {
-                                Navigator.pop(context);
-                              },
-                              svg: ("assets/icon_back.svg"),
-                              colorSvg: AppColors.primaryColor,
-                              size: mediumSize(context) / 1.15,
-                            ),
-                          ),
-                        ],
-                      ),
+                        ),
+                      ],
                     )
                   ],
                 ))),

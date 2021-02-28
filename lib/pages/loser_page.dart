@@ -38,7 +38,7 @@ class LoserState extends State<LoserPage> {
                       horizontal: xlargeSize(context),
                     ),
                     width: fullWidth(context),
-                    height: fullHeight(context) / 7.2,
+                    height: fullHeight(context) / 9,
                     child: Stack(
                       overflow: Overflow.visible,
                       children: [
@@ -107,18 +107,20 @@ class LoserState extends State<LoserPage> {
                     ),
                   ),
                 ),
-                Positioned(
-                  bottom: largeSize(context),
-                  right: largeSize(context),
-                  child: SizedBox(
-                      width: fullWidth(context) / 7,
-                      height: fullWidth(context) / 7,
-                      child: NeuButton(
-                        () {},
-                        svg: ("assets/icon_next.svg"),
-                        colorSvg: AppColors.primaryColor,
-                        size: mediumSize(context) / 1.15,
-                      )),
+                Align(
+                  alignment: Alignment.bottomRight,
+                  child: Container(
+                    margin: EdgeInsets.all(standardSize(context)),
+                    child: SizedBox(
+                        width: fullWidth(context) / 7,
+                        height: fullWidth(context) / 7,
+                        child: NeuButton(
+                          () {},
+                          svg: ("assets/icon_next.svg"),
+                          colorSvg: AppColors.primaryColor,
+                          size: mediumSize(context) / 1.15,
+                        )),
+                  ),
                 ),
               ],
             ),

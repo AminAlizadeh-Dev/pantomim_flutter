@@ -207,51 +207,58 @@ class RoundPageState extends State<RoundPage> {
             ),
             Expanded(
               flex: 1,
-              child: Container(
-                margin: EdgeInsets.symmetric(horizontal: standardSize(context)),
-                child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      SizedBox(
-                        height: fullWidth(context) / 7,
-                        width: fullWidth(context) / 7,
-                        child: NeuButton(
-                          () {
-                            closeGameDialog(context);
-                          },
-                          svg: ("assets/icon_power.svg"),
-                          colorSvg: AppColors.primaryColor,
-                          size: mediumSize(context) / 1.15,
-                        ),
-                      ),
-                      SizedBox(
-                        height: fullWidth(context) / 7,
-                        width: fullWidth(context) / 7,
-                        child: NeuButton(
-                          () {
-                            roleDialog(context);
-                          },
-                          svg: "assets/Rules.svg",
-                          colorSvg: AppColors.primaryColor,
-                          size: mediumSize(context) / 1.24,
-                        ),
-                      ),
-                      SizedBox(
-                        height: fullWidth(context) / 7,
-                        width: fullWidth(context) / 7,
-                        child: NeuButton(
-                          () {
-                            Navigator.pushReplacement(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => SelectTopic()));
-                          },
-                          svg: ("assets/play-button (1).svg"),
-                          colorSvg: Color(0XFF388E3C),
-                          size: mediumSize(context) / 1.12,
-                        ),
-                      ),
-                    ]),
+              child: Stack(
+                children: [
+                  Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Container(
+                      margin: EdgeInsets.all(standardSize(context)),
+                      child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            SizedBox(
+                              height: fullWidth(context) / 7,
+                              width: fullWidth(context) / 7,
+                              child: NeuButton(
+                                    () {
+                                  closeGameDialog(context);
+                                },
+                                svg: ("assets/icon_power.svg"),
+                                colorSvg: AppColors.primaryColor,
+                                size: mediumSize(context) / 1.15,
+                              ),
+                            ),
+                            SizedBox(
+                              height: fullWidth(context) / 7,
+                              width: fullWidth(context) / 7,
+                              child: NeuButton(
+                                    () {
+                                  roleDialog(context);
+                                },
+                                svg: "assets/Rules.svg",
+                                colorSvg: AppColors.primaryColor,
+                                size: mediumSize(context) / 1.24,
+                              ),
+                            ),
+                            SizedBox(
+                              height: fullWidth(context) / 7,
+                              width: fullWidth(context) / 7,
+                              child: NeuButton(
+                                    () {
+                                  Navigator.pushReplacement(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => SelectTopic()));
+                                },
+                                svg: ("assets/icon-play-button.svg"),
+                                colorSvg: Color(0XFF388E3C),
+                                size: mediumSize(context) / 1.12,
+                              ),
+                            ),
+                          ]),
+                    ),
+                  ),
+                ],
               ),
             ),
           ],

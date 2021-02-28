@@ -248,22 +248,24 @@ class SpeedScoreState extends State<SpeedScore> {
                         ),
                       ),
                     ),
-                    Positioned(
-                      bottom: standardSize(context),
-                      right: standardSize(context),
-                      child: SizedBox(
-                        height: fullWidth(context) / 7,
-                        width: fullWidth(context) / 7,
-                        child: NeuButton(
-                          () {
-                            Navigator.pushReplacement(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => StartGamePage()));
-                          },
-                          svg: ("assets/icon_next.svg"),
-                          colorSvg: AppColors.primaryColor,
-                          size: mediumSize(context) / 1.15,
+                    Align(
+                      alignment: Alignment.bottomRight,
+                      child: Container(
+                        margin: EdgeInsets.all(standardSize(context)),
+                        child: SizedBox(
+                          height: fullWidth(context) / 7,
+                          width: fullWidth(context) / 7,
+                          child: NeuButton(
+                            () {
+                              Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => StartGamePage()));
+                            },
+                            svg: ("assets/icon_next.svg"),
+                            colorSvg: AppColors.primaryColor,
+                            size: mediumSize(context) / 1.15,
+                          ),
                         ),
                       ),
                     )
