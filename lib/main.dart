@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
-import 'package:pantomim_flutter/pages/end_game_page.dart';
-import 'package:pantomim_flutter/pages/game_page.dart';
 import 'package:pantomim_flutter/pages/home_page.dart';
-import 'package:pantomim_flutter/pages/loser_page.dart';
+import 'package:pantomim_flutter/pages/round_page.dart';
 import 'package:pantomim_flutter/theme/app_theme.dart';
 import 'package:pantomim_flutter/theme/colors.dart';
 
@@ -28,7 +26,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Pantomime',
       theme: appTheme(context),
-      home: LoserPage(),
+      home: RoundPage(),
     );
   }
 }
