@@ -38,7 +38,7 @@ class LoserState extends State<LoserPage> {
                       horizontal: xlargeSize(context),
                     ),
                     width: fullWidth(context),
-                    height: fullHeight(context) / 7.5,
+                    height: fullHeight(context) / 7.2,
                     child: Stack(
                       overflow: Overflow.visible,
                       children: [
