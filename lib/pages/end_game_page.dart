@@ -14,114 +14,119 @@ class EndGamePage extends StatefulWidget {
 class EndGameState extends State<EndGamePage> {
   @override
   Widget build(BuildContext context) {
-    return Directionality(
-      textDirection: TextDirection.rtl,
-      child: Scaffold(
-        backgroundColor: appTheme(context).accentColor,
-        body: Stack(
-          children: [
-            Align(
-              alignment: Alignment.center,
-              child: Container(
-                margin: EdgeInsets.symmetric(
-                  horizontal: xlargeSize(context),
-                ),
-                width: fullWidth(context),
-                height: fullHeight(context) / 7.5,
-                child: Stack(
-                  overflow: Overflow.visible,
-                  children: [
-                    Container(
-                      child: SizedBox(
-                        width: fullWidth(context),
-                        height: fullWidth(context),
-                        child: Neumorphic(
-                          style: NeumorphicStyle(
-                              color: appTheme(context).accentColor,
-                              depth: 4,
-                              intensity: 10,
-                              boxShape: NeumorphicBoxShape.stadium()),
+    return SafeArea(
+      top: false,
+      bottom: true,
+      child: Directionality(
+        textDirection: TextDirection.rtl,
+        child: Scaffold(
+          backgroundColor: appTheme(context).accentColor,
+          body: Stack(
+            children: [
+              Align(
+                alignment: Alignment.center,
+                child: Container(
+                  margin: EdgeInsets.symmetric(
+                    horizontal: xlargeSize(context),
+                  ),
+                  width: fullWidth(context),
+                  height: fullHeight(context) / 7.5,
+                  child: Stack(
+                    overflow: Overflow.visible,
+                    children: [
+                      Container(
+                        child: SizedBox(
+                          width: fullWidth(context),
+                          height: fullWidth(context),
+                          child: Neumorphic(
+                            style: NeumorphicStyle(
+                                color: appTheme(context).accentColor,
+                                depth: 4,
+                                intensity: 10,
+                                boxShape: NeumorphicBoxShape.stadium()),
+                          ),
                         ),
                       ),
-                    ),
-                    Positioned(
-                      bottom: 0,
-                      top: 0,
-                      left: -10,
-                      child: Transform.rotate(
-                        angle: -0.3,
-                        child: Neumorphic(
-                          padding: EdgeInsets.all(7),
-                          style: NeumorphicStyle(
-                              color: appTheme(context).accentColor,
-                              depth: 4,
-                              intensity: 10,
-                              boxShape: NeumorphicBoxShape.circle()),
-                          child: Image.asset("assets/happy.png"),
+                      Positioned(
+                        bottom: 0,
+                        top: 0,
+                        left: -10,
+                        child: Transform.rotate(
+                          angle: -0.3,
+                          child: Neumorphic(
+                            padding: EdgeInsets.all(7),
+                            style: NeumorphicStyle(
+                                color: appTheme(context).accentColor,
+                                depth: 4,
+                                intensity: 10,
+                                boxShape: NeumorphicBoxShape.circle()),
+                            child: Image.asset("assets/happy.png"),
+                          ),
                         ),
                       ),
-                    ),
-                    Positioned(
-                      right: 0,
-                      top: 0,
-                      bottom: 0,
-                      child: Container(
-                        margin: EdgeInsets.only(right: largeSize(context)),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Container(
-                              margin: EdgeInsets.only(top: smallSize(context)),
-                              child: Center(
-                                child: Text(
-                                  "پــایان مسابقه",
-                                  textAlign: TextAlign.center,
-                                  style: appTheme(context)
-                                      .textTheme
-                                      .subtitle2
-                                      .copyWith(
+                      Positioned(
+                        right: 0,
+                        top: 0,
+                        bottom: 0,
+                        child: Container(
+                          margin: EdgeInsets.only(right: largeSize(context)),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Container(
+                                margin:
+                                    EdgeInsets.only(top: smallSize(context)),
+                                child: Center(
+                                  child: Text(
+                                    "پــایان مسابقه",
+                                    textAlign: TextAlign.center,
+                                    style: appTheme(context)
+                                        .textTheme
+                                        .subtitle2
+                                        .copyWith(
+                                            color: Color(0xff388E3C),
+                                            fontSize: fullWidth(context) / 12,
+                                            height: 1),
+                                  ),
+                                ),
+                              ),
+                              Center(
+                                child: Container(
+                                  child: Text(
+                                    "بریم برای دیدن نتـایج !",
+                                    textAlign: TextAlign.center,
+                                    style: appTheme(context)
+                                        .textTheme
+                                        .bodyText2
+                                        .copyWith(
                                           color: Color(0xff388E3C),
-                                          fontSize: fullWidth(context) / 12,
-                                          height: 1),
+                                        ),
+                                  ),
                                 ),
                               ),
-                            ),
-                            Center(
-                              child: Container(
-                                child: Text(
-                                  "بریم برای دیدن نتـایج !",
-                                  textAlign: TextAlign.center,
-                                  style: appTheme(context)
-                                      .textTheme
-                                      .bodyText2
-                                      .copyWith(
-                                        color: Color(0xff388E3C),
-                                      ),
-                                ),
-                              ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
-            ),
-            Positioned(
-                bottom: largeSize(context),
-                right: largeSize(context),
-                child: SizedBox(
-                  width: fullWidth(context) / 7,
-                  height: fullWidth(context) / 7,
-                  child: NeuButton(
-                    () {},
-                    svg: ("assets/icon_next.svg"),
-                    colorSvg: AppColors.primaryColor,
-                    size: mediumSize(context) / 1.15,
-                  ),
-                )),
-          ],
+              Positioned(
+                  bottom: largeSize(context),
+                  right: largeSize(context),
+                  child: SizedBox(
+                    width: fullWidth(context) / 7,
+                    height: fullWidth(context) / 7,
+                    child: NeuButton(
+                      () {},
+                      svg: ("assets/icon_next.svg"),
+                      colorSvg: AppColors.primaryColor,
+                      size: mediumSize(context) / 1.15,
+                    ),
+                  )),
+            ],
+          ),
         ),
       ),
     );

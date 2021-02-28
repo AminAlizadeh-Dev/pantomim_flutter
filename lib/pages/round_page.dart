@@ -17,94 +17,103 @@ void roleDialog(BuildContext context) {
   showDialog(
     context: context,
     builder: (BuildContext context) {
-      return Material(
-        color: Colors.transparent,
-        child: Directionality(
-          textDirection: TextDirection.rtl,
-          child: Stack(
-            children: [
-              Positioned(
-                top: fullWidth(context) / 4.5,
-                right: standardSize(context),
-                left: standardSize(context),
-                bottom: xxLargeSize(context),
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(standardSize(context)),
-                    color: appTheme(context).accentColor,
-                  ),
-                  child: Padding(
-                    padding: EdgeInsets.only(
-                        top: fullWidth(context) / 23,
-                        bottom: xxSmallSize(context)),
-                    child: Container(
-                      margin: EdgeInsets.symmetric(
-                          vertical: smallSize(context),
-                          horizontal: xxSmallSize(context)),
-                      child: ListView.builder(
-                        padding: EdgeInsets.all(0),
-                        physics: BouncingScrollPhysics(),
-                        addAutomaticKeepAlives: true,
-                        scrollDirection: Axis.vertical,
-                        itemCount: roleData().length,
-                        shrinkWrap: true,
-                        itemBuilder: (context, index) =>
-                            (roleBox(roleData()[index], context)),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              Align(
-                alignment: Alignment(-0.8, -0.7),
-                child: GestureDetector(
-                  onTap: () {
-                    Navigator.pop(context);
-                  },
-                  child: SvgPicture.asset(
-                    "assets/close_small_icon.svg",
-                    color: Colors.red,
-                    height: standardSize(context),
-                    width: standardSize(context),
-                  ),
-                ),
-              ),
-              Align(
-                alignment: Alignment(0.0, -0.88),
-                child: Container(
-                  width: fullWidth(context) / 1.8,
-                  height: xlargeSize(context) / 1.2,
-                  margin: EdgeInsets.only(
-                      top: standardSize(context), bottom: mediumSize(context)),
+      return SafeArea(
+        top: false,
+        bottom: true,
+        child: Material(
+          color: Colors.transparent,
+          child: Directionality(
+            textDirection: TextDirection.rtl,
+            child: Stack(
+              children: [
+                Positioned(
+                  top: fullWidth(context) / 4.5,
+                  right: standardSize(context),
+                  left: standardSize(context),
+                  bottom: xxLargeSize(context),
                   child: Container(
                     decoration: BoxDecoration(
-                        color: AppColors.accentColor,
-                        borderRadius:
-                            BorderRadius.circular(fullWidth(context) / 1),
-                        boxShadow: [
-                          BoxShadow(
-                              color: Color(0xffADADB2),
-                              blurRadius: 1,
-                              spreadRadius: 0.5,
-                              offset: Offset(0.0, 1))
-                        ]),
-                    child: Container(
-                      alignment: Alignment.center,
-                      child: Material(
-                        color: Colors.transparent,
-                        child: Text(
-                          'قـــــوانین',
-                          textAlign: TextAlign.center,
-                          style: appTheme(context).textTheme.headline3.copyWith(
-                              color: appTheme(context).baseColor,
-                              fontSize: fullWidth(context) / 11),
+                      borderRadius:
+                          BorderRadius.circular(standardSize(context)),
+                      color: appTheme(context).accentColor,
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.only(
+                          top: fullWidth(context) / 23,
+                          bottom: xxSmallSize(context)),
+                      child: Container(
+                        margin: EdgeInsets.symmetric(
+                            vertical: smallSize(context),
+                            horizontal: xxSmallSize(context)),
+                        child: ListView.builder(
+                          padding: EdgeInsets.all(0),
+                          physics: BouncingScrollPhysics(),
+                          addAutomaticKeepAlives: true,
+                          scrollDirection: Axis.vertical,
+                          itemCount: roleData().length,
+                          shrinkWrap: true,
+                          itemBuilder: (context, index) =>
+                              (roleBox(roleData()[index], context)),
                         ),
                       ),
                     ),
                   ),
                 ),
-              )
-            ],
+                Align(
+                  alignment: Alignment(-0.8, -0.7),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: SvgPicture.asset(
+                      "assets/close_small_icon.svg",
+                      color: Colors.red,
+                      height: standardSize(context),
+                      width: standardSize(context),
+                    ),
+                  ),
+                ),
+                Align(
+                  alignment: Alignment(0.0, -0.88),
+                  child: Container(
+                    width: fullWidth(context) / 1.8,
+                    height: xlargeSize(context) / 1.2,
+                    margin: EdgeInsets.only(
+                        top: standardSize(context),
+                        bottom: mediumSize(context)),
+                    child: Container(
+                      decoration: BoxDecoration(
+                          color: AppColors.accentColor,
+                          borderRadius:
+                              BorderRadius.circular(fullWidth(context) / 1),
+                          boxShadow: [
+                            BoxShadow(
+                                color: Color(0xffADADB2),
+                                blurRadius: 1,
+                                spreadRadius: 0.5,
+                                offset: Offset(0.0, 1))
+                          ]),
+                      child: Container(
+                        alignment: Alignment.center,
+                        child: Material(
+                          color: Colors.transparent,
+                          child: Text(
+                            'قـــــوانین',
+                            textAlign: TextAlign.center,
+                            style: appTheme(context)
+                                .textTheme
+                                .headline3
+                                .copyWith(
+                                    color: appTheme(context).baseColor,
+                                    fontSize: fullWidth(context) / 11),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       );
@@ -208,10 +217,14 @@ class RoundPageState extends State<RoundPage> {
                         width: fullWidth(context) / 7,
                         child: NeuButton(
                           () {
-                            closeGameDialog(context);
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => SelectTopic()));
                           },
-                          svg: 'assets/power_icon.svg',
-                          size: smallSize(context),
+                          svg: ("assets/icon_power.svg"),
+                          colorSvg: AppColors.primaryColor,
+                          size: mediumSize(context) / 1.15,
                         ),
                       ),
                       SizedBox(
@@ -221,8 +234,9 @@ class RoundPageState extends State<RoundPage> {
                           () {
                             roleDialog(context);
                           },
-                          svg: 'assets/role_icon.svg',
-                          size: smallSize(context),
+                          svg: "assets/Rules.svg",
+                          colorSvg: AppColors.primaryColor,
+                          size: mediumSize(context) / 1.24,
                         ),
                       ),
                       SizedBox(
@@ -230,15 +244,13 @@ class RoundPageState extends State<RoundPage> {
                         width: fullWidth(context) / 7,
                         child: NeuButton(
                           () {
-                            Navigator.pushReplacement(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => SelectTopic()));
+                            closeGameDialog(context);
                           },
-                          svg: 'assets/play_icon.svg',
-                          size: smallSize(context),
+                          svg: ("assets/icon-play-button.svg"),
+                          colorSvg: Color(0XFF388E3C),
+                          size: mediumSize(context) / 1.12,
                         ),
-                      )
+                      ),
                     ]),
               ),
             ),

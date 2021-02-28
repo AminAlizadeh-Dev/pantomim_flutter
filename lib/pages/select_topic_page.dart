@@ -22,33 +22,37 @@ class SelectTopicState extends State<SelectTopic> {
       return false;
     }
 
-    return WillPopScope(
-      onWillPop: _willPopCallback,
-      child: Directionality(
-        textDirection: TextDirection.rtl,
-        child: Scaffold(
-          backgroundColor: NeumorphicTheme.accentColor(context),
-          appBar: AppBar(
-            leading: SizedBox(),
-            elevation: 0,
-            centerTitle: true,
-            title: Text(
-              "انتخاب موضوع",
-              style: theme.textTheme.headline3
-                  .copyWith(fontSize: headline3Size(context) / 1.4),
+    return SafeArea(
+      top: false,
+      bottom: true,
+      child: WillPopScope(
+        onWillPop: _willPopCallback,
+        child: Directionality(
+          textDirection: TextDirection.rtl,
+          child: Scaffold(
+            backgroundColor: NeumorphicTheme.accentColor(context),
+            appBar: AppBar(
+              leading: SizedBox(),
+              elevation: 0,
+              centerTitle: true,
+              title: Text(
+                "انتخاب موضوع",
+                style: theme.textTheme.headline3
+                    .copyWith(fontSize: headline3Size(context) / 1.4),
+              ),
             ),
-          ),
-          body: Container(
-            height: fullHeight(context) / 1,
-            width: fullWidth(context),
-            child: ListView.builder(
-              physics: BouncingScrollPhysics(),
-              addAutomaticKeepAlives: true,
-              scrollDirection: Axis.vertical,
-              itemCount: topicData().length,
-              shrinkWrap: true,
-              itemBuilder: (context, index) =>
-                  selectTopicWidgets(topicData()[index], context),
+            body: Container(
+              height: fullHeight(context) / 1,
+              width: fullWidth(context),
+              child: ListView.builder(
+                physics: BouncingScrollPhysics(),
+                addAutomaticKeepAlives: true,
+                scrollDirection: Axis.vertical,
+                itemCount: topicData().length,
+                shrinkWrap: true,
+                itemBuilder: (context, index) =>
+                    selectTopicWidgets(topicData()[index], context),
+              ),
             ),
           ),
         ),

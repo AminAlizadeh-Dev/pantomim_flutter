@@ -19,7 +19,7 @@ class NeuProgressPieBar extends StatelessWidget {
     final percentage =
         Provider.of<TimerService>(context).currentDuration.inSeconds / 60 * 100;
     return Container(
-       height: fullHeight(context) / 2.3,
+      height: fullHeight(context) / 2.3,
       child: Stack(
         children: <Widget>[
           Positioned.fill(
@@ -52,16 +52,16 @@ class NeuProgressPieBar extends StatelessWidget {
             ),
           ),
           Positioned(
-            top:  fullWidth(context) / 9,
-            bottom:fullWidth(context) / 9,
-            left:  fullWidth(context) / 9,
+            top: fullWidth(context) / 9,
+            bottom: fullWidth(context) / 9,
+            left: fullWidth(context) / 9,
             right: fullWidth(context) / 9,
             child: Neumorphic(
               style: NeumorphicStyle(
                 shape: NeumorphicShape.concave,
                 boxShape: NeumorphicBoxShape.circle(),
                 depth: 5,
-oppositeShadowLightSource: false,
+                oppositeShadowLightSource: false,
                 intensity: 0.8,
                 lightSource: LightSource.topLeft,
                 color: AppColors.accentColor,

@@ -50,48 +50,54 @@ class SplashState extends State<SplashPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Directionality(
-      textDirection: TextDirection.rtl,
-      child: Scaffold(
-        backgroundColor: appTheme(context).accentColor,
-        body: Stack(
-          children: [
-            Center(
-              child: Container(
-                height: fullWidth(context) / 1.4,
-                width: fullWidth(context) / 1.4,
-                child: _riveArtboard == null
-                    ? const SizedBox()
-                    : Rive(artboard: _riveArtboard),
+    return SafeArea(
+      top: false,
+      bottom: true,
+      child: Directionality(
+        textDirection: TextDirection.rtl,
+        child: Scaffold(
+          backgroundColor: appTheme(context).accentColor,
+          body: Stack(
+            children: [
+              Center(
+                child: Container(
+                  height: fullWidth(context) / 1.4,
+                  width: fullWidth(context) / 1.4,
+                  child: _riveArtboard == null
+                      ? const SizedBox()
+                      : Rive(artboard: _riveArtboard),
+                ),
               ),
-            ),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: Container(
-                margin: EdgeInsets.only(bottom: largeSize(context)),
-                child: Text("ادا بــــــازی",
-                    style: appTheme(context).textTheme.headline3.copyWith(
-                        fontFamily: "aviny",
-                        fontSize: largeSize(context) / 1.1)),
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: Container(
+                  margin: EdgeInsets.only(bottom: largeSize(context)),
+                  child: Text("ادا بــــــازی",
+                      style: appTheme(context).textTheme.headline3.copyWith(
+                          fontFamily: "aviny",
+                          fontSize: largeSize(context) / 1.1)),
+                ),
               ),
-            ),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: Container(
-                margin: EdgeInsets.only(bottom: smallSize(context)),
-                child: Text("Version.0.0.1",
-                    style:
-                        appTheme(context).textTheme.caption.copyWith(color: Colors.grey)),
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: Container(
+                  margin: EdgeInsets.only(bottom: smallSize(context)),
+                  child: Text("Version.0.0.1",
+                      style: appTheme(context)
+                          .textTheme
+                          .caption
+                          .copyWith(color: Colors.grey)),
+                ),
               ),
-            ),
-            Align(
-              alignment: Alignment(0, 0.76),
-              child: Container(
-                width: fullWidth(context) / 5.8,
-                child: Lottie.asset("assets/loading.json"),
+              Align(
+                alignment: Alignment(0, 0.76),
+                child: Container(
+                  width: fullWidth(context) / 5.8,
+                  child: Lottie.asset("assets/loading.json"),
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

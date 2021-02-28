@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:lottie/lottie.dart';
-import 'package:pantomim_flutter/pages/home_page.dart';
 import 'package:pantomim_flutter/pages/round_page.dart';
 import 'package:pantomim_flutter/theme/app_theme.dart';
 import 'package:pantomim_flutter/theme/colors.dart';
@@ -50,133 +49,144 @@ class WinnerState extends State<WinnerPage> {
       closeGameDialog(context);
       return false;
     }
-    return WillPopScope(
-      onWillPop: _willPopCallback,
-      child: Directionality(
-        textDirection: TextDirection.rtl,
-        child: Scaffold(
-          backgroundColor: appTheme(context).accentColor,
-          body: Stack(
-            children: [
 
-              Center(
-                child: Container(
-                  margin: EdgeInsets.symmetric(horizontal: largeSize(context)),
-                  child: SizedBox(
-                    width: fullWidth(context),
-                    height: fullHeight(context) / 2,
-                    child: Neumorphic(
-                      style: NeumorphicStyle(
-                          depth: 5,
-                          intensity: 10,
-                          color: appTheme(context).accentColor,
-                          boxShape: NeumorphicBoxShape.roundRect(
-                              BorderRadius.circular(standardSize(context)))),
-                      child: Stack(
-                        children: [
-
-                          Container(
-                            margin: EdgeInsets.only(top: smallSize(context)),
-                            child: Column(
-                              children: [
-                                Container(
-                                    margin:
-                                        EdgeInsets.only(top: mediumSize(context)),
-                                    child: winnerWidget(context, "تـیـم اول",
-                                        "assets/icon_star1.svg")),
-                                winnerWidget(context, "14  امـتـیاز",
-                                    "assets/icon_star1.svg"),
-                                Container(
+    return SafeArea(
+      top: false,
+      bottom: true,
+      child: WillPopScope(
+        onWillPop: _willPopCallback,
+        child: Directionality(
+          textDirection: TextDirection.rtl,
+          child: Scaffold(
+            backgroundColor: appTheme(context).accentColor,
+            body: Stack(
+              children: [
+                Center(
+                  child: Container(
+                    margin:
+                        EdgeInsets.symmetric(horizontal: largeSize(context)),
+                    child: SizedBox(
+                      width: fullWidth(context),
+                      height: fullHeight(context) / 2,
+                      child: Neumorphic(
+                        style: NeumorphicStyle(
+                            depth: 5,
+                            intensity: 10,
+                            color: appTheme(context).accentColor,
+                            boxShape: NeumorphicBoxShape.roundRect(
+                                BorderRadius.circular(standardSize(context)))),
+                        child: Stack(
+                          children: [
+                            Container(
+                              margin: EdgeInsets.only(top: smallSize(context)),
+                              child: Column(
+                                children: [
+                                  Container(
+                                      margin: EdgeInsets.only(
+                                          top: mediumSize(context)),
+                                      child: winnerWidget(context, "تـیـم اول",
+                                          "assets/icon_star1.svg")),
+                                  winnerWidget(context, "14  امـتـیاز",
+                                      "assets/icon_star1.svg"),
+                                  Container(
+                                      margin: EdgeInsets.only(
+                                          top: xlargeSize(context) / 1.5),
+                                      child: finalScoreWidget(
+                                          context,
+                                          "assets/silver_favorites_icon.svg",
+                                          "امـتـیاز  10",
+                                          "تـیـم دوم")),
+                                  Container(
                                     margin: EdgeInsets.only(
-                                        top: xlargeSize(context) / 1.5),
+                                        top: standardSize(context)),
                                     child: finalScoreWidget(
                                         context,
-                                        "assets/silver_favorites_icon.svg",
-                                        "امـتـیاز  10",
-                                        "تـیـم دوم")),
-                                Container(
-                                  margin:
-                                      EdgeInsets.only(top: standardSize(context)),
-                                  child: finalScoreWidget(
-                                      context,
-                                      "assets/bronze_favourites_icon.svg",
-                                      "امـتـیاز  5",
-                                      "تـیـم سوم"),
-                                ),
-                              ],
+                                        "assets/bronze_favourites_icon.svg",
+                                        "امـتـیاز  5",
+                                        "تـیـم سوم"),
+                                  ),
+                                ],
+                              ),
                             ),
-                          ),
-                          Align(
-                            alignment: Alignment(-0.7, -0.50),
-                            child: SvgPicture.asset("assets/icon_cup.svg"),
-                          ),
-                        ],
+                            Align(
+                              alignment: Alignment(-0.7, -0.50),
+                              child: SvgPicture.asset("assets/icon_cup.svg"),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
-              Align(
-                alignment: Alignment(0, -0.59),
-                child: Container(
-                  width: fullWidth(context) / 2.4,
-                  height: xlargeSize(context) / 1.2,
-                  margin: EdgeInsets.only(
-                      top: standardSize(context), bottom: mediumSize(context)),
-                  child: Neumorphic(
-                    style: NeumorphicStyle(
-                        depth: 1.75,
-                        intensity: 3.5,
-                        color: AppColors.accentColor,
-                        boxShape: NeumorphicBoxShape.roundRect(
-                          BorderRadius.circular(fullWidth(context) / 1),
-                        )),
-                    child: Container(
-                      alignment: Alignment.center,
-                      child: Text("بــرنــده !",
-                          style: appTheme(context).textTheme.headline3
-                              .copyWith(fontSize: headline3Size(context) / 1.4)),
+                Align(
+                  alignment: Alignment(0, -0.59),
+                  child: Container(
+                    width: fullWidth(context) / 2.4,
+                    height: xlargeSize(context) / 1.2,
+                    margin: EdgeInsets.only(
+                        top: standardSize(context),
+                        bottom: mediumSize(context)),
+                    child: Neumorphic(
+                      style: NeumorphicStyle(
+                          depth: 1.75,
+                          intensity: 3.5,
+                          color: AppColors.accentColor,
+                          boxShape: NeumorphicBoxShape.roundRect(
+                            BorderRadius.circular(fullWidth(context) / 1),
+                          )),
+                      child: Container(
+                        alignment: Alignment.center,
+                        child: Text("بــرنــده !",
+                            style: appTheme(context)
+                                .textTheme
+                                .headline3
+                                .copyWith(
+                                    fontSize: headline3Size(context) / 1.4)),
+                      ),
                     ),
                   ),
                 ),
-              ),
-              Positioned.fill(
-                child: Container(
-                  width: fullWidth(context) / 1,
-                  child: Lottie.asset("assets/winner.json"),
-                ),
-              ),
-              Align(
-                alignment: Alignment.bottomCenter,
-                child: Container(
-                  margin: EdgeInsets.all(standardSize(context)),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      NeuButton(
-                        () {
-                          closeGameDialog(context,title: "می خواهید همین مسابقه را تکرار کنید؟",onPress: (){
-                            Navigator.of(context, rootNavigator: true)?.pop();
-                            Navigator.pushReplacement(
-                                context, MaterialPageRoute(builder: (context) => RoundPage()));
-                          });
-                        },
-                        svg: ("assets/icon_repeat.svg"),
-                        size: mediumSize(context),
-                      ),
-                      NeuButton(
-                        () {
-                          closeGameDialog(context);
-                        },
-                        svg: ("assets/icon_home.svg"),
-                        size: mediumSize(context),
-                      ),
-                    ],
+                Positioned.fill(
+                  child: Container(
+                    width: fullWidth(context) / 1,
+                    child: Lottie.asset("assets/winner.json"),
                   ),
                 ),
-              ),
-
-            ],
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Container(
+                    margin: EdgeInsets.all(standardSize(context)),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        NeuButton(
+                          () {
+                            closeGameDialog(context,
+                                title: "می خواهید همین مسابقه را تکرار کنید؟",
+                                onPress: () {
+                              Navigator.of(context, rootNavigator: true)?.pop();
+                              Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => RoundPage()));
+                            });
+                          },
+                          svg: ("assets/icon_repeat.svg"),
+                          size: mediumSize(context) / 1.15,
+                        ),
+                        NeuButton(
+                          () {
+                            closeGameDialog(context);
+                          },
+                          svg: ("assets/icon_home.svg"),
+                          size: mediumSize(context) / 1.15,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),

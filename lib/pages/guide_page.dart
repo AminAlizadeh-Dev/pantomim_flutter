@@ -4,6 +4,7 @@ import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:pantomim_flutter/local_data.dart';
 import 'package:pantomim_flutter/theme/app_theme.dart';
+import 'package:pantomim_flutter/theme/colors.dart';
 import 'package:pantomim_flutter/theme/dimense.dart';
 import 'package:pantomim_flutter/widgets/neu_button.dart';
 import 'package:pantomim_flutter/widgets/text_guide_widget.dart';
@@ -89,9 +90,10 @@ class GuidePageState extends State<GuidePage> {
                                           MainAxisAlignment.spaceAround,
                                       children: [
                                         SvgPicture.asset(
-                                          'assets/arrow_down_icon.svg',
-                                          height: smallSize(context),
-                                          width: smallSize(context),
+                                          'assets/icon_down.svg',
+                                          color: AppColors.primaryColor,
+                                          height: mediumSize(context),
+                                          width: mediumSize(context),
                                         ),
                                         Container(
                                           margin: EdgeInsets.only(
@@ -156,7 +158,9 @@ class GuidePageState extends State<GuidePage> {
                       height: fullWidth(context) / 7,
                       child: NeuButton(
                         () {},
-                        icon: Icons.arrow_forward_ios_rounded,
+                        svg: ("assets/icon_next.svg"),
+                        colorSvg: AppColors.primaryColor,
+                        size: mediumSize(context) / 1.15,
                       ),
                     ),
                     SizedBox(
@@ -166,8 +170,9 @@ class GuidePageState extends State<GuidePage> {
                         () {
                           Navigator.pop(context);
                         },
-                        svg: "assets/power_icon.svg",
-                        size: mediumSize(context),
+                        svg: ("assets/icon_power.svg"),
+                        colorSvg: AppColors.primaryColor,
+                        size: mediumSize(context) / 1.15,
                       ),
                     ),
                   ],
