@@ -65,8 +65,11 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:pantomim_flutter/pages/home_page.dart';
 import 'package:pantomim_flutter/theme/app_theme.dart';
+import 'package:pantomim_flutter/theme/colors.dart';
+import 'package:pantomim_flutter/theme/dimense.dart';
 
 AwesomeDialog closeGameDialog(BuildContext context , {String title : "برای خروج و بازگشت به صفحه اصلی مطمئن هستید؟",Function onPress  }) {
   return AwesomeDialog(
@@ -75,7 +78,12 @@ AwesomeDialog closeGameDialog(BuildContext context , {String title : "برای �
     headerAnimationLoop: false,
     animType: AnimType.SCALE,
     showCloseIcon: false,
-
+    dismissOnTouchOutside: true,
+    customHeader: Container(
+      width: fullWidth(context) / 3.8,
+      height: fullWidth(context) / 3.8,
+      child: Lottie.asset("assets/Exclamation_mark.json"),
+    ),
     body: Container(
         // alignment: Alignment.center,
         child: Text(title,

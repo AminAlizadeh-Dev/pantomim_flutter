@@ -217,10 +217,7 @@ class RoundPageState extends State<RoundPage> {
                         width: fullWidth(context) / 7,
                         child: NeuButton(
                           () {
-                            Navigator.pushReplacement(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => SelectTopic()));
+                           closeGameDialog(context);
                           },
                           svg: ("assets/icon_power.svg"),
                           colorSvg: AppColors.primaryColor,
@@ -244,7 +241,10 @@ class RoundPageState extends State<RoundPage> {
                         width: fullWidth(context) / 7,
                         child: NeuButton(
                           () {
-                            closeGameDialog(context);
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => SelectTopic()));
                           },
                           svg: ("assets/icon-play-button.svg"),
                           colorSvg: Color(0XFF388E3C),

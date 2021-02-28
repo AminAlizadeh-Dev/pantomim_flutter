@@ -30,7 +30,7 @@ class EndGameState extends State<EndGamePage> {
                     horizontal: xlargeSize(context),
                   ),
                   width: fullWidth(context),
-                  height: fullHeight(context) / 7.5,
+                  height: fullHeight(context) / 9,
                   child: Stack(
                     overflow: Overflow.visible,
                     children: [
@@ -112,9 +112,10 @@ class EndGameState extends State<EndGamePage> {
                   ),
                 ),
               ),
-              Positioned(
-                  bottom: largeSize(context),
-                  right: largeSize(context),
+              Align(
+                alignment: Alignment.bottomRight,
+                child: Container(
+                  margin: EdgeInsets.all(standardSize(context)),
                   child: SizedBox(
                     width: fullWidth(context) / 7,
                     height: fullWidth(context) / 7,
@@ -124,7 +125,9 @@ class EndGameState extends State<EndGamePage> {
                       colorSvg: AppColors.primaryColor,
                       size: mediumSize(context) / 1.15,
                     ),
-                  )),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
