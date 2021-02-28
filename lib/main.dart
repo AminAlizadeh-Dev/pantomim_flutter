@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
-import 'package:pantomim_flutter/pages/home_page.dart';
+import 'package:pantomim_flutter/pages/splash_page.dart';
 import 'package:pantomim_flutter/theme/app_theme.dart';
 import 'package:pantomim_flutter/theme/colors.dart';
 
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Pantomime',
       theme: appTheme(context),
-      home: HomePage(),
+      home: SplashPage(),
     );
   }
 }
