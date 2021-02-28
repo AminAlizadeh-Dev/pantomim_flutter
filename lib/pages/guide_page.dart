@@ -179,10 +179,10 @@ class GuidePageState extends State<GuidePage> {
                       ),
                     ),
                   ),
-                  SizedBox(
-                    height: largeSize(context),
-                  ),
                 ],
+              ),
+              SizedBox(
+                height: largeSize(context),
               ),
             ],
           ),
