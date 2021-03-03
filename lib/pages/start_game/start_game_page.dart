@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:lottie/lottie.dart';
-import 'file:///F:/Work/Work%20Projects/Flutter%20Projects/Pantomim/lib/pages/game/game_page.dart';
+import 'package:pantomim_flutter/pages/game/game_page.dart';
 import 'package:pantomim_flutter/pages/start_game/start_game_notifier.dart';
 import 'package:pantomim_flutter/theme/app_theme.dart';
 import 'package:pantomim_flutter/theme/colors.dart';

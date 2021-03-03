@@ -142,7 +142,6 @@ class RoundPageState extends State<RoundPage> {
 
     return ViewModelBuilder<RoundVm>.reactive(
         viewModelBuilder: () => RoundVm(),
-        onModelReady: (model) async => model.getItems(),
         builder: (context, model, child) => WillPopScope(
               onWillPop: _willPopCallback,
               child: Scaffold(
@@ -167,24 +166,39 @@ class RoundPageState extends State<RoundPage> {
                                 depth: 5,
                                 intensity: 6,
                               ),
-                              child: Container(
-                                margin: EdgeInsets.only(
-                                    top: largeSize(context),
-                                    bottom: xxSmallSize(context)),
-                                height: fullHeight(context) / 2,
-                                width: fullWidth(context),
-                                child: ListView.builder(
-                                  physics: BouncingScrollPhysics(),
-                                  padding: EdgeInsets.all(0),
-                                  addAutomaticKeepAlives: true,
-                                  scrollDirection: Axis.vertical,
-                                  itemCount: model.teams.length,
-                                  shrinkWrap: true,
-                                  itemBuilder: (context, index) =>
-                                      (teamDetailBox(
-                                          model.teams[index], context)),
-                                ),
-                              ),
+                              child: model.isBusy
+                                  ? CupertinoActivityIndicator()
+                                  : model.hasError
+                                      ? Container(
+                                          color: Colors.red,
+                                          margin: EdgeInsets.only(
+                                              top: largeSize(context),
+                                              bottom: xxSmallSize(context)),
+                                          height: fullHeight(context) / 2,
+                                          width: fullWidth(context),
+                                          child: Text(model.error().toString()),
+                                        )
+                                      : Container(
+                                          margin: EdgeInsets.only(
+                                              top: largeSize(context),
+                                              bottom: xxSmallSize(context)),
+                                          height: fullHeight(context) / 2,
+                                          width: fullWidth(context),
+                                          child: ListView.builder(
+                                            physics: BouncingScrollPhysics(),
+                                            padding: EdgeInsets.all(0),
+                                            addAutomaticKeepAlives: true,
+                                            scrollDirection: Axis.vertical,
+                                            itemCount: model.data != null
+                                                ? model.data.length
+                                                : 0,
+                                            shrinkWrap: true,
+                                            itemBuilder: (context, index) =>
+                                                (teamDetailBox(
+                                                    model.data[index],
+                                                    context)),
+                                          ),
+                                        ),
                             ),
                           ),
                           Align(

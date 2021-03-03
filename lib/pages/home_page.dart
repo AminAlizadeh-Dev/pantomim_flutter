@@ -1,16 +1,16 @@
-import 'package:assets_audio_player/assets_audio_player.dart';
+// import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:lottie/lottie.dart';
-import 'file:///F:/Work/Work%20Projects/Flutter%20Projects/Pantomim/lib/pages/new_game/new_game_page.dart';
 import 'package:pantomim_flutter/theme/app_theme.dart';
 import 'package:pantomim_flutter/theme/colors.dart';
 import 'package:pantomim_flutter/theme/dimense.dart';
+
+import 'new_game/new_game_page.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -18,48 +18,48 @@ class HomePage extends StatefulWidget {
 }
 
 class HomeState extends State<HomePage> with WidgetsBindingObserver {
-  final assetsAudioPlayer = new AssetsAudioPlayer();
+  // final assetsAudioPlayer = new AssetsAudioPlayer();
 
-  void initState() {
-    assetsAudioPlayer.open(
-      Audio("assets/audios/music.mp3"),
-    );
+  // void initState() {
+  //   assetsAudioPlayer.open(
+  //     Audio("assets/audios/music.mp3"),
+  //   );
+  //
+  //   if (assetsAudioPlayer.isPlaying.value) {
+  //     assetsAudioPlayer.pause();
+  //     assetsAudioPlayer.play();
+  //   }
+  //   assetsAudioPlayer.setLoopMode(LoopMode.single);
+  //
+  //   WidgetsBinding.instance.addObserver(this);
+  //
+  //   super.initState();
+  // }
 
-    if (assetsAudioPlayer.isPlaying.value) {
-      assetsAudioPlayer.pause();
-      assetsAudioPlayer.play();
-    }
-    assetsAudioPlayer.setLoopMode(LoopMode.single);
-
-    WidgetsBinding.instance.addObserver(this);
-
-    super.initState();
-  }
-
-  @override
-  void didChangeAppLifecycleState(AppLifecycleState state) {
-    super.didChangeAppLifecycleState(state);
-    if (state == AppLifecycleState.paused) {
-      assetsAudioPlayer.pause();
-    }
-
-    if (state == AppLifecycleState.inactive) {
-      assetsAudioPlayer.pause();
-
-      print(AppLifecycleState.inactive);
-    }
-
-    if (state == AppLifecycleState.detached) {
-      print(AppLifecycleState.detached);
-      assetsAudioPlayer.pause();
-    }
-    if (state == AppLifecycleState.resumed) {
-      if (!assetsAudioPlayer.isPlaying.value) {
-        assetsAudioPlayer.play();
-        assetsAudioPlayer.setLoopMode(LoopMode.single);
-      }
-    }
-  }
+  // @override
+  // void didChangeAppLifecycleState(AppLifecycleState state) {
+  //   super.didChangeAppLifecycleState(state);
+  //   if (state == AppLifecycleState.paused) {
+  //     assetsAudioPlayer.pause();
+  //   }
+  //
+  //   if (state == AppLifecycleState.inactive) {
+  //     assetsAudioPlayer.pause();
+  //
+  //     print(AppLifecycleState.inactive);
+  //   }
+  //
+  //   if (state == AppLifecycleState.detached) {
+  //     print(AppLifecycleState.detached);
+  //     assetsAudioPlayer.pause();
+  //   }
+  //   if (state == AppLifecycleState.resumed) {
+  //     if (!assetsAudioPlayer.isPlaying.value) {
+  //       assetsAudioPlayer.play();
+  //       assetsAudioPlayer.setLoopMode(LoopMode.single);
+  //     }
+  //   }
+  // }
 
   @override
   void dispose() {

@@ -6,7 +6,7 @@ import 'package:neumorphic/neumorphic.dart';
 import 'package:pantomim_flutter/theme/colors.dart';
 import 'package:pantomim_flutter/theme/dimense.dart';
 
-Widget teamName(BuildContext context, String hintText) {
+Widget teamName(BuildContext context, String hintText,TextEditingController controller) {
   return Container(
     width: fullWidth(context)/2.8,
     height: fullWidth(context)/7,
@@ -18,6 +18,7 @@ Widget teamName(BuildContext context, String hintText) {
           intensity: 10,
           color: AppColors.accentColor),
       child: NeuTextField(
+        controller: controller,
         textDirection: TextDirection.rtl,
         textInputAction: TextInputAction.go,
 
