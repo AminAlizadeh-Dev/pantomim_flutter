@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pantomim_flutter/pages/round/round_notifier.dart';
-import 'file:///F:/Work/Work%20Projects/Flutter%20Projects/Pantomim/lib/pages/select_topic/select_topic_page.dart';
+import 'package:pantomim_flutter/pages/select_topic/select_topic_page.dart';
 import 'package:pantomim_flutter/theme/app_theme.dart';
 import 'package:pantomim_flutter/theme/colors.dart';
 import 'package:pantomim_flutter/theme/dimense.dart';
@@ -15,12 +15,14 @@ import 'package:stacked/stacked.dart';
 
 import '../../local_data.dart';
 
-
 void roleDialog(BuildContext context) {
   showDialog(
     context: context,
     builder: (BuildContext context) {
-      return SafeArea(
+      return ViewModelBuilder<RoundVm>.reactive(
+      viewModelBuilder: () => RoundVm(),
+      builder: (context, model, child) =>
+        SafeArea(
         top: false,
         bottom: true,
         child: Material(
@@ -119,7 +121,7 @@ void roleDialog(BuildContext context) {
             ),
           ),
         ),
-      );
+      ));
     },
   );
 }
@@ -139,143 +141,134 @@ class RoundPageState extends State<RoundPage> {
       return false;
     }
 
-    return ViewModelBuilder<RoundVm>.reactive(
-        viewModelBuilder: () => RoundVm(),
-        builder: (context, model, child) => WillPopScope(
-              onWillPop: _willPopCallback,
-              child: Scaffold(
-                backgroundColor: appTheme(context).accentColor,
-                body: Column(
-                  children: [
-                    Expanded(
-                      flex: 5,
-                      child: Stack(
-                        children: [
-                          Center(
-                            child: Neumorphic(
-                              margin: EdgeInsets.symmetric(
-                                  horizontal: standardSize(context)),
-                              padding:
-                                  EdgeInsets.only(bottom: smallSize(context)),
-                              style: NeumorphicStyle(
-                                boxShape: NeumorphicBoxShape.roundRect(
-                                    BorderRadius.circular(
-                                        standardSize(context))),
-                                color: appTheme(context).accentColor,
-                                depth: 5,
-                                intensity: 6,
-                              ),
-                              child: Container(
-                                margin: EdgeInsets.only(
-                                    top: largeSize(context),
-                                    bottom: xxSmallSize(context)),
-                                height: fullHeight(context) / 2,
-                                width: fullWidth(context),
-                                child: ListView.builder(
-                                  physics: BouncingScrollPhysics(),
-                                  padding: EdgeInsets.all(0),
-                                  addAutomaticKeepAlives: true,
-                                  scrollDirection: Axis.vertical,
-                                  itemCount: model.teams.length,
-                                  shrinkWrap: true,
-                                  itemBuilder: (context, index) =>
-                                      (teamDetailBox(
-                                          model.teams[index], context)),
-                                ),
-                              ),
-                            ),
-                          ),
-                          Align(
-                            alignment: Alignment(0.0, -0.81),
-                            child: Container(
-                              width: fullWidth(context) / 1.7,
-                              height: fullWidth(context) / 8,
-                              margin: EdgeInsets.only(
-                                  top: standardSize(context),
-                                  bottom: mediumSize(context)),
-                              child: Neumorphic(
-                                style: NeumorphicStyle(
-                                    depth: 1.75,
-                                    intensity: 3.5,
-                                    color: AppColors.accentColor,
-                                    boxShape: NeumorphicBoxShape.roundRect(
-                                      BorderRadius.circular(
-                                          fullWidth(context) / 1),
-                                    )),
-                                child: Container(
-                                  alignment: Alignment.center,
-                                  child: Text("دور 1 از 3",
-                                      style: theme.textTheme.headline3.copyWith(
-                                          fontSize:
-                                              headline3Size(context) / 1.4)),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
+    return WillPopScope(
+      onWillPop: _willPopCallback,
+      child: Scaffold(
+        backgroundColor: appTheme(context).accentColor,
+        body: Column(
+          children: [
+            Expanded(
+              flex: 5,
+              child: Stack(
+                children: [
+                  Center(
+                    child: Neumorphic(
+                      margin: EdgeInsets.symmetric(
+                          horizontal: standardSize(context)),
+                      padding: EdgeInsets.only(bottom: smallSize(context)),
+                      style: NeumorphicStyle(
+                        boxShape: NeumorphicBoxShape.roundRect(
+                            BorderRadius.circular(standardSize(context))),
+                        color: appTheme(context).accentColor,
+                        depth: 5,
+                        intensity: 6,
+                      ),
+                      child: Container(
+                        margin: EdgeInsets.only(
+                            top: largeSize(context),
+                            bottom: xxSmallSize(context)),
+                        height: fullHeight(context) / 2,
+                        width: fullWidth(context),
+                        child: ListView.builder(
+                          physics: BouncingScrollPhysics(),
+                          padding: EdgeInsets.all(0),
+                          addAutomaticKeepAlives: true,
+                          scrollDirection: Axis.vertical,
+                          itemCount: teamData().length,
+                          shrinkWrap: true,
+                          itemBuilder: (context, index) =>
+                              (teamDetailBox(teamData()[index], context)),
+                        ),
                       ),
                     ),
-                    Expanded(
-                      flex: 1,
-                      child: Stack(
-                        children: [
-                          Align(
-                            alignment: Alignment.bottomCenter,
-                            child: Container(
-                              margin: EdgeInsets.all(standardSize(context)),
-                              child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    SizedBox(
-                                      height: fullWidth(context) / 7,
-                                      width: fullWidth(context) / 7,
-                                      child: NeuButton(
-                                        () {
-                                          closeGameDialog(context);
-                                        },
-                                        svg: ("assets/icon_power.svg"),
-                                        colorSvg: AppColors.primaryColor,
-                                        size: mediumSize(context) / 1.15,
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      height: fullWidth(context) / 7,
-                                      width: fullWidth(context) / 7,
-                                      child: NeuButton(
-                                        () {
-                                          roleDialog(context);
-                                        },
-                                        svg: "assets/Rules.svg",
-                                        colorSvg: AppColors.primaryColor,
-                                        size: mediumSize(context) / 1.24,
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      height: fullWidth(context) / 7,
-                                      width: fullWidth(context) / 7,
-                                      child: NeuButton(
-                                        () {
-                                          Navigator.pushReplacement(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      SelectTopic()));
-                                        },
-                                        svg: ("assets/icon-play-button.svg"),
-                                        colorSvg: Color(0XFF388E3C),
-                                        size: mediumSize(context) / 1.12,
-                                      ),
-                                    ),
-                                  ]),
-                            ),
-                          ),
-                        ],
+                  ),
+                  Align(
+                    alignment: Alignment(0.0, -0.81),
+                    child: Container(
+                      width: fullWidth(context) / 1.7,
+                      height: fullWidth(context) / 8,
+                      margin: EdgeInsets.only(
+                          top: standardSize(context),
+                          bottom: mediumSize(context)),
+                      child: Neumorphic(
+                        style: NeumorphicStyle(
+                            depth: 1.75,
+                            intensity: 3.5,
+                            color: AppColors.accentColor,
+                            boxShape: NeumorphicBoxShape.roundRect(
+                              BorderRadius.circular(fullWidth(context) / 1),
+                            )),
+                        child: Container(
+                          alignment: Alignment.center,
+                          child: Text("دور 1 از 3",
+                              style: theme.textTheme.headline3.copyWith(
+                                  fontSize: headline3Size(context) / 1.4)),
+                        ),
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-            ));
+            ),
+            Expanded(
+              flex: 1,
+              child: Stack(
+                children: [
+                  Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Container(
+                      margin: EdgeInsets.all(standardSize(context)),
+                      child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            SizedBox(
+                              height: fullWidth(context) / 7,
+                              width: fullWidth(context) / 7,
+                              child: NeuButton(
+                                () {
+                                  closeGameDialog(context);
+                                },
+                                svg: ("assets/icon_power.svg"),
+                                colorSvg: AppColors.primaryColor,
+                                size: mediumSize(context) / 1.15,
+                              ),
+                            ),
+                            SizedBox(
+                              height: fullWidth(context) / 7,
+                              width: fullWidth(context) / 7,
+                              child: NeuButton(
+                                () {
+                                  roleDialog(context);
+                                },
+                                svg: "assets/Rules.svg",
+                                colorSvg: AppColors.primaryColor,
+                                size: mediumSize(context) / 1.24,
+                              ),
+                            ),
+                            SizedBox(
+                              height: fullWidth(context) / 7,
+                              width: fullWidth(context) / 7,
+                              child: NeuButton(
+                                () {
+                                  Navigator.pushReplacement(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => SelectTopic()));
+                                },
+                                svg: ("assets/play-button (1).svg"),
+                                colorSvg: Color(0XFF388E3C),
+                                size: mediumSize(context) / 1.12,
+                              ),
+                            ),
+                          ]),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
