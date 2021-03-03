@@ -3,9 +3,15 @@ import 'package:pantomim_flutter/models/team_model.dart';
 import 'package:stacked/stacked.dart';
 
 class RoundVm extends BaseViewModel {
-  List<TeamModel> teams = teamData();
+  List<TeamModel> teams;
 
-  void sendDataToServer(){
+  Future getItems() async {
+    await Future.delayed(Duration(seconds: 5));
+    teams = teamData();
+    notifyListeners();
+  }
+
+  void sendDataToServer() {
     //show loading
     //send data to server
     //show result

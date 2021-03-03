@@ -37,7 +37,7 @@ List guideType() {
   return guide;
 }
 
-List teamData() {
+List<TeamModel> teamData() {
   List<TeamModel> team = new List();
 
   team.add(TeamModel('تیم اوّل', '42 امتیاز', 1));
