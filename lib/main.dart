@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
-import 'file:///F:/Work/Work%20Projects/Flutter%20Projects/Pantomim/lib/pages/guide/guide_page.dart';
-import 'file:///F:/Work/Work%20Projects/Flutter%20Projects/Pantomim/lib/pages/splash/splash_page.dart';
+import 'package:pantomim_flutter/pages/splash_page.dart';
 import 'package:pantomim_flutter/theme/app_theme.dart';
 import 'package:pantomim_flutter/theme/colors.dart';
 
