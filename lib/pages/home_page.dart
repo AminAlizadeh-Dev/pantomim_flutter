@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:lottie/lottie.dart';
-import 'package:pantomim_flutter/pages/new_game_page.dart';
+import 'file:///F:/Work/Work%20Projects/Flutter%20Projects/Pantomim/lib/pages/new_game/new_game_page.dart';
 import 'package:pantomim_flutter/theme/app_theme.dart';
 import 'package:pantomim_flutter/theme/colors.dart';
 import 'package:pantomim_flutter/theme/dimense.dart';

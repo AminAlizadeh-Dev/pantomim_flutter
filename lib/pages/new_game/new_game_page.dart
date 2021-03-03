@@ -3,8 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:pantomim_flutter/pages/guide_page.dart';
-import 'package:pantomim_flutter/pages/round_page.dart';
+import 'file:///F:/Work/Work%20Projects/Flutter%20Projects/Pantomim/lib/pages/guide/guide_page.dart';
+import 'file:///F:/Work/Work%20Projects/Flutter%20Projects/Pantomim/lib/pages/round/round_page.dart';
 import 'package:pantomim_flutter/theme/app_theme.dart';
 import 'package:pantomim_flutter/theme/colors.dart';
 import 'package:pantomim_flutter/theme/dimense.dart';
@@ -12,6 +12,9 @@ import 'package:pantomim_flutter/widgets/bottom_sheet_widget.dart';
 import 'package:pantomim_flutter/widgets/neu_button.dart';
 import 'package:pantomim_flutter/widgets/num_picker_buttons.dart';
 import 'package:pantomim_flutter/widgets/team_name_picker.dart';
+import 'package:stacked/stacked.dart';
+
+import 'new_game_notifier.dart';
 
 class NewGame extends StatefulWidget {
   @override
@@ -24,7 +27,9 @@ class NewGameState extends State<NewGame> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+    return ViewModelBuilder<NewGameVM>.reactive(
+    viewModelBuilder: () => NewGameVM(),
+    builder: (context, model, child) => SafeArea(
       top: false,
       bottom: true,
       child: GestureDetector(
@@ -417,6 +422,6 @@ class NewGameState extends State<NewGame> {
                   ],
                 ))),
       ),
-    );
+    ));
   }
 }
